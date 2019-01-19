@@ -1,0 +1,27 @@
+.cat-1 {
+  position: fixed;
+  width: 20vw;
+  height: auto;
+  bottom: 0;
+  right: 0;
+  animation: helperCat 3s infinite;
+  
+}
+
+.cat-2 {
+  width: 33.333vw;
+  height: 33.333vw;
+  position: absolute;
+  left: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px 0px #ccc;
+
+}
+
+@keyframes helperCat {
+  0% {transform: translateY(100%)}
+  10% {transform: translateY(0%)}
+  90% {transform: translateY(0%)}
+  100% {transform: translateY(100%)}
+}
