@@ -1,0 +1,566 @@
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+:...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+:...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+:...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+:...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+:...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+007e592 HEAD@{25}: merge develop: Fast-forward
+20c697d HEAD@{26}: checkout: moving from develop to feature1
+007e592 HEAD@{27}: commit (merge): Merge branch 'feature1' into develop
+20c697d HEAD@{28}: merge feature1: Fast-forward
+:...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+007e592 HEAD@{25}: merge develop: Fast-forward
+20c697d HEAD@{26}: checkout: moving from develop to feature1
+007e592 HEAD@{27}: commit (merge): Merge branch 'feature1' into develop
+20c697d HEAD@{28}: merge feature1: Fast-forward
+eded5f0 HEAD@{29}: checkout: moving from feature2 to develop
+76eeb1c HEAD@{30}: commit: added scr link in html
+6d12674 HEAD@{31}: commit: added styles
+:...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+007e592 HEAD@{25}: merge develop: Fast-forward
+20c697d HEAD@{26}: checkout: moving from develop to feature1
+007e592 HEAD@{27}: commit (merge): Merge branch 'feature1' into develop
+20c697d HEAD@{28}: merge feature1: Fast-forward
+eded5f0 HEAD@{29}: checkout: moving from feature2 to develop
+76eeb1c HEAD@{30}: commit: added scr link in html
+6d12674 HEAD@{31}: commit: added styles
+eded5f0 HEAD@{32}: checkout: moving from develop to feature2
+:...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+007e592 HEAD@{25}: merge develop: Fast-forward
+20c697d HEAD@{26}: checkout: moving from develop to feature1
+007e592 HEAD@{27}: commit (merge): Merge branch 'feature1' into develop
+20c697d HEAD@{28}: merge feature1: Fast-forward
+eded5f0 HEAD@{29}: checkout: moving from feature2 to develop
+76eeb1c HEAD@{30}: commit: added scr link in html
+6d12674 HEAD@{31}: commit: added styles
+eded5f0 HEAD@{32}: checkout: moving from develop to feature2
+eded5f0 HEAD@{33}: checkout: moving from feature1 to develop
+:...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+007e592 HEAD@{25}: merge develop: Fast-forward
+20c697d HEAD@{26}: checkout: moving from develop to feature1
+007e592 HEAD@{27}: commit (merge): Merge branch 'feature1' into develop
+20c697d HEAD@{28}: merge feature1: Fast-forward
+eded5f0 HEAD@{29}: checkout: moving from feature2 to develop
+76eeb1c HEAD@{30}: commit: added scr link in html
+6d12674 HEAD@{31}: commit: added styles
+eded5f0 HEAD@{32}: checkout: moving from develop to feature2
+eded5f0 HEAD@{33}: checkout: moving from feature1 to develop
+20c697d HEAD@{34}: commit: add kitty pic to html
+:...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+007e592 HEAD@{25}: merge develop: Fast-forward
+20c697d HEAD@{26}: checkout: moving from develop to feature1
+007e592 HEAD@{27}: commit (merge): Merge branch 'feature1' into develop
+20c697d HEAD@{28}: merge feature1: Fast-forward
+eded5f0 HEAD@{29}: checkout: moving from feature2 to develop
+76eeb1c HEAD@{30}: commit: added scr link in html
+6d12674 HEAD@{31}: commit: added styles
+eded5f0 HEAD@{32}: checkout: moving from develop to feature2
+eded5f0 HEAD@{33}: checkout: moving from feature1 to develop
+20c697d HEAD@{34}: commit: add kitty pic to html
+eded5f0 HEAD@{35}: checkout: moving from develop to feature1
+:...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+007e592 HEAD@{25}: merge develop: Fast-forward
+20c697d HEAD@{26}: checkout: moving from develop to feature1
+007e592 HEAD@{27}: commit (merge): Merge branch 'feature1' into develop
+20c697d HEAD@{28}: merge feature1: Fast-forward
+eded5f0 HEAD@{29}: checkout: moving from feature2 to develop
+76eeb1c HEAD@{30}: commit: added scr link in html
+6d12674 HEAD@{31}: commit: added styles
+eded5f0 HEAD@{32}: checkout: moving from develop to feature2
+eded5f0 HEAD@{33}: checkout: moving from feature1 to develop
+20c697d HEAD@{34}: commit: add kitty pic to html
+eded5f0 HEAD@{35}: checkout: moving from develop to feature1
+eded5f0 HEAD@{36}: commit: created empty index.html
+fd67366 (master) HEAD@{37}: checkout: moving from master to develop
+:...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+007e592 HEAD@{25}: merge develop: Fast-forward
+20c697d HEAD@{26}: checkout: moving from develop to feature1
+007e592 HEAD@{27}: commit (merge): Merge branch 'feature1' into develop
+20c697d HEAD@{28}: merge feature1: Fast-forward
+eded5f0 HEAD@{29}: checkout: moving from feature2 to develop
+76eeb1c HEAD@{30}: commit: added scr link in html
+6d12674 HEAD@{31}: commit: added styles
+eded5f0 HEAD@{32}: checkout: moving from develop to feature2
+eded5f0 HEAD@{33}: checkout: moving from feature1 to develop
+20c697d HEAD@{34}: commit: add kitty pic to html
+eded5f0 HEAD@{35}: checkout: moving from develop to feature1
+eded5f0 HEAD@{36}: commit: created empty index.html
+fd67366 (master) HEAD@{37}: checkout: moving from master to develop
+fd67366 (master) HEAD@{38}: commit (initial): init commit
+~
+~
+~
+(END)...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+007e592 HEAD@{25}: merge develop: Fast-forward
+20c697d HEAD@{26}: checkout: moving from develop to feature1
+007e592 HEAD@{27}: commit (merge): Merge branch 'feature1' into develop
+20c697d HEAD@{28}: merge feature1: Fast-forward
+eded5f0 HEAD@{29}: checkout: moving from feature2 to develop
+76eeb1c HEAD@{30}: commit: added scr link in html
+6d12674 HEAD@{31}: commit: added styles
+eded5f0 HEAD@{32}: checkout: moving from develop to feature2
+eded5f0 HEAD@{33}: checkout: moving from feature1 to develop
+20c697d HEAD@{34}: commit: add kitty pic to html
+eded5f0 HEAD@{35}: checkout: moving from develop to feature1
+eded5f0 HEAD@{36}: commit: created empty index.html
+fd67366 (master) HEAD@{37}: checkout: moving from master to develop
+fd67366 (master) HEAD@{38}: commit (initial): init commit
+~
+~
+~
+~
+(END)...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+007e592 HEAD@{25}: merge develop: Fast-forward
+20c697d HEAD@{26}: checkout: moving from develop to feature1
+007e592 HEAD@{27}: commit (merge): Merge branch 'feature1' into develop
+20c697d HEAD@{28}: merge feature1: Fast-forward
+eded5f0 HEAD@{29}: checkout: moving from feature2 to develop
+76eeb1c HEAD@{30}: commit: added scr link in html
+6d12674 HEAD@{31}: commit: added styles
+eded5f0 HEAD@{32}: checkout: moving from develop to feature2
+eded5f0 HEAD@{33}: checkout: moving from feature1 to develop
+20c697d HEAD@{34}: commit: add kitty pic to html
+eded5f0 HEAD@{35}: checkout: moving from develop to feature1
+eded5f0 HEAD@{36}: commit: created empty index.html
+fd67366 (master) HEAD@{37}: checkout: moving from master to develop
+fd67366 (master) HEAD@{38}: commit (initial): init commit
+~
+~
+~
+~
+~
+(END)...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+007e592 HEAD@{25}: merge develop: Fast-forward
+20c697d HEAD@{26}: checkout: moving from develop to feature1
+007e592 HEAD@{27}: commit (merge): Merge branch 'feature1' into develop
+20c697d HEAD@{28}: merge feature1: Fast-forward
+eded5f0 HEAD@{29}: checkout: moving from feature2 to develop
+76eeb1c HEAD@{30}: commit: added scr link in html
+6d12674 HEAD@{31}: commit: added styles
+eded5f0 HEAD@{32}: checkout: moving from develop to feature2
+eded5f0 HEAD@{33}: checkout: moving from feature1 to develop
+20c697d HEAD@{34}: commit: add kitty pic to html
+eded5f0 HEAD@{35}: checkout: moving from develop to feature1
+eded5f0 HEAD@{36}: commit: created empty index.html
+fd67366 (master) HEAD@{37}: checkout: moving from master to develop
+fd67366 (master) HEAD@{38}: commit (initial): init commit
+~
+~
+~
+~
+~
+~
+(END)...skipping...
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{0}: merge develop: Fast-forward
+fd67366 (master) HEAD@{1}: checkout: moving from develop to HW1-Git
+4dcbc90 (HEAD -> HW1-Git, develop) HEAD@{2}: commit: fixed styles
+7b8a3e9 HEAD@{3}: rebase finished: returning to refs/heads/develop
+7b8a3e9 HEAD@{4}: rebase: add classes to img
+224daa3 HEAD@{5}: rebase: add one more cat img
+089c886 (feature2) HEAD@{6}: rebase: checkout feature2
+15a75c4 (feature1) HEAD@{7}: rebase finished: refs/heads/develop onto 15a75c4b2740ca19bd5184ea7208c439924ab741
+15a75c4 (feature1) HEAD@{8}: rebase: checkout feature1
+007e592 HEAD@{9}: checkout: moving from feature1 to develop
+15a75c4 (feature1) HEAD@{10}: checkout: moving from feature2 to feature1
+089c886 (feature2) HEAD@{11}: commit: add class to html element
+d6b0f80 HEAD@{12}: commit: added styles
+007e592 HEAD@{13}: checkout: moving from feature1 to feature2
+15a75c4 (feature1) HEAD@{14}: commit: add classes to img
+bff9521 HEAD@{15}: commit: add one more cat img
+007e592 HEAD@{16}: checkout: moving from feature2 to feature1
+007e592 HEAD@{17}: reset: moving to 007e
+6f9538b HEAD@{18}: checkout: moving from feature1 to feature2
+007e592 HEAD@{19}: checkout: moving from feature2 to feature1
+6f9538b HEAD@{20}: checkout: moving from develop to feature2
+007e592 HEAD@{21}: checkout: moving from feature2 to develop
+6f9538b HEAD@{22}: commit: add one more cat
+007e592 HEAD@{23}: merge develop: Fast-forward
+76eeb1c HEAD@{24}: checkout: moving from feature1 to feature2
+007e592 HEAD@{25}: merge develop: Fast-forward
+20c697d HEAD@{26}: checkout: moving from develop to feature1
+007e592 HEAD@{27}: commit (merge): Merge branch 'feature1' into develop
+20c697d HEAD@{28}: merge feature1: Fast-forward
+eded5f0 HEAD@{29}: checkout: moving from feature2 to develop
+76eeb1c HEAD@{30}: commit: added scr link in html
+6d12674 HEAD@{31}: commit: added styles
+eded5f0 HEAD@{32}: checkout: moving from develop to feature2
+eded5f0 HEAD@{33}: checkout: moving from feature1 to develop
+20c697d HEAD@{34}: commit: add kitty pic to html
+eded5f0 HEAD@{35}: checkout: moving from develop to feature1
+eded5f0 HEAD@{36}: commit: created empty index.html
+fd67366 (master) HEAD@{37}: checkout: moving from master to develop
+fd67366 (master) HEAD@{38}: commit (initial): init commit
+~
+~
+~
+~
+~
+~
+~
