@@ -13,9 +13,10 @@
   height: 33.333vw;
   position: absolute;
   left: 50%;
-  height: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 15px 0px #ccc;
+  border-radius: 50%;
 
 }
 
