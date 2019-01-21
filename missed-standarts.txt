@@ -1,0 +1,17 @@
+1. Added <!doctype>.
+2. Added arrtibute lang to <html> whith value "en".
+3. Replace div.up to header.app.
+4. Was closed logo <img/>.
+5. Was closed <br/> tag.
+6. Replaced single quotation to double quotation.
+7. Replace fieldset to section and fixed.
+8. Rerlace legend to h2.
+9. Removed p inside links.
+10. Replaced div.down to footer.down.
+11. Added content to empty link.
+12. Was closed <img> tag.
+13. Added attribute alt to <img>.
+14. Removed obsolete attribute 'align' and added css rule for it.
+15. Added <meta charset="UTF-8"> and <title> to <head>.
+16. Added <h1> to header.
+17. Closed <body> tag.
