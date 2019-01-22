@@ -344,10 +344,25 @@ td {
 }
 
 .authorization-form {
-    width: 45%;
+    width: 30%;
     margin: 0 auto;
 }
 
 [type="submit"] {
     margin-top: 12px;
+}
+
+.fegistration-form {
+    width: 45%;
+    margin: 0 auto;
+}
+
+.fegistration-form input,
+.fegistration-form select {
+    width: 100%;
+}
+
+.fegistration-form input[type="radio"],
+.fegistration-form input[type="checkbox"] {
+    width: auto;
 }
