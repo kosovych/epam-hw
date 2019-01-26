@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/main.css">
+  <title>Forms</title>
+</head>
+
+<body>
+  <section>
+    <h2 class="text-center">Feedback</h2>
+    <form class="feedback-form" action="#" method="POST" class="fedback-form">
+      <fieldset class="feedback-form__fieldset">
+        <legend class="feedback-form__legend">Feedback</legend>
+        <div class="feedback-form__wrapper">
+
+
+          <label class="feedback-form__el label" for="first-name">First name</label>
+          <input class="feedback-form__el input " id="first-name" type="text" name="first_name">
+
+          <label class="feedback-form__el label" for="email-input">Email</label>
+          <input class="feedback-form__el input " id="email-input" type="email" pattern="[a-z0-9.-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            name="email" placeholder="user@user.com" />
+
+          <label class="feedback-form__el label" for="pros">Pros</label>
+          <input class="feedback-form__el input " id="pros" name="pros" type="text" placeholder="Main pros" />
+
+          <label class="feedback-form__el label" for="cons">Cons</label>
+          <input class="feedback-form__el input " id="cons" type="text" name="cons" placeholder="Main cons" />
+
+          <label class="feedback-form__el label" for="overview">Overview</label>
+          <textarea class="feedback-form__el input " name="overview" id="overview" cols="30" rows="10"></textarea>
+
+          <label class="feedback-form__el label" for="rating">Rating</label>
+          <input class="feedback-form__el input width-auto" type="text" id="rating" name="number" value="5" pattern="^[0-9]+$" />
+
+          <label class="feedback-form__el label accept">
+            <input type="checkbox" name="sub_news" />
+            Subscribe me to the newsletters
+          </label>
+
+
+          <input class="feedback-form__el input submit" type="submit" value="Send" />
+        </div>
+      </fieldset>
+    </form>
+  </section>
+
+  <section>
+    <h2 class="text-center">Login</h2>
+    <form class="auth-form" action="#" method="GET" class="authorization-form">
+      <fieldset>
+        <legend>Authorization</legend>
+
+        <label class="auth-form__el label" for="login">Login</label>
+        <input class="auth-form__el input" id="login" type="email" pattern="[a-z0-9.-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          required="required" placeholder="user@user.com" />
+
+        <label class="auth-form__el label" for="password">Password</label>
+        <input class="auth-form__el input" type="password" id="password" required="required" placeholder="password" />
+
+        <button class="auth-form__el submit" type="submit">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+  </section>
+
+  <section>
+    <h2 class="text-center">Registration</h2>
+    <form class="req-form" action="#" method="POST" class="fegistration-form">
+      <fieldset>
+        <legend>Registration</legend>
+
+        <b class="req-form__grou-title">Common:</b>
+
+        <label class="req-form__el label" for="user-name">Name</label>
+        <input class="req-form__el input" id="user-name" type="text" name="user-name" placeholder="John" required="required" />
+        <i class="req-form__el info">*Field is required</i>
+
+        <label class="req-form__el label" for="user-sername">Sername</label>
+        <input class="req-form__el input" id="user-sername" type="text" name="user-sername" placeholder="John" required="required" />
+        <i class="req-form__el info">*Field is required</i>
+
+        <span class="req-form__el label">Gender</span>
+
+        <span class="req-form__el input">
+          <label>
+            <input type="radio" name="gender" value="male" />Male</label>
+          <label>
+            <input type="radio" name="gender" value="female" />Female</label>
+        </span>
+        <i class="req-form__el info"></i>
+
+        
+
+
+        <label class="req-form__el label" for="date-of-birth">Date of birth</label>
+        <input class="req-form__el input" type="date" name="date-of-birth" id="date-of-birth" />
+        <i class="req-form__el info">*01/01/1990</i>
+
+        <hr />
+
+        <b class="req-form__grou-title">Address:</b>
+        <label class="req-form__el label" for="user-country">Country</label>
+
+        <select class="req-form__el input" name="user-country" id="user-country">
+          <option value="ua">Ukraine</option>
+          <option value="pl">Poland</option>
+          <option value="usa">USA</option>
+        </select>
+
+        <hr />
+        <b class="req-form__grou-title">Other:</b>
+
+        <label class="req-form__el label" for="user-fav-colot">Favourite color</label>
+        <input class="req-form__el input input_lg" type="color" name="user-fav-colot" id="user-fav-colot" />
+
+        <label class="req-form__el label" for="user-avatar">Upload avatar</label>
+
+        <input class="req-form__el input" type="file" name="user-avatar" id="user-avatar" accept="image/png, image/jpg, image/jpeg, image/gif" />
+
+        <hr />
+        <b class="req-form__grou-title">Secyrity:</b>
+
+        <label class="req-form__el label" for="user-password">Password</label>
+
+        <input class="req-form__el input" type="password" name="user-password" id="user-password" required="required" placeholder="Your password" />
+
+        <i class="req-form__el info">*Field is required</i>
+
+        <label class="req-form__el label" for="user-password-repeat">Repeat password</label>
+        <input class="req-form__el input" type="password" name="user-password-repeat" id="user-password-repeat" required="required" />
+        <i class="req-form__el info"></i>
+
+        <label class="req-form__el label" for="user-email">Email</label>
+        <input class="req-form__el input" type="email" pattern="[a-z0-9.-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="user-email" id="user-email" placeholder="john_doe@gmail.com"
+          required="required" />
+        <i class="req-form__el info">*Field is required</i>
+        <hr />
+
+
+        <td colspan="2" class="text-center">
+          <label class="req-form__el accept text-center"><input type="checkbox" name="user-afree" required="required" />I agree the
+            Terms and conditions</label>
+
+        <button class="req-form__el submit" type="submit">Register</button>
+      </fieldset>
+    </form>
+  </section>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.text-center  {
+  text-align: center;
+}
+
+.feedback-form {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.feedback-form__el {
+  float: left;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+}
+
+.feedback-form__el.label {
+  width: 30%;
+}
+
+.feedback-form__el.input {
+  width: 70%;
+}
+
+.feedback-form__el.accept {
+  float: none;
+  clear: both;
+  display: block;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 6px;
+}
+
+.feedback-form__el.submit {
+  float: none;
+  display: block;
+  width: 120px;
+  margin: 0 auto;
+}
+
+.width-auto {
+  width: auto;
+}
+
+.auth-form {
+  width: 33.333%;
+  margin: 0 auto;
+}
+
+.auth-form__el {
+  float: left;
+  margin-bottom: 6px;
+  box-sizing: border-box;
+}
+
+.auth-form__el.label {
+  width: 30%;
+}
+.auth-form__el.input {
+  width: 70%;
+}
+
+.auth-form__el.submit {
+  float: none;
+  width: 60px;
+  display: block;
+  margin: 0 auto;
+}
+
+.req-form {
+  width: 75%;
+  margin: 0 auto;
+} 
+
+.req-form__el {
+  float: left;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+.req-form__el.label {
+  width: 20%;
+  height: 22px;
+}
+.req-form__el.input {
+  width: 50%;
+  margin-bottom: 12px;
+  height: 22px;
+}
+.req-form__el.info {
+  width: 30%;
+  height: 22px;
+  padding-left: 12px;
+}
+
+.req-form__grou-title {
+  margin-bottom: 6px;
+  width: 100%;
+  display: block;
+}
+
+hr {
+  clear: both;
+}
+
+.input.input_lg {
+  width: 80%;
+}
+
+.req-form__el.accept {
+  float: none;
+  display: block;
+  margin-top: 32px;
+}
+
+.req-form__el.submit {
+  display: block;
+  float: none;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
