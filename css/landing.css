@@ -1,0 +1,388 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header {
+  position: relative;
+  height: 70px;
+  border-top: 3px solid #5E8DBB;
+  background-color: #2B2D2B;
+}
+
+.nav-btn {
+  float: left;
+  height: 62px;
+  width: 62px;
+  margin: 4px 0px 4px 4px;
+  position: relative;
+  background: none;
+  border: none;
+  outline: none;
+  position: relative;
+  z-index: 3;
+}
+
+.nav-btn__label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.nav-btn__line {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #5E8DBB;
+  left: 0;
+  transform: rotate(0deg);
+  transition: all .3s;
+}
+
+.nav-btn__line:nth-child(1) {
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nav-btn__line:nth-child(2) {
+  top: calc(50% - 3px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-btn__line:nth-child(3) {
+  top: calc(50% - 3px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-btn__line:nth-child(4) {
+  top: auto;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#nav-btn-switcher {
+  display: none;
+}
+
+#nav-btn-switcher:checked +
+.nav-btn
+.nav-btn__line:nth-child(1) {
+  width: 0;
+  top: calc(50% - 3px);
+}
+
+#nav-btn-switcher:checked +
+.nav-btn
+.nav-btn__line:nth-child(4) {
+  width: 0;
+  bottom: calc(50% - 3px);
+}
+
+#nav-btn-switcher:checked +
+.nav-btn
+.nav-btn__line:nth-child(2) {
+  transform: translateX(-50%) rotateZ(45deg);
+}
+
+#nav-btn-switcher:checked +
+.nav-btn
+.nav-btn__line:nth-child(3) {
+  transform: translateX(-50%) rotateZ(-45deg);
+}
+
+.nav {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  text-align: center;
+  transition: left .8s;
+  z-index: 2;
+}
+
+.nav__link {
+  display: inline-block;
+  line-height: 67px;
+  height: 67px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  padding: 0 12px;
+  font-weight: 600;
+}
+
+#nav-btn-switcher:checked ~ .nav {
+  animation: navMove 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.main {
+  position: relative;
+  margin-bottom: 56px;
+}
+
+.tab {
+  padding-top: 24px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: -100%;
+  transition: all 1s;
+  pointer-events: none;
+}
+
+.tab-switcher {
+  display: none;
+}
+
+.tab-switcher:checked + .tab {
+  animation: tabMove 1s forwards;
+  pointer-events: all;
+
+}
+
+.tab__header {
+  margin-bottom: 24px;
+}
+
+.checkbox-tab {
+  text-align: center;
+}
+
+.custom-checkbox {
+  margin-bottom: 48px;
+}
+
+.custom-checkbox__label {
+  width: 68px;
+  height: 12px;
+  display: inline-block;
+  position: relative;
+  background-color: #fff;
+  box-shadow: inset 2px 2px 2px 1px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.custom-checkbox__trigger {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #666;
+  top: 50%;
+  left: -12px;
+  transform: translateY(-50%);
+  box-shadow: 0px 0px 1px 1px #aaa;
+  transition: all 0.3s;
+}
+
+.custom-checkbox__input {
+  display: none;
+}
+
+.custom-checkbox__input:disabled +
+.custom-checkbox__label {
+  opacity: .7;
+}
+
+.custom-checkbox__input:checked + 
+.custom-checkbox__label {
+  background-color: #557ED3;
+}
+
+.custom-checkbox__input:checked + 
+.custom-checkbox__label
+.custom-checkbox__trigger {
+  left: calc(100% - 12px);
+}
+
+.accordion {
+  width: 33%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.accordion__label {
+  height: 24px;
+  display: inline-block;
+  width: auto;
+  border: 1px solid #555;
+  line-height: 24px;
+  padding: 4px 12px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.accordion__label:active {
+  box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.15);
+
+}
+.accordion__content {
+  padding: 12px 6px;
+  margin-top: 6px;
+  background-color: #555;
+  border-radius: 4px;
+  color: #fff;
+  display: none;
+  width: auto;
+  margin-bottom: 6px;
+}
+
+.accordion__input {
+  display: none;
+}
+
+.accordion__input:checked +
+.accordion__content {
+  display: block;
+  animation: accordionMove .8s;
+}
+
+.dropdown {
+  position: relative;
+  z-index: 5;
+}
+
+.dropdown__wrapper {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  border-top: 3px solid #5E8DBB;
+  max-height: 0px;
+  transition: all 1s;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.dropdown__item {
+  display: block;
+  color: #fff;
+  line-height: 36px;
+  text-align: left;
+  padding: 0 8px;
+  border-bottom: 1px solid #ddd;
+  background-color: #2B2D2B;
+  transition: all .3s;
+}
+
+.dropdown__item:hover {
+  background-color: #000;
+}
+
+.dropdown__input {
+  display: none;
+}
+
+.dropdown__input:checked + 
+.dropdown__wrapper {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.footer {
+  background-color: #2B2D2B;
+  padding: 12px 8px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer__link {
+  float: left;
+  height: 32px;
+  width: 32px;
+  color: transparent;
+  overflow: hidden;
+  background-image: url(../img/sprites.png);
+  background-color: #fff;
+  background-size: 1100%;
+  background-position-y: 0;
+  background-repeat: no-repeat;
+}
+
+.footer__link.transition {
+  float: right;
+  transition: all 1s;
+}
+
+.footer__link:hover {
+  background-position-y: -32px;
+}
+
+.footer__link:active {
+  background-position-y: -64px;
+}
+
+.footer__link.fb {
+  background-position-x: 0;
+}
+.footer__link.glus {
+  background-position-x: -96px;
+}
+.footer__link.link {
+  background-position-x: -128px;
+}
+.footer__link.skype {
+  background-position-x: -224px;
+
+}
+.footer__link.twitter {
+  background-position-x: -256px;
+}
+.footer__link.youtube {
+  background-position-x: -320px;
+}
+
+@keyframes accordionMove {
+  from {
+    transform: translateX(-100vw);
+  }
+
+  to {
+    transform: translateX(0vw);
+  }
+}
+
+
+@keyframes navMove {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 0%;
+  }
+}
+
+@keyframes tabMove {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 0%;
+  }
+}

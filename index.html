@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./css/main.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <header class="header clearfix">
+    <input id="nav-btn-switcher" name="nav-btn-switcher" class="nav-btn__switcher" type="checkbox" />
+    <span class="nav-btn">
+      <label for="nav-btn-switcher" class="nav-btn__label">
+        <span class="nav-btn__line"></span>
+        <span class="nav-btn__line"></span>
+        <span class="nav-btn__line"></span>
+        <span class="nav-btn__line"></span>
+      </label>
+    </span>
+
+    <nav class="nav">
+      <label class="nav__link" for="checkbox-tab">Checkbox</label>
+      <label class="nav__link" for="accordion-tab">Accordion</label>
+      <label class="nav__link dropdown" for="dropdown-input">
+        + Drop-Down
+        <input type="checkbox" class="dropdown__input" id="dropdown-input">
+        <span class="dropdown__wrapper">
+          <span class="dropdown__item">Checkbox</span>
+          <span class="dropdown__item">Accordion</span>
+          <span class="dropdown__item">Menu</span>
+        </span>
+        </label>
+    </nav>
+
+  </header>
+
+  <main class="main">
+    <input id="checkbox-tab" class="tab-switcher" type="radio" name="tab-switcher">
+    <section class="tab checkbox-tab">
+      <h2 class="tab__header">Custom checkbox</h2>
+
+      <div class="custom-checkbox">
+        <input class="custom-checkbox__input" id="custom-checkbox-1" name="custom-checkbox" type="checkbox">
+        <label class="custom-checkbox__label" for="custom-checkbox-1">
+          <span class="custom-checkbox__trigger"></span>
+        </label>
+      </div>
+
+      <h2 class="tab__header">Custom checkbox (disabled)</h2>
+
+      <div class="custom-checkbox">
+        <input class="custom-checkbox__input" disabled="disabled" id="custom-checkbox-2" name="custom-checkbox" type="checkbox">
+        <label class="custom-checkbox__label" for="custom-checkbox-2">
+          <span class="custom-checkbox__trigger"></span>
+        </label>
+      </div>
+
+      <h2 class="tab__header">Custom checkbox (disabled & checked)</h2>
+
+      <div class="custom-checkbox">
+        <input class="custom-checkbox__input" checked="checked" disabled="disabled" id="custom-checkbox-3" name="custom-checkbox" type="checkbox">
+        <label class="custom-checkbox__label" for="custom-checkbox-3">
+          <span class="custom-checkbox__trigger"></span>
+        </label>
+      </div>
+    </section>
+
+    <input id="accordion-tab" class="tab-switcher" type="radio" name="tab-switcher">
+    <section class="tab checkbox-tab">
+
+      <h2 class="tab__header">Accordion</h2>
+
+      <div class="accordion">
+        <label class="accordion__label" for="accordion-slide-1">Slide 1</label>
+        <input id="accordion-slide-1" type="checkbox" class="accordion__input" name="accordion">
+        <div class="accordion__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, excepturi!
+        </div>
+      </div>
+
+      <div class="accordion">
+        <label class="accordion__label" for="accordion-slide-2">Slide 2</label>
+        <input id="accordion-slide-2" type="checkbox" class="accordion__input" name="accordion">
+        <div class="accordion__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, excepturi!
+        </div>
+      </div>
+
+      <div class="accordion">
+        <label class="accordion__label" for="accordion-slide-3">Slide 3</label>
+        <input id="accordion-slide-3" type="checkbox" class="accordion__input" name="accordion">
+        <div class="accordion__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, excepturi!
+        </div>
+      </div>
+
+      <div class="accordion">
+        <label class="accordion__label" for="accordion-slide-4">Slide 4</label>
+        <input id="accordion-slide-4" type="checkbox" class="accordion__input" name="accordion">
+        <div class="accordion__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, excepturi!
+        </div>
+      </div>
+
+      <h2 class="tab__header">Accordion (collapsible)</h2>
+
+      <div class="accordion">
+        <label class="accordion__label" for="accordion-slide-5">Slide 1</label>
+        <input id="accordion-slide-5" type="radio" class="accordion__input" name="accordion-coll">
+        <div class="accordion__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, excepturi!
+        </div>
+      </div>
+
+      <div class="accordion">
+        <label class="accordion__label" for="accordion-slide-6">Slide 2</label>
+        <input id="accordion-slide-6" type="radio" class="accordion__input" name="accordion-coll">
+        <div class="accordion__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, excepturi!
+        </div>
+      </div>
+
+      <div class="accordion">
+        <label class="accordion__label" for="accordion-slide-7">Slide 3</label>
+        <input id="accordion-slide-7" type="radio" class="accordion__input" name="accordion-coll">
+        <div class="accordion__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, excepturi!
+        </div>
+      </div>
+
+      <div class="accordion">
+        <label class="accordion__label" for="accordion-slide-8">Slide 4</label>
+        <input id="accordion-slide-8" type="radio" class="accordion__input" name="accordion-coll">
+        <div class="accordion__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, excepturi!
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer clearfix">
+      <a href="#" class="footer__link fb">Faceboock</a>
+      <a href="#" class="footer__link glus">Google Plus</a>
+      <a href="#" class="footer__link link">Linkedin</a>
+
+      <a href="#" class="footer__link transition skype">Skype</a>
+      <a href="#" class="footer__link transition twitter">Twitter</a>
+      <a href="#" class="footer__link transition youtube">Youtube</a>
+  </footer>
+
+
+
+</body>
+
+</html>

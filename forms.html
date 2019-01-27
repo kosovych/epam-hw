@@ -2,21 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./css/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./css/main.css" />
   <title>Forms</title>
 </head>
 
 <body>
   <section>
     <h2 class="text-center">Feedback</h2>
-    <form class="feedback-form" action="#" method="POST" class="fedback-form">
+    <form class="feedback-form" action="#" method="POST">
       <fieldset class="feedback-form__fieldset">
         <legend class="feedback-form__legend">Feedback</legend>
         <div class="feedback-form__wrapper">
-
 
           <label class="feedback-form__el label" for="first-name">First name</label>
           <input class="feedback-form__el input " id="first-name" type="text" name="first_name">
@@ -42,7 +41,6 @@
             Subscribe me to the newsletters
           </label>
 
-
           <input class="feedback-form__el input submit" type="submit" value="Send" />
         </div>
       </fieldset>
@@ -51,7 +49,7 @@
 
   <section>
     <h2 class="text-center">Login</h2>
-    <form class="auth-form" action="#" method="GET" class="authorization-form">
+    <form class="auth-form" action="#" method="GET">
       <fieldset>
         <legend>Authorization</legend>
 
@@ -63,14 +61,13 @@
         <input class="auth-form__el input" type="password" id="password" required="required" placeholder="password" />
 
         <button class="auth-form__el submit" type="submit">Submit</button>
-        </div>
       </fieldset>
     </form>
   </section>
 
   <section>
     <h2 class="text-center">Registration</h2>
-    <form class="req-form" action="#" method="POST" class="fegistration-form">
+    <form class="req-form" action="#" method="POST">
       <fieldset>
         <legend>Registration</legend>
 
@@ -93,10 +90,6 @@
             <input type="radio" name="gender" value="female" />Female</label>
         </span>
         <i class="req-form__el info"></i>
-
-        
-
-
         <label class="req-form__el label" for="date-of-birth">Date of birth</label>
         <input class="req-form__el input" type="date" name="date-of-birth" id="date-of-birth" />
         <i class="req-form__el info">*01/01/1990</i>
@@ -127,24 +120,25 @@
 
         <label class="req-form__el label" for="user-password">Password</label>
 
-        <input class="req-form__el input" type="password" name="user-password" id="user-password" required="required" placeholder="Your password" />
+        <input class="req-form__el input" type="password" name="user-password" id="user-password" required="required"
+          placeholder="Your password" />
 
         <i class="req-form__el info">*Field is required</i>
 
         <label class="req-form__el label" for="user-password-repeat">Repeat password</label>
-        <input class="req-form__el input" type="password" name="user-password-repeat" id="user-password-repeat" required="required" />
+        <input class="req-form__el input" type="password" name="user-password-repeat" id="user-password-repeat"
+          required="required" />
         <i class="req-form__el info"></i>
 
         <label class="req-form__el label" for="user-email">Email</label>
-        <input class="req-form__el input" type="email" pattern="[a-z0-9.-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="user-email" id="user-email" placeholder="john_doe@gmail.com"
-          required="required" />
+        <input class="req-form__el input" type="email" pattern="[a-z0-9.-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="user-email"
+          id="user-email" placeholder="john_doe@gmail.com" required="required" />
         <i class="req-form__el info">*Field is required</i>
         <hr />
 
-
-        <td colspan="2" class="text-center">
-          <label class="req-form__el accept text-center"><input type="checkbox" name="user-afree" required="required" />I agree the
-            Terms and conditions</label>
+        <label class="req-form__el accept text-center"><input type="checkbox" name="user-afree" required="required" />I
+          agree the
+          Terms and conditions</label>
 
         <button class="req-form__el submit" type="submit">Register</button>
       </fieldset>
