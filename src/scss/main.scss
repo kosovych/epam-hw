@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+p {
+  line-height: 1.5;
+}
+
 body {
   font-family: 'Geramond', serif;
   font-size: 14px;
@@ -18,10 +22,46 @@ a {
   color: inherit;
 }
 
+.title {
+  &-lg {
+    font-size: 45px;
+    font-weight: normal;
+  }
+
+  &-md {
+    font-size: 28px;
+    margin-bottom: 18px;
+    font-weight: normal;
+  }
+
+  &-sm {
+    font-size: 21px;
+    font-weight: normal;
+  }
+}
+
+.duble-border {
+  position: relative;
+  padding-bottom: 18px;
+  border-bottom: 1px solid $darck;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    left: 0;
+    bottom: 5px;
+    background-color: $darck;
+  }
+}
+
 .container {
   max-width: 860px;
   margin: 0;
-  margin: 0 auto; 
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .clearfix::after {
@@ -36,15 +76,15 @@ a {
 
   &__wrapper {
     height: 60px;
-    padding-top: 26px;
+    padding-top: 22px;
     position: relative;
   }
 
   &__link {
     float: right;
     color: $white;
-    font-size: 18px;
-    margin-right: 26px;
+    font-size: 20px;
+    margin-right: 28px;
     padding-bottom: 4px;
 
     &:hover {
@@ -52,7 +92,7 @@ a {
     }
 
     &:first-child {
-      margin-right: $space;
+      margin-right: 0;
     }
 
     &.logo {
@@ -96,31 +136,62 @@ a {
 
 .article {
   &__title {
-    margin-top: 72px;
-    padding-bottom: 24px;
+    margin-top: 60px;
     font-size: 45px;
-    border-bottom: 1px solid $darck;
     position: relative;
-    margin-bottom: 28px;
+    margin-bottom: 16px;
 
-    &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 6px;
-      left: 0;
-      bottom: 5px;
-      background-color: $darck;
-    }
+
   }
 }
 
 .carousel {
   float: right;
-  height: 290px;
+  height: 250px;
   width: 410px;
 }
 
+.welcome {
+  &__content {
+    float: left;
+    width: 410px;
+  }
+}
+
+.hero-section {
+  width: ($container - $space*4) / 3;
+  float: left;
+  box-sizing: border-box;
+  margin-top: 60px;
+  padding-top: 20px;
+  margin-right: $space;
+  border-top: 1px dashed #ccc; 
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    padding-left: 36px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto;
+
+    &.folder {
+      background-image: url(../img/icon/Icon1.png)
+    }
+
+    &.pen {
+      background-image: url(../img/icon/Icon2.png)
+    }
+
+    &.man {
+      background-image: url(../img/icon/Icon3.png)
+    }
+  }
+}
+
 * {
-  outline: 1px solid red;
+  // outline: 1px solid red;
 }
