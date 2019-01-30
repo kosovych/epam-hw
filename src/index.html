@@ -14,13 +14,13 @@
 
     <header class="header">
       <div class="clearfix container header__wrapper">
-        <a class="header__link" href="#">Contact</a>
-        <a class="header__link" href="#">Elements</a>
-        <a class="header__link" href="#">About me</a>
-        <a class="header__link" href="#">My work</a>
-        <a class="header__link" href="#">Portfolio</a>
-        <a class="header__link" href="#">Home</a>
-        <a class="header__link logo" href="#">Pixelstudio</a>
+        <a class="header__link" href="#contact">Contact</a>
+        <a class="header__link" href="#my-works">Elements</a>
+        <a class="header__link" href="#about-me">About me</a>
+        <a class="header__link" href="#my-works">My work</a>
+        <a class="header__link" href="#portfolio">Portfolio</a>
+        <a class="header__link" href="/">Home</a>
+        <a class="header__link logo" href="/">Pixelstudio</a>
       </div>
     </header>
 
@@ -29,9 +29,25 @@
       <article class="article welcome">
         <h2 class="article__title title-lg duble-border">Welcome !</h2>
         <div class="clearfix">
-          <div class="carousel"></div>
+
+          <div class="carousel">
+              <div class="carousel__slide">
+                <span class="absolute-center">1</span>
+                <p class="carousel__slide-description">Description for image 1</p>
+              </div>
+              <button class="carousel__btn prev absolute-center-y">prev</button>
+              <button class="carousel__btn next absolute-center-y">next</button>
+
+              <div class="carousel__controlls">
+                <span class="carousel__dot active"></span>
+                <span class="carousel__dot"></span>
+                <span class="carousel__dot"></span>
+                <span class="carousel__dot"></span>
+              </div>
+         </div>
+
           <section class="welcome__content">
-            <h3 class="title-md">Welcome to Pixelstudio !</h3>
+            <h3 class="title-md">Welcome to <span class="red">Pixelstudio</span> !</h3>
             <p>Sed sed mollis neque. Integer ac libero ligula, sit amet volutpat magna. Maecenas tincidunt nulla
               iaculis
               massa ultricies facilisis. Curabitur sagittis cursus dolor, a tempor mauris sagittis ac. Pellentesque
@@ -64,13 +80,206 @@
               Nunc et massa arcu, at bibendum velit. Sed ut lacus non elit tempor dignissim. Donec nibh tellus</p>
           </section>
         </div>
-
-
       </article>
 
+      <article id="about-me" class="about article duble-border">
+        <h2 class="article__title about__title title-lg duble-border">About me</h2>
+        <div class="clearfix">
+          <div class="about__content">
+            <p class="about__text">Nam imperdiet faucibus orci ut vestibulum. Cras ut tellus ac leo blandit convallis a
+              vitae odio. Integer
+              molestie varius hendrerit. Ut lacinia eleifend dolor ut luctus. Sed euismod quam congue est congue
+              lacinia. Aliquam quam augue, fringilla faucibus consequat vitae, mollis ac nulla. Nunc at urna enim, non
+              mollis mi. Nunc eget magna mauris. Aenean elit ligula, dignissim;
+              <br />
+              <br />
+              Quisque cursus libero ante, a pellentesque massa. Vestibulum et dolor ut est tincidunt aliquam. Aliquam
+              nunc velit, ornare eu porta et, volutpat sit amet arcu. Quisque vel risus dolor. Sed </p>
+
+            <h3 class="title-md">Pellentesque eu metus est, id accumsan leo</h3>
+            <p class="about__text">Nulla facilisi. Nam sagittis pretium iaculis. Curabitur egestas mattis dui, vitae
+              ultricies tortor
+              facilisis vel. Phasellus et cursus enim. Maecenas vel porta magna. Curabitur at elit ut lacus luctus
+              mattis. Sed nibh quam, blandit vitae feugiat eu, gravida a elit. Donec commodo laoreet venenatis.
+              Curabitur
+              eget augue augue, in pellentesque arcu. Phasellus eget turpis nec lorem sagittis sagittis.</p>
+
+            <h3 class="title-md">Morbi viverra, neque quis</h3>
+            <p class="about__text">Cras feugiat rutrum leo, at viverra nisl ornare quis. Maecenas quis quam justo.
+              Proin molestie, massa
+              lacinia pharetra aliquam, eros nunc ultricies magna, sit amet molestie ligula nulla vitae arcu. Donec
+              commodo laoreet venenatis. Curabitur eget augue augue, in pellentesque arcu. Phasellus eget turpis nec
+              lorem sagittis sagittis. Quisque porta fringilla quam, a volutpat justo imperdiet non.</p>
+
+            <h4 class="title-sm">Some styled typography</h4>
+            <ul class="ui-list">
+              <li class="ui-list__item">Sed adipiscing lorem massa, in aliquet lectus. Nunc mollis mauris vitae est
+                vestibulum mattis. Nunc lacus magna, aliquet sit amet elementum at, iaculis ac lacus. Maecenas et
+                interdum erat. Sed augue dolor, fermentum ut commodo quis.</li>
+              <li class="ui-list__item">Nam bibendum, purus sit amet convallis tempor, dolor lorem ullamcorper eros,
+                vitae dapibus justo diam a elit. Duis at massa nulla, eget consequat velit. Nulla auctor, mauris eu
+                mattis gravida, lorem neque posuere eros, quis vehicula mauris. </li>
+              <li class="ui-list__item">Praesent in tellus in urna fermentum lobortis. Class aptent taciti sociosqu ad
+                litora torquent per conubia nostra, per inceptos himenaeos. Nulla tempus pretium lorem, semper laoreet
+                mi ornare sagittis. Id placerat leo dictum non.</li>
+              <li class="ui-list__item">Aliquam aliquam mattis varius. Fusce interdum mi nec lacus pellentesque
+                adipiscing. Sed in augue non massa elementum rhoncus quis quis eros. Quisque viverra, dolor eu eleifend
+                elementum, elit massa aliquam lectus, in varius odio lacus a justo.</li>
+            </ul>
+          </div>
+
+
+          <aside id="portfolio" class="aside">
+            <h3 class="title-md">From Flickr</h3>
+            <div class="gallery clearfix">
+              <div class="gallery__el"></div>
+              <div class="gallery__el"></div>
+              <div class="gallery__el"></div>
+              <div class="gallery__el"></div>
+              <div class="gallery__el"></div>
+              <div class="gallery__el"></div>
+              <div class="gallery__el"></div>
+              <div class="gallery__el"></div>
+              <div class="gallery__el"></div>
+            </div>
+
+            <h3 id="my-works" class="title-md">Links</h3>
+
+            <ul class="links-list">
+              <li class="links-list__el">
+                <a href="#">Themeforest</a>
+              </li>
+              <li class="links-list__el">
+                <a href="#">GraphicRiver</a>
+              </li>
+              <li class="links-list__el">
+                <a href="#">CodeCanyon</a>
+              </li>
+              <li class="links-list__el">
+                <a href="#">ActiveDen</a>
+              </li>
+              <li class="links-list__el">
+                <a href="#">3DOcean</a>
+              </li>
+              <li class="links-list__el">
+                <a href="#">VideoHive</a>
+              </li>
+              <li class="links-list__el">
+                <a href="#">Audiojungle</a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </article>
+
+      <article id="contact" class="contact duble-border">
+        <h2 class="contact__header title-lg duble-border">Contact</h2>
+        <div class="clearfix">
+          <div class="contact-form">
+            <p>Donec vel est elit. Morbi augue enim, lobortis a commodo vitae, sodales in arcu. Suspendisse dapibus
+              lacinia sem at molestie. Sed auctor tempus ullamcorper. Ut sed bibendum odio. Quisque tincidunt luctus
+              convallis.</p>
+
+            <form class="form" action="#" method="GET">
+              <table class="form__table">
+                <tbody>
+                  <tr>
+                    <td><label class="form__label" for="user-name">Name</label></td>
+                    <td><input class="form__input" id="user-name" name="user-name" type="text" /></td>
+                  </tr>
+
+                  <tr>
+                    <td><label class="form__label" for="user-email">Email</label></td>
+                    <td><input class="form__input" type="email" name="user-email" id="user-email" /></td>
+                  </tr>
+
+                  <tr>
+                    <td><label class="form__label" for="user-message">Message</label></td>
+                    <td><textarea class="form__input textarea" name="user-message" id="user-message"></textarea></td>
+                  </tr>
+
+                  <tr>
+                    <td colspan="2">
+                      <button class="form__btn" type="submit">SEND</button>
+                      <button class="form__btn" type="reset">RESET</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+          <section class="contact-info">
+            <h3 class="title-md">Contact informations</h3>
+            <p>Feel free to contact us for any of your projects, we’ll gat back to you as soon as possible !</p>
+
+            <p class="contact-info__item">
+              <img src="/img/icon/mail-icon.png" alt="Icon">
+              Company name<br />
+              789 Street name<br />
+              999 00 City name, Country
+            </p>
+
+            <p class="contact-info__item">
+              <img src="/img/icon/Speech-bubble-icon.png" alt="Icon">
+              Phone : +000 987 654 321<br />
+              Fax : +000 123 456 789
+            </p>
+
+            <p class="contact-info__item">
+              <img src="/img/icon/Pen-icon.png" alt="Icon">
+              Email : <a href="mailto:sales@yourcompany.com">sales@yourcompany.com</a>
+            </p>
+          </section>
+        </div>
+      </article>
 
     </main>
 
+    <footer class="footer">
+      <div class="container clearfix">
+        <div class="footer__el">
+          <h2 class="title-md">Social networks</h2>
+          <p>
+            For all news and updates, join us on the social networks and stay tuned !
+          </p>
+          <div class="clearfix footer-likns">
+              <a href="#" class="footer-likns__link">
+                <img src="./img/icon/Facebook-icon.png" alt="Facebook">
+              </a>
+              <a href="#" class="footer-likns__link">
+                <img src="./img/icon/Twitter-icon.png" alt="Twitter">
+              </a>
+              <a href="#" class="footer-likns__link">
+                <img src="./img/icon/Flickr-icon.png" alt="Flickr">
+              </a>
+              <a href="#" class="footer-likns__link">
+                <img src="./img/icon/Digg-icon.png" alt="Digg">
+              </a>
+              <a href="#" class="footer-likns__link">
+                <img src="./img/icon/Blogger-icon.png" alt="Blogger">
+              </a>
+            </div>
+        </div>
+        <div class="footer__el">
+          <h2 class="title-md">Freelance work</h2>
+          <p>
+            I'm currently available for freelance work, I can design for you a brand new website or create an awesome
+            logo.<br />
+            Just <span class="red">drop me an email</span> to get in touch !
+          </p>
+        </div>
+        <div class="footer__el">
+          <div class="title-md">&nbsp;</div>
+          <p>
+            This theme uses 100% valid<br />
+            <span class="red">HTML</span> and <span class="red">CSS</span>
+            <br />
+            <br />
+            Copyright © 2010 Pixelstudio
+          </p>
+        </div>
+      </div>
+    </footer>
   </div>
 </body>
 

@@ -1,20 +1,27 @@
 @font-face {
-  font-family: 'Calluna';
+  font-family: "Calluna";
   font-style: normal;
   font-weight: 300;
-  src: url('/fonts/Calluna.otf') format('otf');
+  src: url("/font/Calluna.otf");
 }
 
 @font-face {
-  font-family: 'Georgia';
+  font-family: "Georgia";
   font-style: normal;
   font-weight: 300;
-  src: url('/fonts/Georgia.woff') format('woff');
+  src: url("/font/Georgia.woff");
 }
 
 @font-face {
-  font-family: 'Geramond';
+  font-family: "Geramond";
   font-style: normal;
   font-weight: 300;
-  src: url('/fonts/Geramond.ttf') format('ttf');
+  src: url("/font/Geramond.ttf");
+}
+
+@font-face {
+  font-family: "LaurenScript";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/font/LaurenScript.ttf");
 }
