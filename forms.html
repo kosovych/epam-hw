@@ -10,8 +10,8 @@
 </head>
 
 <body>
-  <section>
-    <h2 class="text-center">Feedback</h2>
+  <section class="section">
+    <h2 class="text-center section__header">Feedback</h2>
     <form class="feedback-form" action="#" method="POST">
       <fieldset class="feedback-form__fieldset">
         <legend class="feedback-form__legend">Feedback</legend>
@@ -47,10 +47,10 @@
     </form>
   </section>
 
-  <section>
-    <h2 class="text-center">Login</h2>
+  <section class="section">
+    <h2 class="text-center section__header">Login</h2>
     <form class="auth-form" action="#" method="GET">
-      <fieldset>
+      <fieldset class="auth-form__fieldset">
         <legend>Authorization</legend>
 
         <label class="auth-form__el label" for="login">Login</label>
@@ -65,10 +65,10 @@
     </form>
   </section>
 
-  <section>
-    <h2 class="text-center">Registration</h2>
+  <section class="section">
+    <h2 class="text-center section__header">Registration</h2>
     <form class="req-form" action="#" method="POST">
-      <fieldset>
+      <fieldset class="req-form__fieldset">
         <legend>Registration</legend>
 
         <b class="req-form__grou-title">Common:</b>
@@ -91,7 +91,7 @@
         </span>
         <i class="req-form__el info"></i>
         <label class="req-form__el label" for="date-of-birth">Date of birth</label>
-        <input class="req-form__el input" type="date" name="date-of-birth" id="date-of-birth" />
+        <input class="req-form__el input" type="date" name="date-of-birth" id="date-of-birth" required="required"/>
         <i class="req-form__el info">*01/01/1990</i>
 
         <hr />
@@ -99,7 +99,8 @@
         <b class="req-form__grou-title">Address:</b>
         <label class="req-form__el label" for="user-country">Country</label>
 
-        <select class="req-form__el input" name="user-country" id="user-country">
+        <select class="req-form__el input" name="user-country" id="user-country" required="required">
+          <option value="default" selected="selected" disabled value="">Select</option>
           <option value="ua">Ukraine</option>
           <option value="pl">Poland</option>
           <option value="usa">USA</option>
@@ -109,11 +110,11 @@
         <b class="req-form__grou-title">Other:</b>
 
         <label class="req-form__el label" for="user-fav-colot">Favourite color</label>
-        <input class="req-form__el input input_lg" type="color" name="user-fav-colot" id="user-fav-colot" />
+        <input class="req-form__el input input_lg" type="color" name="user-fav-colot" id="user-fav-colot" required="required"/>
 
         <label class="req-form__el label" for="user-avatar">Upload avatar</label>
 
-        <input class="req-form__el input" type="file" name="user-avatar" id="user-avatar" accept="image/png, image/jpg, image/jpeg, image/gif" />
+        <input class="req-form__el input" type="file" name="user-avatar" id="user-avatar" accept="image/png, image/jpg, image/jpeg, image/gif" required="required"/>
 
         <hr />
         <b class="req-form__grou-title">Secyrity:</b>
@@ -136,11 +137,13 @@
         <i class="req-form__el info">*Field is required</i>
         <hr />
 
-        <label class="req-form__el accept text-center"><input type="checkbox" name="user-afree" required="required" />I
-          agree the
-          Terms and conditions</label>
-
-        <button class="req-form__el submit" type="submit">Register</button>
+        <div class="text-center">
+          <label class="req-form__el accept text-center"><input type="checkbox" name="user-afree" required="required" />I
+            agree the
+            Terms and conditions</label>
+            
+            <button class="req-form__el submit" type="submit">Register</button>
+          </div>
       </fieldset>
     </form>
   </section>
