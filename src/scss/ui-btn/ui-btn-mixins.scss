@@ -1,0 +1,10 @@
+@mixin ui-btn($border-color, $grad-start, $grad-eng) {
+  border-color: $border-color;
+  background: linear-gradient(to bottom, $grad-start 0%, $grad-eng 100%);
+}
+
+@mixin ui-btn-hover($border-color, $bg-color) {
+  border-color: $border-color;
+  background: none;
+  background-color: $bg-color;
+}

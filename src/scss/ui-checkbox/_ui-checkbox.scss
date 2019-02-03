@@ -1,0 +1,37 @@
+@import '../ui-btn/ui-btn-mixins.scss';
+
+.ui-checkbox {
+  &__label {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 2px solid $light-grey;
+    box-sizing: border-box;
+    background: $white;
+    border-radius: 6px;
+  }
+
+  &__input {}
+
+  &__input:checked+&__label {
+    &--green {
+      @include ui-btn($green-border, $green-end, $green-start);
+    }
+
+    &--yellow {
+      @include ui-btn($yellow-border, $yellow-end, $yellow-start);
+    }
+
+    &--red {
+      @include ui-btn($red-border, $red-end, $red-start);
+    }
+
+    &--blue {
+      @include ui-btn($blue-border, $blue-end, $blue-start);
+    }
+
+    &--grey {
+      @include ui-btn($grey-border, $grey-end, $grey-start);
+    }
+  }
+}
