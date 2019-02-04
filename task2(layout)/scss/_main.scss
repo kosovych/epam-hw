@@ -1,0 +1,135 @@
+
+$text-color: #000 !default;
+$brief-w: 30% !default;
+$brief-float: left !default;
+$link-color: rgb(0, 0, 238) !default;
+$th-bg: #ccc !default;
+$table-w: auto !default;
+$th-border: #fff !default;
+$td-bg: #fff !default;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font: $bodyFont;
+  font-size: 16px;
+  background-color: $body-bg;
+  color: $text-color;
+}
+
+.clear::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content {
+  margin: 36px 48px;
+  padding: 12px 14px;
+  background-color: $content-bg;
+
+  &.mt-0 {
+    margin-top: 0;
+  }
+
+  &.mb-0 {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    font-weight: 600;
+    margin-bottom: 1em;
+    color: $header-color;
+
+    &--lg {
+      font-size: 3em;
+      line-height: 1;
+    }
+
+    &--md {
+      font-size: 1.5em;
+      line-height: 1;
+      font-style: italic;
+    }
+  }
+
+  &__link {
+    color: $link-color;
+  }
+
+  &__img {
+    padding: 6px;
+    margin-bottom: 6px;
+    border: 1px solid $img-border;
+    
+    &.img-left {
+      float: left;
+      width: 425px;
+      height: 155px;
+      margin-right: 6px;
+    }
+
+    &.img-right {
+      float: right;
+      display: block;
+      width: 220px;
+      height: 165px;
+      margin-left: 6px;
+    }
+
+    &.img-left-2 {
+      float: left;
+      width: 220px;
+      height: 155px;
+      margin-right: 6px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 1em;
+    
+  }
+
+  &__brief {
+    float: $brief-float;
+    width: $brief-w;
+    padding: 16px 24px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    background-color: $brief-bg;
+    box-sizing: border-box;
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  margin-bottom: 48px;
+  width: $table-w;
+
+  &__caption {
+    text-align: right;
+    padding: 6px;
+    font-style: italic;
+  }
+  
+  &__cell {
+    border-bottom: 1px solid;
+    text-align: left;
+    padding: 8px;
+    vertical-align: top;
+    background-color: $td-bg;
+
+    &--head {
+      background-color: $th-bg;
+      border-bottom: none;
+
+      &:not(:last-child) {
+        border-right: 2px solid $th-border;
+      }
+    }
+  }
+}
