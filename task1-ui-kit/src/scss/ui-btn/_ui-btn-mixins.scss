@@ -1,6 +1,6 @@
 @mixin ui-btn($border-color, $grad-start, $grad-eng) {
   border-color: $border-color;
-  background: linear-gradient(to bottom, $grad-start 0%, $grad-eng 100%);
+  background: linear-gradient(to bottom, $grad-start 50%, $grad-eng 100%);
 }
 
 @mixin ui-btn-hover($border-color, $bg-color) {

@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: "Roboto Regular";
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.ui-btns {
+  border-spacing: 10px;
+}
+
+.ui-checkbox {
+  @extend .ui-btns;
+}
+
+.ui-paginations {
+  @extend .ui-btns;
+}
+
+.ui-tabs {
+  @extend .ui-btns;
+}

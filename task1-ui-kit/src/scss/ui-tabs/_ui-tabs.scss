@@ -1,0 +1,96 @@
+@import "../vars";
+@import "../ui-btn/ui-btn-mixins";
+
+
+.tabs {
+  display: inline-block;
+  font-family: "Roboto Medium";
+  font-size: 0;
+  white-space: nowrap;
+  &__input {
+    display: none;
+  }
+  
+  &__label{
+    font-size: 30px;
+    display: inline-block;
+    height: 78px;
+    line-height: 78px;
+    box-sizing: border-box;
+    padding: 0 30px;
+    cursor: pointer;
+    position: relative;
+  }
+}
+
+.tabs--epmty {
+
+  border-bottom: 2px solid $tab-border;
+  color: $tab-empty-color;
+
+  .tabs__label {
+    &:not(:last-child) {
+      margin-right: (114px - 30px) / 2;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      bottom: -2px;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background-color: currentColor;
+    }
+  }
+
+  .tabs__input:checked + .tabs__label {
+    color: $grey;
+    &::after {
+      display: block;
+    }
+  }
+}
+
+.tabs--green {
+  .tabs__input:checked + .tabs__label::after {
+    background-color: $green;
+  }
+}
+
+.tabs--red {
+  .tabs__input:checked + .tabs__label::after {
+    background-color: $red;
+  }
+}
+
+.tabs--fill {
+  display: inline-block;
+  border: 1px solid $tab-border;
+  border-radius: 6px;
+  overflow: hidden;
+
+  .tabs__label {
+    color: $tab-fill-color;
+    background-color: $white;
+    
+    &:not(:last-child) {
+      border-right: 1px solid $tab-border;
+    }
+  }
+
+  &.tabs--green {
+    .tabs__input:checked + .tabs__label {
+      color: white;
+      background-color: $green;
+
+    }
+  }
+  &.tabs--red {
+    .tabs__input:checked + .tabs__label {
+      color: white;
+      background-color: $red;
+    }
+  }
+}

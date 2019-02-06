@@ -1,0 +1,86 @@
+@import "../ui-checkbox/ui-checkbox";
+@import "../vars";
+
+.paginations {
+  
+  &__btn {
+    border: none;
+    background: none;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    font-family: "Roboto Medium";
+    font-size: 20px;
+    box-sizing: border-box;
+    color: $pagination-color;
+    border: 1px solid;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+
+    &:active {
+      box-shadow: inset 0px 2px 5px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    &.active {
+      color: $white;
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    @include ui-btn($white-border, $white-end, $white-start);
+
+    &:hover {
+      @include ui-btn-hover($dark-white, $dark-white);
+    }
+
+    &--arrow:hover {
+      @include ui-btn-hover($arrow-bg, $arrow-bg);
+    }
+  }
+}
+
+.paginations {
+  &--green &__btn.active {
+    @include ui-btn($green-border, $green-end, $green-start);
+
+    &:hover {
+      @include ui-btn-hover($dark-green, $dark-green);
+    }
+  }
+
+  &--yellow &__btn.active {
+    @include ui-btn($yellow-border, $yellow-end, $yellow-start);
+
+    &:hover {
+      @include ui-btn-hover($dark-yellow, $dark-yellow);
+    }
+  }
+
+  &--red &__btn.active {
+    @include ui-btn($red-border, $red-end, $red-start);
+
+    &:hover {
+      @include ui-btn-hover($dark-red, $dark-red);
+    }
+  }
+
+  &--blue &__btn.active {
+    @include ui-btn($blue-border, $blue-end, $blue-start);
+
+    &:hover {
+      @include ui-btn-hover($dark-blue, $dark-blue);
+    }
+  }
+
+  &--grey &__btn.active {
+    @include ui-btn($grey-border, $grey-end, $grey-start);
+
+    &:hover {
+      @include ui-btn-hover($dark-grey, $dark-grey);
+    }
+  }
+}
