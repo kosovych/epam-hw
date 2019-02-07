@@ -1,0 +1,150 @@
+.goods {
+  display: flex;
+  background-color: $goods-bg;
+  height: 374px;
+}
+
+.goods-category {
+  height: 100%;
+  flex-basis: 374px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &--pots {
+    background-color: $pots;
+    color: $pots-color;
+  }
+
+  &__img {
+    margin-bottom: 36px;
+  }
+
+  &__title {
+    font-family: "Roboto Light";
+    font-size: 21px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+
+  }
+
+  &__link {
+    font-family: "Roboto Regular";
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+}
+
+.goods-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 64px 0 50px;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+  order: 2;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__info-price {
+    font-size: 28px;
+    font-family: "Roboto Light";
+    margin-bottom: 34px;
+    line-height: 38px;
+    color: $grey;
+  }
+
+  &__add {
+    position: relative;
+    font-family: "Roboto Light";
+    cursor: pointer;
+    margin-left: 22px;
+    color: $grey;
+
+    &::after {
+      content: "ADD TO FAVS"
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      left: -24px;
+      top: -2px;
+      background-image: url(../img/heard.png);
+      background-repeat: no-repeat;
+      background-position-x: 0;
+
+    }
+  }
+
+  &__author-img {
+    margin-bottom: 12px;
+    padding-left: 26px;
+    
+  }
+
+  &__author-name {
+    font-family: "Roboto Black";
+    margin-bottom: 32px;
+    color: $grey;
+  }
+
+  &__author-clogan {
+    font-family: "Roboto Light";
+    font-size: 56px;
+    line-height: 58px;
+  }
+
+
+  &__link-item {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-blend-mode: lighten;
+  }
+}
+
+.goods-item__add-input {
+  display: none;
+}
+
+.goods-item__add-input:checked+.goods-item__add::after {
+  content: "FAVED";
+}
+
+.goods-item__add-input:checked+.goods-item__add::before {
+  background-image: url(../img/heard-red.png);
+}
+
+.goods-category--right {
+  order: 3;
+  background-image: url(../img/arrow-left.png);
+  background-repeat: repeat-y;
+}
+
+.goods-category--left {
+  order: 1;
+  background-image: url(../img/arrow-right.png);
+  background-repeat: repeat-y;
+  background-position: 100% 0;
+
+}
+
+.goods-category--shake {
+  background-color: $shake-bg;
+}
+
+.goods-category--authen {
+  background-color: $auth-color;
+}
+
+.goods-item__link-item--plate {
+  transform: translate(-50%, 30%);
+}

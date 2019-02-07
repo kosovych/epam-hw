@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  height: 656px;
+  position: relative;
+
+  &__content {
+    flex-grow: 1;
+    height: 100%;
+
+    background: url(../img/triangle.png) 180px 0px;
+
+    background-repeat: no-repeat;
+  }
+}
+
+.header-goods {
+  margin-top: 215px;
+  display: flex;
+  justify-content: space-between;
+
+  &__link {
+    position: absolute;
+    bottom: -5%;
+    left: 150px;
+  }
+  
+  &__info {
+    font-size: 28px;
+    font-family: "Roboto Light";
+    margin-left: 50px;
+    line-height: 38px;
+    color: $grey;
+
+  }
+
+  &__author {
+    margin-top: -74px;
+    margin-right: 150px;
+  }
+
+  &__author-img {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  &__author-name {
+    font-family: "Roboto Black";
+    text-align: center;
+    margin-bottom: 46px;
+    color: $grey;
+  }
+
+  &__author-slogan {
+    font-family: "Roboto Light";
+    font-size: 56px;
+    line-height: 58px;
+    text-align: center;
+
+  }
+}

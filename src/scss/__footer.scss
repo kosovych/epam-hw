@@ -1,0 +1,60 @@
+.footer {
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 126px;
+  background-image: url(../img/footer.jpg);
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 160px;
+    flex-basis: 50%;
+  }
+
+  &__link {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 42px;
+    margin-bottom: 46px;
+
+    &--authen {
+      width: 17px;
+      height: 39px;
+      background: url('../img/css_sprites-2.png') -85px -10px;
+    }
+
+    &--shake {
+      width: 43px;
+      height: 43px;
+      background: url('../img/css_sprites-2.png') -10px -64px;
+    }
+
+    &--pots {
+      width: 55px;
+      height: 34px;
+      background: url('../img/css_sprites-2.png') -10px -10px;
+    }
+  }
+
+  &__copy {
+    flex-basis: 100%;
+    text-transform: uppercase;
+    color: $grey;
+  }
+
+  &__right {
+    margin-top: 120px;
+  }
+
+  &__logo {
+    font-size: 30px;
+    font-family: "Roboto Light";
+  }
+
+  &__logo-val {
+    text-align: center;
+    display: block;
+  }
+}

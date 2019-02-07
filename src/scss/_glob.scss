@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // outline: 1px solid red;
+  line-height: 1;
+  background-repeat: no-repeat;
+  color: inherit;
+
+  // font-family: "Roboto Black";
+  // font-family: "Roboto Condensed";
+  // font-family: "Roboto Light";
+  // font-family: "Roboto Regular";
+  // font-family: "Roboto Black";
+}
+
+body {
+  color: $black;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.grayscale {
+  filter: grayscale(1);
+}
+
+.content {
+  width: 1500px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: $header-bg;
+}
+

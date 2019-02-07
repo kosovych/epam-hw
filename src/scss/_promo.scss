@@ -1,0 +1,29 @@
+.promo {
+  position: relative;
+  height: 330px;
+  background-image: url(../img/promo.jpg);
+  background-size: cover;
+
+  &__link {
+    position: absolute;
+    left: 480px;
+    top: 50%;
+    width: 160px;
+    height: 160px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: url(../img/promo-icon.png);
+    background-repeat: no-repeat;
+    background-position: center 35%;
+    background-color: $goods-bg;
+  }
+
+  &__link-value {
+    font-family: "Roboto Light";
+    color: $grey;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 50px;
+  }
+}

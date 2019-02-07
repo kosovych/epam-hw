@@ -1,0 +1,190 @@
+
+.nav {
+  position: relative;
+  height: 100%;
+  flex-basis: 380px;
+  background-image: url(../img/nav-bg.jpg);
+  background-size: cover;
+  margin-right: 0;
+  will-change: margin-right;
+  transition: all 1s;
+  z-index: 1;
+
+  &__header {
+    margin-left: 34px;
+    margin-top: 86px;
+    font-family: "Roboto Condensed";
+    font-size: 18px;
+    color: $text-grey;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+}
+
+.nav-list {
+  margin: 0px 60px 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__link {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: "Roboto Black";
+    color: $purple-text;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+
+    &--bowls::after {
+      width: 34px;
+      height: 20px;
+      background: url('../img/css_sprites.png') -117px -10px;
+    }
+
+    &--cups::after {
+      width: 20px;
+      height: 31px;
+      background: url('../img/css_sprites.png') -117px -50px;
+    }
+
+    &--disp::after {
+      width: 13px;
+      height: 35px;
+      background: url('../img/css_sprites.png') -10px -115px;
+    }
+
+    &--furn::after {
+      width: 41px;
+      height: 26px;
+      background: url('../img/css_sprites.png') -10px -69px;
+    }
+
+    &--table::after {
+      width: 33px;
+      height: 33px;
+      background: url('../img/css_sprites.png') -64px -10px;
+    }
+
+    &--cut::after {
+      width: 9px;
+      height: 33px;
+      background: url('../img/css_sprites.png') -43px -115px;
+    }
+
+    &--plant::after {
+      width: 34px;
+      height: 39px;
+      background: url('../img/css_sprites.png') -10px -10px;
+    }
+  }
+
+  &__el {
+    flex-basis: 50%;
+    text-align: center;
+    margin-top: 98px;
+
+    &:nth-child(even) {
+      flex-basis: 30%;
+    }
+  }
+}
+
+.nav-btn-swicher {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 28px;
+  right: 28px;
+  z-index: 2;
+
+  &__line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: $purple-text;
+
+    &:first-child {
+      top: 50%;
+      transform: rotateZ(45deg);
+    }
+
+    &:last-child {
+      top: 50%;
+      transform: rotateZ(-45deg);
+    }
+  }
+}
+
+#nav-switcher{
+  display: none;
+  &:checked~.nav {
+    margin-right: -380px;
+  }
+}
+
+#nav-switcher:checked+.nav-btn-swicher {
+  .nav-btn-swicher__line {
+    transform: rotateZ(0deg);
+
+    &:first-child {
+      top: 3px;
+    }
+
+    &:last-child {
+      top: auto;
+      bottom: 3px;
+    }
+  }
+}
+
+.nav-tab {
+  position: absolute;
+  right: 100%;
+  top: 60px;
+
+  &__el {
+    display: block;
+    position: relative;
+    width: 70px;
+    height: 60px;
+    margin-bottom: 16px;
+
+    &--active {
+      background-color: $pirple;
+
+    }
+  }
+
+  &__el-val {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+
+    &--home {
+      height: 45%;
+      background: url('../img/css_sprites-1.png') 3px -33px;
+      background-size: 200%;
+    }
+
+    &--fav {
+      background: url('../img/css_sprites-1.png') -175px 0px;
+      background-size: 200%;
+    }
+
+    &--search {
+      background: url('../img/css_sprites-1.png') 0px -2px;
+      background-size: 200%;
+    }
+  }
+}
