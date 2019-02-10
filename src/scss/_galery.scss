@@ -1,0 +1,39 @@
+.galery {
+  display: flex;
+  margin-bottom: 68px;
+  height: 18vw;
+
+  &__el {
+    flex-basis: 25%;
+    overflow: hidden;
+    text-align: right;
+    position: relative;
+  }
+
+  &__el-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .galery {
+    flex-wrap: wrap;
+    height: 72vw;
+    margin-bottom: 56px;
+
+    &__el {
+      flex-basis: 50%;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .galery {
+    margin-bottom: 38px;
+  }
+}

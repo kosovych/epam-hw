@@ -1,0 +1,42 @@
+.logo {
+  display: block;
+  width: 200px;
+  margin-top: 86px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 102px;
+  font-family: "FiraSans Medium";
+  font-size: 30px;
+  position: relative;
+  letter-spacing: 6px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 106px;
+    height: 12px;
+    left: 50%;
+    bottom: -16px;
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    transform: translateX(-50%);
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .logo {
+    margin: 80px auto;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .logo {
+    margin: 64px auto;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .logo {
+    margin-top: 38px;
+  }
+}

@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+body {
+  color: $darck-grey;
+}
+
+html, body {
+  font-size: 16px;
+  font-family: "Roboto Regular";
+  line-height: 1.5;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.copyright {
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 44px;
+}
+
+@media all and (max-width: 1024px) {
+  .container {
+    width: 94%;
+    margin: 0 auto;
+  }
+}
+
+@media all and (max-width: 768px) {
+  html, body {
+    font-size: 12px;
+  }
+}
+

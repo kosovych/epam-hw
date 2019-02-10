@@ -1,0 +1,115 @@
+.feactures {
+  margin-bottom: 56px;
+
+  &__title {
+    font-size: 34px;
+    margin-bottom: 24px;
+    text-align: center;
+    color: $darck-grey;
+  }
+
+  &__text {
+    text-align: center;
+    line-height: 1.5;
+    color: $darck-grey;
+    margin-bottom: 72px;
+  }
+
+  &__container {
+    display: flex;
+    
+  }
+
+  &__img-wrapper {
+    flex-basis: 50%;
+    margin: 0 10px;
+    min-height: 100%;
+    position: relative;
+  }
+
+  &__img {
+    position: absolute;
+    height: 100%;
+    width: auto;
+  }
+}
+
+.feactures-list {
+  flex-basis: 50%;
+  margin: 0 10px;
+  margin-left: 80px;
+
+  &__el {
+    &:not(:last-child) {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__el-header {
+    margin-bottom: 24px;
+    line-height: 1.5;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 40px;
+      background-image: url(../img/sport---reward-badge.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      left: -64px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__el-text {
+    line-height: 1.5;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .feactures {
+    &__img {
+      width: 100%;
+      height: auto;
+    }
+
+    &-list__el-header {
+      &::after {
+        left: -32px;
+      }
+    }
+  
+  }
+}
+
+@media all and (max-width: 768px) {
+  .feactures {
+    &__title {
+      font-size: 28px;
+    }
+
+    &__text {
+      margin-bottom: 62px;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .feactures__container {
+    flex-wrap: wrap;
+  }
+  .feactures__img-wrapper {
+    flex-basis: 100%;
+    margin-bottom: 36px;
+  }
+  .feactures-list {
+    flex-basis: 100%;
+    margin-left: 56px;
+  }
+  .feactures__img {
+    position: static;
+  }
+}
