@@ -1,0 +1,479 @@
+//ARTICLE MAIN
+.article {
+  @include make-xs-column(9);
+
+  &__date {
+    @include make-xs-column(1);
+    text-align: center;
+    color: $date-color;
+    font-family: "Raleway SemiBold";
+    text-transform: uppercase;
+    padding: 0;
+  }
+
+  &__date-year {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  &__date-month {
+    font-size: 24px;
+    font-family: "Raleway Bold";
+  }
+
+  &__date-day {
+    font-size: 51px;
+    font-family: 'Raleway Regular';
+  }
+
+  &__content {
+    @include make-xs-column(11);
+    padding-left: 30px;
+  }
+
+  &__content-wrapper {
+    padding-left: 36px;
+  }
+
+  &__title {
+    margin-bottom: 28px;
+    font-family: "Raleway SemiBold";
+    font-size: 45px;
+  }
+
+  &__details {
+    margin-bottom: 28px;
+    font-family: 'OpenSans Regular';
+    font-size: 14px;
+  }
+
+  &__details-author {
+    display: inline-block;
+    margin-right: 16px;
+    padding-left: 32px;
+    line-height: 18px;
+    background-image: url(../img/ico/ti-user.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+
+  &__details-comments {
+    display: inline-block;
+    margin-right: 16px;
+    padding-left: 32px;
+    line-height: 18px;
+    background-image: url(../img/ico/ti-comment.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+
+  &__img {
+    height: 485px;
+    background-color: $article-preview-bg;
+    position: relative;
+    margin-bottom: 41px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: (5000% / 97);
+      border-left: 48px solid transparent;
+      border-top: 48px solid $white;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+
+  }
+
+  &__text {
+    margin-bottom: 36px;
+    line-height: 25px;
+    color: $article-text-color;
+    font-family: 'OpenSans Light';
+    line-height: 25px;
+    color: $article-text-color;
+    margin-bottom: 40px;
+  }
+}
+
+.comments {
+  margin-bottom: 100px;
+}
+
+.comment {
+  @include make-xs-column(11);
+
+  &--reply {
+    @include make-xs-column-push(1);
+  }
+
+  &:last-child {
+    margin-bottom: 64px;
+  }
+
+  &__author-avatar {
+    @include make-xs-column(1);
+    @include make-xs-column-push(1);
+    padding-left: 0;
+  }
+
+  &__author-avatar-img {
+    width: 78px;
+    height: 78px;
+    position: relative;
+    background-color: $article-preview-bg;
+    border: 1px solid $avarar-border-color;
+
+    &::after {
+      content: '';
+      position: absolute;
+      border-top: 9px solid $white;
+      width: 50%;
+      right: 0;
+      top: -1px;
+      right: -1px;
+      border-left: 12px solid transparent;
+      box-sizing: border-box;
+    }
+  }
+
+  &__content {
+    @include make-xs-column(8);
+    @include make-xs-column-push(1);
+    padding-left: 30px;
+  }
+
+  &__author {
+    font-size: 18px;
+    font-family: 'OpenSans SemiBold';
+    margin-bottom: 24px;
+
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 25px;
+    margin-bottom: 28px;
+  }
+
+  &__reply-btn {
+    margin-bottom: 36px;
+    color: $reply-color;
+  }
+}
+
+
+.reply-form {
+  @include make-xs-column(8);
+  @include make-xs-column-push(1);
+  margin-top: 68px;
+  margin-bottom: 100px;
+
+  &__col {
+    @include make-xs-column(6);
+  }
+}
+
+
+.related-posts {
+  @include make-xs-column(8);
+  @include make-xs-column-push(1);
+
+  &__title {
+    font-family: 'OpenSans SemiBold';
+    font-size: 22px;
+    margin-bottom: 48px;
+    position: relative;
+    @include grad-border;
+  }
+
+  &__carousel {
+    font-size: 0;
+  }
+
+  &__item {
+    font-size: 20px;
+    display: inline-block;
+    height: 260px;
+    width: calc(50% - 30px);
+    background-color: $pelated-post-bg;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      border-top: 36px solid $white;
+      width: 50%;
+      right: 0;
+      top: 0px;
+      right: 0px;
+      border-left: 32px solid transparent;
+      box-sizing: border-box;
+    }
+
+    &-title {
+      color: $white;
+      font-family: 'OpenSans SemiBold';
+      position: absolute;
+      width: 95%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      transition: transform .3s;
+    }
+
+    &-actions {
+      position: absolute;
+      bottom: 2px;
+      width: calc(100% - 4px);
+      line-height: 76px;
+      left: 2px;
+      background-color: $pattens-blue;
+      padding-right: 52px;
+      text-align: right;
+      transform: translateY(105%);
+      transition: all .3s;
+
+      &::after {
+        content: '';
+        position: absolute;
+        border-top: 36px solid $pelated-post-bg;
+        width: 50%;
+        left: 0;
+        top: 0px;
+        right: 0px;
+        border-right: 32px solid transparent;
+        box-sizing: border-box;
+      }
+    }
+
+    &-action-link {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+
+      &:hover {
+        color: $red-orange;
+      }
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    font-size: 44px;
+    top: 65%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &:hover {
+      color: $red-orange;
+    }
+    
+    &--prev {
+      left: -30px;
+      transform: translate(-50%, -50%);
+    }
+
+    &--next {
+      right: -30px;
+    }
+  }
+}
+
+.related-posts__item:hover {
+  .related-posts__item-actions {
+    transform: translateY(0%);
+  }
+
+  .related-posts__item-title {
+    transform: translate(-50%, -200%);
+  }
+}
+
+//ASIDE
+
+.search {
+  margin-bottom: 100px;
+}
+
+.categories {
+  margin-bottom: 100px;
+
+  &__title {
+    font-family: 'Raleway SemiBold';
+    font-size: 24px;
+    margin-bottom: 46px;
+  }
+
+  &__list {
+    margin-left: 20px;
+    list-style-image: url(/../img/ico/ti-angle-doube-right.png);
+  }
+
+  &__list-item {
+    line-height: 42px;
+    color: $fiord;
+
+    &:hover {
+      color: $red-orange;
+      cursor: pointer;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $light-grayish-blue;
+    }
+  }
+
+  &__list-item-amount {
+    float: right;
+  }
+}
+
+.tags {
+  margin-bottom: 95px;
+
+  &__title {
+    font-family: 'Raleway SemiBold';
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+
+  &__wrapper {
+    font-size: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    padding: 8px 18px;
+    font-size: 14px;
+    color: $tab-border;
+    border: 1px solid;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    transition: all .3s;
+
+    &:hover {
+      color: $white;
+      background-color: $red-orange;
+    }
+  }
+}
+
+.recent-posts {
+  margin-bottom: 100px;
+  &__title {
+    font-family: 'Raleway SemiBold';
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+}
+
+.recent-post {
+
+  &:not(:last-child) {
+    margin-bottom: 34px;
+  }
+
+  &__img-wrapper {
+    @include make-xs-column(4);
+  }
+
+  &__img {
+    width: 78px;
+    height: 78px;
+    position: relative;
+    background-color: $article-preview-bg;
+    border: 1px solid $avarar-border-color;
+
+    &::after {
+      content: '';
+      position: absolute;
+      border-top: 9px solid $white;
+      width: 50%;
+      right: 0;
+      top: -1px;
+      right: -1px;
+      border-left: 12px solid transparent;
+      box-sizing: border-box;
+    }
+  }
+
+  &__content {
+    @include make-xs-column(8);
+  }
+
+  &__title {
+    margin-bottom: 26px;
+    font-family: 'Raleway SemiBold';
+    font-size: 18px;
+  }
+
+  &__title-date {
+
+  }
+
+  &__title-date-icon {
+    color: $red-orange;
+    display: inline-block;
+    margin-right: 14px;
+  }
+
+  &__title-date-value {
+
+  }
+}
+
+.twitter-feed {
+  &__title {
+    margin-bottom: 32px;
+    font-family: 'Raleway SemiBold';
+    font-size: 24px;
+
+  }
+}
+
+
+.twit {
+  &__icon {
+    color: $red-orange;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__author {
+    font-family: 'Raleway SemiBold';
+    color: $red-orange;
+    margin-bottom: 18px;
+  }
+
+  &__text {
+    line-height: 24px;
+    margin-bottom: 26px;
+  }
+
+  &__hash {
+    color: $red-orange;
+  }
+
+  &__date {
+    font-family: 'Raleway SemiBold';
+    color: $red-orange;
+  }
+}
+
+
+
+* {
+  // outline: 1px solid red;
+}

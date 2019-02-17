@@ -1,0 +1,58 @@
+.blog-nav {
+  font-family: 'MyriadPro Regular';
+  margin-bottom: 60px;
+  &__logo {
+    @include make-xs-column(2);
+    font-size: 32px;
+    padding: 0; 
+  }
+
+  &__logo-link {
+    padding-left: 70px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-image: url(../img/ico/logo.png);
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__links {
+    @include make-xs-column(10);
+    text-align: right;
+    padding: 0;
+  }
+
+  &__links-item {
+    display: inline-block;
+    margin-left: 48px;
+    line-height: 32px;
+
+  }
+
+  &__link {
+    font-size: 18px;
+    position: relative;
+
+    &:hover::after {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 1px;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(to right, #902616 0%,#fe3c1f 100%);
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

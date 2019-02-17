@@ -1,0 +1,218 @@
+.blog-header {
+  padding-top: 32px;
+  margin-bottom: 100px;
+  background-color: $blog-header-bg;
+  color: $blog-color;
+  position: relative;
+  background-image: url(../img/pattern.png);
+
+  &__title {
+    margin-bottom: 42px;
+    font-size: 45px;
+    font-family: 'MyriadPro Regular';
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: -12px;
+      left: 0;
+      background: linear-gradient(to right, #902616 0%,#fe3c1f 100%);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    left: 0;
+    border-top: 0px solid $black;
+    border-right: 30px solid transparent;
+    border-bottom: 32px solid $white;
+    box-sizing: border-box;
+
+  }
+}
+
+.article-preview {
+  margin-bottom: 142px;
+
+  &__info {
+    @include make-xs-column(2);
+    text-align: center;
+    color: $date-color;
+    font-family: "Raleway SemiBold";
+    text-transform: uppercase;
+  }
+
+  &__info-year {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  &__info-date {
+    font-size: 24px;
+    font-family: "Raleway Bold";
+    margin-bottom: 6px;
+  }
+
+  &__info-day {
+    font-size: 51px;
+    font-family: "Raleway Bold";
+  }
+
+  &__content {
+    @include make-xs-column(10);
+  }
+
+  &__content-wrapper {
+    padding-left: 38px;
+  }
+
+  &__img {
+    height: 350px;
+    margin-bottom: 40px;
+    background-color: $article-preview-bg;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: (5000% / 97);
+      border-left: 48px solid transparent;
+      border-top: 48px solid $white;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+  }
+
+  &__img-label {
+    position: absolute;
+    top: 0;
+    height: 47px;
+    width: 26px;
+    left: (100 - 5000% / 97);
+    z-index: 2;
+    transform: translateX(49px);
+    background-color: $label-color;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    &--pic {
+      background-image: url(../img/ico/ti-image.png);
+    }
+
+    &--film {
+      background-image: url(../img/ico/ti-video-clapper.png);
+    }
+
+    &--write {
+      background-image: url(../img/ico/ti-pencil.png);
+    }
+
+    &--music {
+      background-image: url(../img/ico/ti-music.png);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 100%;
+      top: 0;
+      border-left: 47px solid transparent;
+      border-top: 47px solid $label-color;
+      // border-left: 48px solid $label-color;
+
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 0;
+      border-right: 47px solid transparent;
+      border-bottom: 47px solid $label-color;
+    }
+  }
+
+  &__title {
+    margin-bottom: 48px;
+    font-family: "Raleway SemiBold";
+    font-size: 28px;
+  }
+
+  &__statistics {
+    margin-bottom: 28px;
+  }
+
+  &__statistics-author {
+    display: inline-block;
+    margin-right: 16px;
+    padding-left: 32px;
+    line-height: 18px;
+    background-image: url(../img/ico/ti-user.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+
+  &__statistics-comments {
+    display: inline-block;
+    margin-right: 16px;
+    padding-left: 32px;
+    line-height: 18px;
+    background-image: url(../img/ico/ti-comment.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+
+  &__text {
+    margin-bottom: 36px;
+    line-height: 25px;
+    color: $article-text-color;
+  }
+
+  &__link {
+    font-family: "Raleway SemiBold";
+    font-size: 16px;
+    padding: 16px 28px;
+    border: 1px solid $label-color;
+    display: inline-block;
+    color: $label-color;
+    box-shadow: 1px 2px 1px 0px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+      color: $white;
+      background-color: $label-color;
+    }
+  }
+}
+
+.pagination {
+  font-family: "Raleway SemiBold";
+  font-size: 18px;
+  margin-bottom: 117px;
+
+  &__btns {
+    @include make-xs-column(10);
+    @include make-xs-column-push(2);
+  }
+
+  &__btn {
+    display: inline-block;
+    margin-right: 30px;
+    cursor: pointer;
+
+  }
+
+  &__btn-next {
+    display: inline-block;
+    margin-left: 40px;
+    cursor: pointer;
+  }
+}

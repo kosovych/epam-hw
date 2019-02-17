@@ -1,9 +1,21 @@
-@import "./reset";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+@import './reset';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize';
 
-@import "./vars";
-@import "./fonts";
-@import "./glob";
+@import './vars';
+@import './color-matrix';
+@import './fonts';
+@import './ui/ui';
 
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables';
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid.scss';
+
+@import './mixins/mixins';
+@import './glob';
+@import './nav';
+@import './blog/blog';
+@import './blog/article';
+@import './aside';
+
+@import './footer';
+
