@@ -418,18 +418,10 @@
     font-size: 18px;
   }
 
-  &__title-date {
-
-  }
-
   &__title-date-icon {
     color: $red-orange;
     display: inline-block;
     margin-right: 14px;
-  }
-
-  &__title-date-value {
-
   }
 }
 
@@ -470,10 +462,4 @@
     font-family: 'Raleway SemiBold';
     color: $red-orange;
   }
-}
-
-
-
-* {
-  // outline: 1px solid red;
 }
