@@ -24,7 +24,7 @@
   .galery {
     flex-wrap: wrap;
     height: 72vw;
-    margin-bottom: 56px;
+    margin-bottom: 52px;
 
     &__el {
       flex-basis: 50%;
@@ -32,8 +32,8 @@
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 480px) {
   .galery {
-    margin-bottom: 38px;
+    margin-bottom: 44px;
   }
 }

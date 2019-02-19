@@ -1,22 +1,22 @@
 .hero {
-  height: 880px;
+  height: 894px;
   color: $white;
   background-image: url(../img/hero-bg.jpg);
   background-size: cover;
   background-position: center;
   overflow: hidden;
   text-align: center;
-  margin-bottom: 78px;
+  margin-bottom: 68px;
 
   &__header {
     font-size: 56px;
     font-family: "Roboto Thin";
-    margin-bottom: 18px;
+    margin-bottom: 22px;
   }
 
   &__text {
     line-height: 1.5;
-    margin-bottom: 68px;
+    margin-bottom: 62px;
   }
 }
 
@@ -26,12 +26,12 @@
 
   &__header {
     font-size: 24px;
-    margin-bottom: 28px;
+    margin-bottom: 34px;
     text-align: center;
   }
 
   &__wrapper {
-    width: 326px;
+    width: 338px;
     height: 394px;
     margin: 0 auto;
     padding: 42px;
@@ -49,8 +49,7 @@
     color: $black;
     font-size: 16px;
     width: 100%;
-    margin-top: 6px;
-    margin-bottom: 22px;
+    margin-bottom: 30px;
     padding: 6px 0;
     border: none;
     border-bottom: 1px solid $grey;
@@ -59,7 +58,8 @@
   &__btn {
     display: block;
     width: 216px;
-    height: 43px;
+    height: 38px;
+    font-size: 16px;
     margin: 0 auto;
     border: none;
     background: $purple;
@@ -73,18 +73,80 @@
 
 @media all and (max-width: 1024px) {
   .hero {
-    margin-bottom: 48px;
+    margin-bottom: 64px;
     height: auto;
 
     &__header {
       width: 94%;
       margin: 0 auto;
-      font-size: 48px;
       margin-bottom: 22px;
+    }
+
+    &__text {
+      margin-bottom: 72px;
     }
   }
 
   .hero-form {
-    margin-bottom: 48px;
+    margin-bottom: 94px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .hero {
+    margin-bottom: 54px;
+  }
+
+  .hero__header {
+    font-size: 50px;
+  }
+
+  .hero__text {
+    margin-bottom: 66px;
+  }
+
+  .hero-form__header {
+    font-size: 22px;
+  }
+
+  .hero-form__input {
+    margin-bottom: 26px;
+  }
+
+  .hero-form {
+    margin-bottom: 82px;
+  }
+
+  .hero-form__wrapper {
+    height: 378px;
+  }
+
+  .hero-form__input {
+    font-size: 14px;
+  }
+
+  .hero-form__btn {
+    font-size: 14px;
+    width: 190px;
+  }
+}
+
+
+@media all and (max-width: 768px) {
+
+  .hero {
+    margin-bottom: 43px;
+    br {
+      display: none;
+    }
+  }
+
+  .hero__header {
+    font-size: 52px;
+    margin-bottom: 26px;
+  }
+
+  .hero-form {
+    margin-bottom: 72px;
   }
 }

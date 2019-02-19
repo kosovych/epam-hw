@@ -9,7 +9,8 @@ body {
   color: $darck-grey;
 }
 
-html, body {
+html,
+body {
   font-size: 16px;
   font-family: "Roboto Regular";
   line-height: 1.5;
@@ -38,15 +39,38 @@ a {
 }
 
 @media all and (max-width: 1024px) {
+
+  html,
+  body {
+    font-size: 14px;
+  }
+
   .container {
-    width: 94%;
+    width: 92%;
     margin: 0 auto;
   }
 }
 
 @media all and (max-width: 768px) {
-  html, body {
-    font-size: 12px;
+
+  html,
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 94%;
   }
 }
 
+@media all and (max-width: 480px) {
+
+  html,
+  body {
+    font-size: 13px;
+  }
+
+  .container {
+    width: 91%;
+  }
+}
