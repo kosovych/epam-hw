@@ -1,5 +1,5 @@
 .blog-nav {
-  font-family: 'MyriadPro Regular';
+  font-family: 'Raleway Light';  
   margin-bottom: 60px;
 
   &__logo {
@@ -32,7 +32,7 @@
 
   &__links-item {
     display: inline-block;
-    margin-left: 48px;
+    margin-left: 62px;
     line-height: 32px;
 
   }
@@ -41,7 +41,7 @@
     font-size: 18px;
     position: relative;
 
-    &:hover::after {
+    &:hover::after, &--active::after {
       content: '';
       position: absolute;
       width: calc(100% + 12px);

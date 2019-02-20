@@ -12,7 +12,7 @@
   }
 
   &__date-year {
-    font-size: 14px;
+    font-size: 24px;
     margin-bottom: 6px;
   }
 
@@ -72,15 +72,27 @@
     background-color: $article-preview-bg;
     position: relative;
     margin-bottom: 41px;
+    overflow: hidden;
+
+    .article-preview__img-label {
+      left: calc(58.5% - 1px) !important;
+    }
 
     &::after {
       content: '';
       position: absolute;
+      top: 0;
       right: 0;
       width: (5000% / 97);
       border-left: 48px solid transparent;
       border-top: 48px solid $white;
       box-sizing: border-box;
+      z-index: 1;
+    }
+
+    &-el {
+      width: 100%;
+      position: relative;
       z-index: 1;
     }
 
@@ -136,6 +148,11 @@
       border-left: 12px solid transparent;
       box-sizing: border-box;
     }
+
+    &-el {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__content {
@@ -179,6 +196,11 @@
 .related-posts {
   @include make-xs-column(8);
   @include make-xs-column-push(1);
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
 
   &__title {
     font-family: 'OpenSans SemiBold';
@@ -233,24 +255,35 @@
     &-actions {
       position: absolute;
       bottom: 2px;
-      width: calc(100% - 4px);
+      width: 50%;
       line-height: 76px;
-      left: 2px;
+      right: 2px;
       background-color: $pattens-blue;
       padding-right: 52px;
       text-align: right;
       transform: translateY(105%);
       transition: all .3s;
 
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        left: -100%;
+        margin-left: 4px;
+        bottom: 0;
+        background-color: $pattens-blue;
+      }
+
       &::after {
         content: '';
         position: absolute;
-        border-top: 36px solid $pelated-post-bg;
+        border-top: 38px solid transparent;
         width: 50%;
-        left: 0;
+        left: -50%;
         top: 0px;
         right: 0px;
-        border-right: 32px solid transparent;
+        border-right: 32px solid  $pattens-blue;
         box-sizing: border-box;
       }
     }
@@ -406,6 +439,11 @@
       border-left: 12px solid transparent;
       box-sizing: border-box;
     }
+
+    &-el {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__content {
@@ -422,6 +460,12 @@
     color: $red-orange;
     display: inline-block;
     margin-right: 14px;
+  }
+
+  &__title-date-value {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

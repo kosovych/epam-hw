@@ -11,7 +11,15 @@
     top: -20px;
     background: $footer-bg-btn;
     right: 6.666%;
+    text-align: center;
 
+    &::before {
+      position: absolute;
+      top: 50%;
+      margin-top: -7px;
+      left: 50%;
+      margin-left: -7px;
+    }
   }
 
   &__item {
@@ -48,7 +56,6 @@
       bottom: 100%;
       left: 50%;
       transform: translate(-50%, -24px);
-
     }
   }
 }

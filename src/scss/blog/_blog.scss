@@ -20,7 +20,7 @@
       height: 1px;
       bottom: -12px;
       left: 0;
-      background: linear-gradient(to right, #902616 0%,#fe3c1f 100%);
+      background: linear-gradient(to right, #902616 0%, #fe3c1f 100%);
     }
   }
 
@@ -39,7 +39,7 @@
 }
 
 .article-preview {
-  margin-bottom: 142px;
+  margin-bottom: 100px;
 
   &__info {
     @include make-xs-column(2);
@@ -50,19 +50,18 @@
   }
 
   &__info-year {
-    font-size: 14px;
+    font-size: 24px;
     margin-bottom: 6px;
   }
 
   &__info-date {
     font-size: 24px;
     font-family: "Raleway Bold";
-    margin-bottom: 6px;
   }
 
   &__info-day {
     font-size: 51px;
-    font-family: "Raleway Bold";
+    font-family: "Raleway Regular";
   }
 
   &__content {
@@ -71,17 +70,50 @@
 
   &__content-wrapper {
     padding-left: 38px;
+    padding-top: 40px;
+    padding-right: 42px;
+    border: 1px solid $post-border;
   }
 
   &__img {
     height: 350px;
-    margin-bottom: 40px;
     background-color: $article-preview-bg;
     position: relative;
+    overflow: hidden;
+
+    &-el {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: auto;
+    }
+
+    &--no-image {
+      height: 1px;
+      background: $white;
+      position: relative;
+      overflow: visible;
+
+      & + .article-preview__content-wrapper {
+        padding-top: 86px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 45%;
+        height: 1px;
+        left: 55%;
+        top: 47px;
+        background-color: $post-border;
+        z-index: 3;
+      }
+    }
 
     &::after {
       content: '';
       position: absolute;
+      top: 0;
       right: 0;
       width: (5000% / 97);
       border-left: 48px solid transparent;
@@ -93,58 +125,69 @@
 
   &__img-label {
     position: absolute;
+    left: calc(56.5% - 1px);
     top: 0;
-    height: 47px;
-    width: 26px;
-    left: (100 - 5000% / 97);
-    z-index: 2;
-    transform: translateX(49px);
-    background-color: $label-color;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    border-right: 47px solid transparent;
+    border-bottom: 47px solid $label-color;
+    z-index: 3;
 
     &--pic {
-      background-image: url(../img/ico/ti-image.png);
+      &::before {
+        content: '\e633';
+      }
     }
 
     &--film {
-      background-image: url(../img/ico/ti-video-clapper.png);
+      &::before {
+        content: '\e6ce';
+      }
     }
 
     &--write {
-      background-image: url(../img/ico/ti-pencil.png);
+      &::before {
+        content: '\e61c';
+      }
     }
 
     &--music {
-      background-image: url(../img/ico/ti-music.png);
+      &::before {
+        content: '\e689';
+      }
     }
 
     &::after {
       content: '';
       position: absolute;
-      right: 100%;
+      right: 26px;
       top: 0;
       border-left: 47px solid transparent;
       border-top: 47px solid $label-color;
-      // border-left: 48px solid $label-color;
-
     }
 
     &::before {
-      content: '';
+      font-family: 'themify';
+      font-size: 24px;
+      color: $white;
       position: absolute;
-      left: 100%;
       top: 0;
-      border-right: 47px solid transparent;
-      border-bottom: 47px solid $label-color;
+      line-height: 47px;
+      width: 26px;
+      left: -75px;
+      z-index: 2;
+      transform: translateX(49px);
+      background-color: $label-color;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
     }
   }
 
   &__title {
-    margin-bottom: 48px;
+    padding-bottom: 16px;
+    margin-bottom: 32px;
     font-family: "Raleway SemiBold";
     font-size: 28px;
+    border-bottom: 1px solid $post-border;
   }
 
   &__statistics {
@@ -152,23 +195,43 @@
   }
 
   &__statistics-author {
+    font-family: 'OpenSans Regular' !important;
     display: inline-block;
     margin-right: 16px;
-    padding-left: 32px;
     line-height: 18px;
-    background-image: url(../img/ico/ti-user.png);
     background-repeat: no-repeat;
     background-position: left center;
+
+    &::before {
+      font-family: 'themify';
+      padding-right: 16px;
+      color: $red-orange;
+
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__statistics-comments {
+    font-family: 'OpenSans Regular' !important;
     display: inline-block;
     margin-right: 16px;
-    padding-left: 32px;
     line-height: 18px;
-    background-image: url(../img/ico/ti-comment.png);
     background-repeat: no-repeat;
     background-position: left center;
+
+    &::before {
+      font-family: 'themify';
+      padding-right: 16px;
+      color: $red-orange;
+
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__text {
@@ -185,6 +248,7 @@
     display: inline-block;
     color: $label-color;
     box-shadow: 1px 2px 1px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 40px;
 
     &:hover {
       color: $white;
@@ -207,12 +271,24 @@
     display: inline-block;
     margin-right: 30px;
     cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border: 1px solid $solitude;
 
+    &:hover {
+      color: $red-orange;
+    }
   }
 
   &__btn-next {
     display: inline-block;
-    margin-left: 40px;
     cursor: pointer;
+    height: 45px;
+    padding: 0 28px;
+    border: 1px solid $solitude;
+
+    &:hover {
+      color: $red-orange;
+    }
   }
 }
