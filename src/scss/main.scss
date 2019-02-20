@@ -16,6 +16,10 @@
 @import './blog/blog';
 @import './blog/article';
 @import './aside';
+@import './home/home';
 
 @import './footer';
 
+* {
+  // outline: 1px solid red;
+}
