@@ -1,0 +1,59 @@
+.paralax {
+  height: 560px;
+  background-color: $paralax-bg;
+  padding-top: 128px;
+  color: $white;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    top: 0;
+    right: 0;
+    border-top: 0px solid #000000;
+    border-left: 30px solid transparent;
+    border-top: 32px solid #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  &__header {
+    text-align: center;
+    font-family: 'OpenSans SemiBold';
+    font-size: 45px;
+    margin-bottom: 38px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 1px;
+      bottom: -18px;
+      left: 50%;
+      background-color: $white;
+      transform: translateX(-50%);
+    }
+
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 82px;
+  }
+
+  &__blockquote {
+    @include make-xs-column(10);
+    @include make-xs-column-push(1);
+    font-size: 30px;
+    font-style: italic;
+    line-height: 40px;
+    font-family: 'OpenSans Light';
+  }
+
+  &__blockquote-author {
+    font-style: normal;
+  }
+}
