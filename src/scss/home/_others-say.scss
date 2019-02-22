@@ -1,0 +1,254 @@
+.others-say {
+  height: 770px;
+  position: relative;
+  margin-bottom: 100px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    left: 0;
+    border-right: 30px solid transparent;
+    border-bottom: 32px solid $white;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  &__header {
+    margin-top: 130px;
+    color: $white;
+    font-size: 45px;
+    font-family: 'Raleway SemiBold';
+    text-align: center;
+    position: relative;
+    @include grad-border;
+    margin-bottom: 120px;
+
+    &::after {
+      background: $white;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+}
+
+.filter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  opacity: .6;
+  z-index: 0;
+  background-image: url(../img/other-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.filter-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  opacity: .6;
+  z-index: 0;
+  z-index: -1;
+}
+
+.testimonials-wrapper {
+  @include make-xs-column(6);
+
+}
+
+.accordion-wrapper {
+  @include make-xs-column(6);
+
+}
+
+.testimonials {
+  min-height: 228px;
+  background-color: $white;
+  margin-top: (350px - 231px);
+  position: relative;
+  padding: 0 28px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    top: -32px;
+    left: 0;
+    border-right: 30px solid transparent;
+    border-bottom: 32px solid #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  &__avatar-img-wrapper {
+    display: inline-block;
+    width: 80px;
+    margin-right: 23px;
+  }
+
+  &__avatar-img {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-color: $article-preview-bg;
+    position: relative;
+    top: -120px;
+    z-index: 1;
+    border: 1px solid $red-orange;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 8px;
+      top: -1px;
+      background-color: $white;
+      right: -1px;
+      border-bottom: 1px solid $red-orange;
+      z-index: 2;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      right: 50%;
+      background-color: $white;
+      margin-right: -4px;
+      transform: skew(45deg);
+      border-left: 1px solid $red-orange;
+      top: -1px;
+      z-index: 2;
+    }
+  }
+
+  &__content {
+    display: inline-block;
+    width: calc(100% - 110px);
+  }
+
+  &__user {
+    display: inline-block;
+    font-family: 'Raleway SemiBold';
+    font-size: 24px;
+    margin: 24px 0;
+  }
+
+  &__user-role {
+    font-family: 'Raleway Medium';
+    color: $red-orange;
+    padding-left: 16px;
+  }
+
+  &__text {
+    font-size: 15px;
+    font-style: italic;
+    line-height: (25 / 15);
+    margin-bottom: 24px;
+  }
+
+  &__conntroll {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $raven-light;
+    margin-right: 16px;
+
+    &--active {
+      background-color: $red-orange;
+    }
+
+  }
+
+  &__conntrolls {
+    display: inline-block;
+    margin-bottom: 24px;
+  }
+}
+
+
+.accordion {
+  height: 306px;
+  
+  
+  &__el {
+    overflow: hidden;
+    &--close &-text {
+      max-height: 0px;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+  }
+  
+  &__el-header {
+    padding: 15px 0;
+    padding-left: 60px;
+    background-color: $white;
+    width: 170px;
+    position: relative;
+    box-sizing: border-box;
+
+    &-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);  
+    }
+
+    &:hover {
+      color: $red-orange;
+      cursor: pointer;
+      border-top: 1px solid;
+
+      &::after {
+        border-right: 1px solid;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 1000px;
+        height: 1px;
+        background-color: $red-orange;
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      background-color: $white;
+      left: 100%;
+      top: 0px;
+      margin-left: -23px;
+      transform: skew(45deg);
+      z-index: 2;
+    }
+  }
+
+  &__el-text {
+    padding: 18px 28px 28px 18px;
+    font-size: 14px;
+    line-height: (25 / 14);
+    max-height: 360px;
+    overflow: hidden;
+    background-color: $white;
+
+  }
+}
+
+.bg-white {
+  background-color: $white;
+}

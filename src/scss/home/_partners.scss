@@ -1,0 +1,57 @@
+.partners {
+  margin-bottom: 100px;
+
+  &__item {
+    @include make-xs-column(2);
+
+    &-inner {
+      height: 116px;
+      border: 1px solid $solitude;
+
+      &::after {
+        content: '';
+        position: absolute;
+        transform: translate(-50%, -50%) scale(.425);
+        top: 50%;
+        left: 50%;
+
+      }
+
+      &--bg-activeden::after {
+        width: 270px;
+        height: 61px;
+        background: url('../img/portner-sprites.png') -362px -87px;
+      }
+
+      &--bg-audiojungle::after {
+        width: 303px;
+        height: 57px;
+        background: url('../img/portner-sprites.png') -362px -10px;
+      }
+
+      &--bg-codecanyon::after {
+        width: 329px;
+        height: 54px;
+        background: url('../img/portner-sprites.png') -10px -196px;
+      }
+
+      &--bg-graphicriver::after {
+        width: 332px;
+        height: 78px;
+        background: url('../img/portner-sprites.png') -10px -10px;
+      }
+
+      &--bg-photodune::after {
+        width: 304px;
+        height: 68px;
+        background: url('../img/portner-sprites.png') -10px -108px;
+      }
+
+      &--bg-themeforest::after {
+        width: 324px; height: 55px;
+        background: url('../img/portner-sprites.png') -10px -270px;
+    }
+
+    }
+  }
+}

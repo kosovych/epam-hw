@@ -1,0 +1,49 @@
+.case {
+  height: 294px;
+  padding-top: 100px;
+  color: $white;
+  background-color: $dark-grayishnavy;
+
+  &__item {
+    @include make-xs-column(2);
+    @include make-xs-column-push(1);
+
+    &:nth-child(2) {
+      @include make-xs-column-push(2);
+
+    }
+
+    &:nth-child(3) {
+      @include make-xs-column-push(3);
+
+    }
+
+    &:nth-child(4) {
+      @include make-xs-column-push(4);
+    }
+  }
+
+  &__item-header {
+    font-family: 'Raleway Regular' !important;
+    font-size: 40px;
+    margin-bottom: 32px;
+    position: relative;
+
+    &::before {
+      font-family: 'themify' !important;
+      position: absolute;
+      font-size: 50px;
+      padding-right: 22px;
+      display: inline-block;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(-33.333% - 30px);
+    }
+
+  }
+
+  &__item-text {
+    font-family: 'Raleway Light';
+    font-size: 25px;
+  }
+}
