@@ -15,9 +15,7 @@ function sum(_arg1, _arg2) {
     arg2Num = _arg1;
   }
 
-  if ( arg2Num % 3 === 0 ||
-    arg2Num % 5 === 0 ||
-    arg2Num % 15 === 0) {
+  if ( arg2Num % 15 === 0) {
     arg2Num *= -1;
   }
 
@@ -32,7 +30,7 @@ function validateAgr(arg) {
   return false;
 }
 
-sum('25', 15);
-sum(41, '3');
-sum('3', 45);
-sum('15', 15);
+console.log(sum('25', 15));
+console.log(sum(41, '3'));
+console.log(sum('3', 45));
+console.log(sum('15', 15));
