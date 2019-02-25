@@ -6,15 +6,19 @@ function countCharacters(string) {
 
   let arrOfChar = string.split('');
 
-  arrOfChar.forEach((currentSunm) => {
-    if (!result[currentSunm]) {
-      result[currentSunm] = 1;
-    } else {
-      result[currentSunm] = result[currentSunm] + 1;
-    }
-  });
+  arrOfChar.filter((sumb) => (
+    sumb.toLocaleLowerCase().charCodeAt() >= 97
+     && sumb.toLocaleLowerCase().charCodeAt() <= 122)).
+
+      forEach((currentSunm) => {
+        if (!result[currentSunm]) {
+          result[currentSunm] = 1;
+        } else {
+          result[currentSunm] = result[currentSunm] + 1;
+        }
+      });
 
   return result;
 }
 
-countCharacters('qwerty!qwerrty asd');
+countCharacters('qewrty wert wt');
