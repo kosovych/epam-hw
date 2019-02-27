@@ -57,7 +57,6 @@ function validateNumb(numb) {
 
 
 function getPolindromFromOdd(arr) {
-  console.log(arr);
   let result;
   let firstArr = arr.slice(0, (arr.length - 1) / 2);
   let secondArr = arr.slice((arr.length + 1) / 2, arr.length);
@@ -100,7 +99,6 @@ function getPolindromFromEven(arr) {
   && +firstArr[firstArr.length - 1] < 9) {
     firstArr[firstArr.length - 1] = +firstArr[firstArr.length - 1] + 1;
     result = [...firstArr, ...firstArr.reverse()];
-    console.log(result.join(''));
     return +result.join('');
   } else if (+firstArr.join('') < +secondArr.join('')) {
     result = [+firstArr[0] + 1,
@@ -113,7 +111,6 @@ function getPolindromFromEven(arr) {
     let _firstArr = firstArr.map( (el) => el );
     _firstArr[_firstArr.length - 1] = +_firstArr[_firstArr.length - 1] + 1;
     result = [..._firstArr, ..._firstArr.reverse()];
-    console.log(result);
     return +result.join('');
   }
 
