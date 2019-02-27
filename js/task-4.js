@@ -8,9 +8,8 @@ function countCharacters(string) {
 
   arrOfChar.filter((sumb) => (
     sumb.toLocaleLowerCase().charCodeAt() >= 97
-     && sumb.toLocaleLowerCase().charCodeAt() <= 122)).
-
-      forEach((currentSunm) => {
+     && sumb.toLocaleLowerCase().charCodeAt() <= 122))
+      .forEach((currentSunm) => {
         if (!result[currentSunm]) {
           result[currentSunm] = 1;
         } else {
