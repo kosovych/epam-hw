@@ -65,7 +65,7 @@ function getPolindromFromOdd(arr) {
 
   if (+middleNumb + 1 === 10) {
     firstArr[firstArr.length - 1] = +firstArr[firstArr.length - 1] + 1;
-    middleNumb = middleNumb - 1;
+    middleNumb = -1;
   }
 
   if (+firstArr.join('') < +secondArr.join('')) {
@@ -130,4 +130,4 @@ function isPolindrom(number) {
   } else return false;
 }
 
-console.log(getNextPalindrome(3223));
+console.log(getNextPalindrome(321123));
