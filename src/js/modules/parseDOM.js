@@ -3,7 +3,7 @@ function parseDOM(parentEl, childrenEl) {
   switch (childrenEl.nodeName) {
     case '#text':
       obj.tagName = 'text';
-      obj.textValue = childrenEl.nodeValue;
+      obj.textValue = childrenEl.nodeValue.trim();
       break;
     default:
       obj.attributes = {};
@@ -16,7 +16,7 @@ function parseDOM(parentEl, childrenEl) {
       break;
   }
   
-  if (parentEl && parentEl.childrens) {
+  if (checkBeforeAdd(parentEl, obj)) {
     parentEl.childrens.push(obj);
   }
 
@@ -26,6 +26,15 @@ function parseDOM(parentEl, childrenEl) {
     })
   }
   return obj;
+}
+
+function checkBeforeAdd(parentEl, obj) {
+  if(parentEl && parentEl.childrens) {
+    if(obj.textValue !== '') {
+      return true
+    }
+  }
+  return false
 }
 
 module.exports = parseDOM;
