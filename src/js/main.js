@@ -1,6 +1,7 @@
 const parseDOM = require('./modules/parseDOM');
 const renderDOM = require('./modules/renderDOM');
 const articleTemplate = require('./templates/post/article');
+const commentTemplate = require('./templates/post/comments');
 
 let data;
 
@@ -22,11 +23,12 @@ switch (path) {
   case '/post.html':
     data = [
       require('./data/post/post')(),
-      // require('./data/post/comments')(),
+      require('./data/post/comments')(),
       // require('./data/post/aside')(),
     ]
     renderDOM(document.getElementById('article'), articleTemplate(data[0]));
-    // renderDOM(document.getElementById('comments'), data[1]);
+    data[1].map( (obj) => renderDOM(document.getElementById('comments'), commentTemplate(obj)));
+    renderDOM(document.getElementById('comments'));
     // renderDOM(document.getElementById('aside-content'), data[2]);
     break;
 
