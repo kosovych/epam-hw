@@ -3,7 +3,8 @@ module.exports = () => {
     "attributes": {},
     "childrens": [{
       "attributes": {
-        "class": "about"
+        "class": "about",
+        "id": "about",
       },
       "childrens": [{
         "attributes": {
@@ -693,7 +694,8 @@ module.exports = () => {
       "tagName": "SECTION"
     }, {
       "attributes": {
-        "class": "latest-portfolios"
+        "class": "latest-portfolios",
+        "id": "portfolios"
       },
       "childrens": [{
         "attributes": {
