@@ -1,138 +1,100 @@
-module.exports = () => {
+module.exports = (data) => {
   return {
-    "attributes": {
-      "class": "main-carousel row"
+    attributes: {
+      class: "main-carousel row"
     },
-    "childrens": [{
-      "tagName": "text",
-      "textValue": "\n "
-    }, {
-      "attributes": {
-        "class": "main-carousel__slide"
+    childrens: [{
+      attributes: {
+        id: "main-carousel-slide-wrapper"
       },
-      "childrens": [{
-        "tagName": "text",
-        "textValue": "\n "
-      }, {
-        "attributes": {
-          "class": "main-carousel__header"
+      childrens: data.slides.map( (slide) => {
+        return {
+        attributes: {
+          class: "main-carousel__slide"
         },
-        "childrens": [{
-          "tagName": "text",
-          "textValue": "\n Expire\n "
-        }, {
-          "attributes": {
-            "class": "main-carousel__header-border"
+        childrens: [{
+          attributes: {
+            class: "main-carousel__header"
           },
-          "childrens": [],
-          "tagName": "DIV"
+          childrens: [{
+            tagName: "text",
+            textValue: "Expire"
+          }, {
+            attributes: {
+              class: "main-carousel__header-border"
+            },
+            childrens: [],
+            tagName: "DIV"
+          }],
+          tagName: "H2"
         }, {
-          "tagName": "text",
-          "textValue": "\n "
+          attributes: {
+            class: "main-carousel__text"
+          },
+          childrens: [{
+            tagName: "text",
+            textValue: "Professionaly designed, carefully made\n for your enjoyement"
+          }],
+          tagName: "P"
+        }, {
+          attributes: {
+            class: "btn main-carousel__btn-explore"
+          },
+          childrens: [{
+            tagName: "text",
+            textValue: "EXPLORE"
+          }],
+          tagName: "BUTTON"
+        }, {
+          attributes: {
+            class: "btn"
+          },
+          childrens: [{
+            tagName: "text",
+            textValue: "LEARN MORE"
+          }],
+          tagName: "BUTTON"
         }],
-        "tagName": "H2"
-      }, {
-        "tagName": "text",
-        "textValue": "\n "
-      }, {
-        "attributes": {
-          "class": "main-carousel__text"
+        tagName: "DIV"
+      }}),
+      tagName: "DIV"
+    }, {
+      attributes: {
+        class: "main-carousel__markers"
+      },
+      childrens: [{
+        attributes: {
+          class: "main-carousel__marker main-carousel__marker--active"
         },
-        "childrens": [{
-          "tagName": "text",
-          "textValue": "\n Professionaly designed, carefully made\n for your enjoyement\n "
-        }],
-        "tagName": "P"
+        childrens: [],
+        tagName: "DIV"
       }, {
-        "tagName": "text",
-        "textValue": "\n "
-      }, {
-        "attributes": {
-          "class": "btn main-carousel__btn-explore"
+        attributes: {
+          class: "main-carousel__marker"
         },
-        "childrens": [{
-          "tagName": "text",
-          "textValue": "EXPLORE"
-        }],
-        "tagName": "BUTTON"
+        childrens: [],
+        tagName: "DIV"
       }, {
-        "tagName": "text",
-        "textValue": "\n "
-      }, {
-        "attributes": {
-          "class": "btn"
+        attributes: {
+          class: "main-carousel__marker"
         },
-        "childrens": [{
-          "tagName": "text",
-          "textValue": "LEARN MORE"
-        }],
-        "tagName": "BUTTON"
-      }, {
-        "tagName": "text",
-        "textValue": "\n "
+        childrens: [],
+        tagName: "DIV"
       }],
-      "tagName": "DIV"
+      tagName: "DIV"
     }, {
-      "tagName": "text",
-      "textValue": "\n "
-    }, {
-      "attributes": {
-        "class": "main-carousel__markers"
+      attributes: {
+        class: "main-carousel__btn main-carousel__btn--prew ti-angle-left"
       },
-      "childrens": [{
-        "tagName": "text",
-        "textValue": "\n "
-      }, {
-        "attributes": {
-          "class": "main-carousel__marker main-carousel__marker--active"
-        },
-        "childrens": [],
-        "tagName": "DIV"
-      }, {
-        "tagName": "text",
-        "textValue": "\n "
-      }, {
-        "attributes": {
-          "class": "main-carousel__marker"
-        },
-        "childrens": [],
-        "tagName": "DIV"
-      }, {
-        "tagName": "text",
-        "textValue": "\n "
-      }, {
-        "attributes": {
-          "class": "main-carousel__marker"
-        },
-        "childrens": [],
-        "tagName": "DIV"
-      }, {
-        "tagName": "text",
-        "textValue": "\n "
-      }],
-      "tagName": "DIV"
+      childrens: [],
+      tagName: "BUTTON"
     }, {
-      "tagName": "text",
-      "textValue": "\n "
-    }, {
-      "attributes": {
-        "class": "main-carousel__btn main-carousel__btn--prew ti-angle-left"
+      attributes: {
+        class: "main-carousel__btn main-carousel__btn--next ti-angle-right"
       },
-      "childrens": [],
-      "tagName": "BUTTON"
-    }, {
-      "tagName": "text",
-      "textValue": "\n "
-    }, {
-      "attributes": {
-        "class": "main-carousel__btn main-carousel__btn--next ti-angle-right"
-      },
-      "childrens": [],
-      "tagName": "BUTTON"
-    }, {
-      "tagName": "text",
-      "textValue": "\n "
+      childrens: [],
+      tagName: "BUTTON"
     }],
-    "tagName": "DIV"
+    tagName: "DIV"
   }
 }
