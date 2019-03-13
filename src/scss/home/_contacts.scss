@@ -16,6 +16,7 @@
 .contact-info {
   @include make-xs-column(3);
   @include make-xs-column-push(1);
+  overflow: hidden;
 
   &__el {
     display: inline-block;

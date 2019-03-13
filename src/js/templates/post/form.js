@@ -1,47 +1,47 @@
 module.exports = () => {
   return {
     attributes: {
-      class: "reply-form row"
+      class: 'reply-form row',
     },
     childrens: [{
       attributes: {
-        class: "reply-form__col"
+        class: 'reply-form__col',
       },
       childrens: [{
         attributes: {
-          class: "reply-form__input input",
-          type: "text",
-          name: "name",
-          placeholder: "Name"
+          class: 'reply-form__input input',
+          type: 'text',
+          name: 'name',
+          placeholder: 'Name',
         },
         childrens: [],
-        tagName: "INPUT"
+        tagName: 'INPUT',
       }, {
         attributes: {
-          class: "reply-form__input input",
-          type: "text",
-          name: "email",
-          placeholder: "Email"
+          class: 'reply-form__input input',
+          type: 'text',
+          name: 'email',
+          placeholder: 'Email',
         },
         childrens: [],
-        tagName: "INPUT"
+        tagName: 'INPUT',
       }],
-      tagName: "DIV"
+      tagName: 'DIV',
     }, {
       attributes: {
-        class: "reply-form__col"
+        class: 'reply-form__col',
       },
       childrens: [{
         attributes: {
-          class: "reply-form__input input input--textarea",
-          name: "text",
-          placeholder: "Message"
+          class: 'reply-form__input input input--textarea',
+          name: 'text',
+          placeholder: 'Message',
         },
         childrens: [],
-        tagName: "TEXTAREA"
+        tagName: 'TEXTAREA',
       }],
-      tagName: "DIV"
+      tagName: 'DIV',
     }],
-    tagName: "FORM"
-  }
-}
+    tagName: 'FORM',
+  };
+};

@@ -1,54 +1,54 @@
 module.exports = () => {
   return {
-    "attributes": {
-      "class": "pagination"
+    attributes: {
+      class: 'pagination',
     },
-    "childrens": [{
-      "attributes": {
-        "class": "container"
+    childrens: [{
+      attributes: {
+        class: 'container',
       },
-      "childrens": [{
-        "attributes": {
-          "class": "row"
+      childrens: [{
+        attributes: {
+          class: 'row',
         },
-        "childrens": [{
-          "attributes": {
-            "class": "pagination__btns"
+        childrens: [{
+          attributes: {
+            class: 'pagination__btns',
           },
-          "childrens": [{
-            "attributes": {
-              "class": "pagination__btn"
+          childrens: [{
+            attributes: {
+              class: 'pagination__btn',
             },
-            "childrens": [{
-              "tagName": "text",
-              "textValue": "1"
+            childrens: [{
+              tagName: 'text',
+              textValue: '1',
             }],
-            "tagName": "BUTTON"
+            tagName: 'BUTTON',
           }, {
-            "attributes": {
-              "class": "pagination__btn"
+            attributes: {
+              class: 'pagination__btn',
             },
-            "childrens": [{
-              "tagName": "text",
-              "textValue": "2"
+            childrens: [{
+              tagName: 'text',
+              textValue: '2',
             }],
-            "tagName": "BUTTON"
+            tagName: 'BUTTON',
           }, {
-            "attributes": {
-              "class": "pagination__btn-next"
+            attributes: {
+              class: 'pagination__btn-next',
             },
-            "childrens": [{
-              "tagName": "text",
-              "textValue": "NEXT PAGE"
+            childrens: [{
+              tagName: 'text',
+              textValue: 'NEXT PAGE',
             }],
-            "tagName": "BUTTON"
+            tagName: 'BUTTON',
           }],
-          "tagName": "DIV"
+          tagName: 'DIV',
         }],
-        "tagName": "DIV"
+        tagName: 'DIV',
       }],
-      "tagName": "DIV"
+      tagName: 'DIV',
     }],
-    "tagName": "DIV"
-  }
-}
+    tagName: 'DIV',
+  };
+};

@@ -1,5 +1,5 @@
 function parseDOM(parentEl, childrenEl) {
-  let obj = {};
+  const obj = {};
   switch (childrenEl.nodeName) {
     case '#text':
       obj.tagName = 'text';
@@ -9,32 +9,32 @@ function parseDOM(parentEl, childrenEl) {
       obj.attributes = {};
       obj.childrens = [];
       obj.tagName = childrenEl.tagName;
-      let arrOfAttr = Array.from(childrenEl.attributes);
-      arrOfAttr.map(attr => {
+      const arrOfAttr = Array.from(childrenEl.attributes);
+      arrOfAttr.map((attr) => {
         obj.attributes[`${attr.name}`] = `${attr.value}`;
       });
       break;
   }
-  
+
   if (checkBeforeAdd(parentEl, obj)) {
     parentEl.childrens.push(obj);
   }
 
-  if(childrenEl.childNodes.length > 0) {
-    Array.from(childrenEl.childNodes).map( (el) => {
-      parseDOM(obj, el)
-    })
+  if (childrenEl.childNodes.length > 0) {
+    Array.from(childrenEl.childNodes).map((el) => {
+      parseDOM(obj, el);
+    });
   }
   return obj;
 }
 
 function checkBeforeAdd(parentEl, obj) {
-  if(parentEl && parentEl.childrens) {
-    if(obj.textValue !== '') {
-      return true
+  if (parentEl && parentEl.childrens) {
+    if (obj.textValue !== '') {
+      return true;
     }
   }
-  return false
+  return false;
 }
 
 module.exports = parseDOM;

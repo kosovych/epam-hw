@@ -33,9 +33,14 @@ switch (path) {
   case '/post.html':
     data = require('./data/post/post')();
     renderDOM(document.getElementById('article'), articleTemplate(data));
-    data.comments.map( (obj) => renderDOM(document.getElementById('comments'), commentTemplate(obj)));
+    data.comments.map( (obj) => { 
+      renderDOM(document.getElementById('comments'), commentTemplate(obj));
+    });
     renderDOM(document.getElementById('comments'), commentForm());
-    renderDOM(document.getElementById('aside-content'), categoriesTemplate(data));
+    renderDOM(
+        document.getElementById('aside-content'),
+        categoriesTemplate(data)
+    );
     renderDOM(document.getElementById('aside-content'), tagsContent(data));
     renderDOM(document.getElementById('aside-content'), resentPosts(data));
     renderDOM(document.getElementById('aside-content'), twittFeed(data));
