@@ -1,0 +1,21 @@
+.slider {
+  transform: translateX(0px);
+
+  &:hover {
+    cursor: move;
+  }
+
+  &-wrapper {
+    overflow: hidden;
+  }
+
+  &__prev,
+  &__next {
+    outline: none;
+  }
+
+  &__prev:active,
+  &__next:active {
+    transform: translateY(-50%) scale(0.9);
+  }
+}

@@ -32,6 +32,7 @@
 .lates-post {
   @include make-xs-column(4);
   position: relative;
+  min-width: 33.333%;
 
   &::before {
     content: '';

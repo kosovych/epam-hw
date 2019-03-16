@@ -12,15 +12,18 @@ const blogPreview = require('./templates/blog/blog');
 const pagination = require('./templates/blog/padination');
 const carousel = require('./templates/home/carousel');
 const homeTemplate = require('./templates/home/main');
+const slider = require('./modules/carousel');
 let data;
 
 const path = window.location.pathname;
 
 switch (path) {
   case '/home.html':
-    data = require('./data/home/data')();
-    renderDOM(document.getElementById('header-container'), carousel(data));
-    renderDOM(document.getElementById('main'), homeTemplate());
+    data = [require('./data/home/data')(), require('./data/blog/blog')()];
+    renderDOM(document.getElementById('header-container'), carousel(data[0]));
+    renderDOM(document.getElementById('main'), homeTemplate(data[1]));
+    slider('#laters-post-carousel');
+
     break;
 
   case '/blog.html':
@@ -33,7 +36,7 @@ switch (path) {
   case '/post.html':
     data = require('./data/post/post')();
     renderDOM(document.getElementById('article'), articleTemplate(data));
-    data.comments.map( (obj) => { 
+    data.comments.map( (obj) => {
       renderDOM(document.getElementById('comments'), commentTemplate(obj));
     });
     renderDOM(document.getElementById('comments'), commentForm());

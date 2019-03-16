@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-module.exports = () => {
+module.exports = (data) => {
   return {
     attributes: {},
     childrens: [{
@@ -400,292 +400,117 @@ module.exports = () => {
         },
         childrens: [{
           attributes: {
-            class: 'lates-post-carousel__btn lates-post-carousel__btn--prew ti-angle-left',
+            class: 'lates-post-carousel__btn lates-post-carousel__btn--prew ti-angle-left slider__prev',
           },
           childrens: [],
           tagName: 'BUTTON',
         }, {
           attributes: {
-            class: 'lates-post-carousel__btn lates-post-carousel__btn--next ti-angle-right',
+            class: 'lates-post-carousel__btn lates-post-carousel__btn--next ti-angle-right slider__next',
           },
           childrens: [],
           tagName: 'BUTTON',
         }, {
           attributes: {
-            class: 'container',
+            class: 'container slider-wrapper overflow-h',
           },
           childrens: [{
             attributes: {
-              class: 'row row-eq-height',
+              class: 'row row-eq-height slider',
+              id: 'laters-post-carousel',
             },
-            childrens: [{
-              attributes: {
-                class: 'lates-post',
-              },
-              childrens: [{
+            childrens: data.map((post) => {
+              return {
                 attributes: {
-                  class: 'lates-post__img',
-                },
-                childrens: [],
-                tagName: 'DIV',
-              }, {
-                attributes: {
-                  class: 'lates-post__comtent',
+                  class: 'lates-post slider__slide',
                 },
                 childrens: [{
                   attributes: {
-                    class: 'lates-post__header',
+                    class: 'lates-post__img',
                   },
-                  childrens: [{
-                    attributes: {
-                      class: 'lates-post__header-link',
-                      href: '#',
-                    },
-                    childrens: [{
-                      tagName: 'text',
-                      textValue: 'Just Another Blog Post',
-                    }],
-                    tagName: 'A',
-                  }],
-                  tagName: 'H3',
+                  childrens: [],
+                  tagName: 'DIV',
                 }, {
                   attributes: {
-                    class: 'lates-post__info',
+                    class: 'lates-post__comtent',
                   },
                   childrens: [{
                     attributes: {
-                      href: '#',
-                      class: 'lates-post__info-el ti-user',
+                      class: 'lates-post__header',
+                    },
+                    childrens: [{
+                      attributes: {
+                        class: 'lates-post__header-link',
+                        href: '#',
+                      },
+                      childrens: [{
+                        tagName: 'text',
+                        textValue: 'This Could be Great',
+                      }],
+                      tagName: 'A',
+                    }],
+                    tagName: 'H3',
+                  }, {
+                    attributes: {
+                      class: 'lates-post__info',
+                    },
+                    childrens: [{
+                      attributes: {
+                        href: '#',
+                        class: 'lates-post__info-el ti-user',
+                      },
+                      childrens: [{
+                        tagName: 'text',
+                        textValue: `By Author`,
+                      }],
+                      tagName: 'A',
+                    }, {
+                      attributes: {
+                        href: '#',
+                        class: 'lates-post__info-el ti-calendar',
+                      },
+                      childrens: [{
+                        tagName: 'text',
+                        textValue: '10 June 2014',
+                      }],
+                      tagName: 'A',
+                    }, {
+                      attributes: {
+                        href: '#',
+                        class: 'lates-post__info-el ti-comment',
+                      },
+                      childrens: [{
+                        tagName: 'text',
+                        textValue: '0',
+                      }],
+                      tagName: 'A',
+                    }],
+                    tagName: 'DIV',
+                  }, {
+                    attributes: {
+                      class: 'lates-post__text',
                     },
                     childrens: [{
                       tagName: 'text',
-                      textValue: 'By Author',
+                      textValue: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis at, voluptatem similique tempora\n voluptate quia in ea minima earum consequatur eveniet, praesentium illum error delectus optio nobis\n eaque distinctio! Suscipit nostrum?',
                     }],
-                    tagName: 'A',
+                    tagName: 'P',
                   }, {
                     attributes: {
                       href: '#',
-                      class: 'lates-post__info-el ti-calendar',
+                      class: 'lates-post__link btn btn--link',
                     },
                     childrens: [{
                       tagName: 'text',
-                      textValue: '9 November 2014',
-                    }],
-                    tagName: 'A',
-                  }, {
-                    attributes: {
-                      href: '#',
-                      class: 'lates-post__info-el ti-comment',
-                    },
-                    childrens: [{
-                      tagName: 'text',
-                      textValue: '3',
+                      textValue: 'READ MORE',
                     }],
                     tagName: 'A',
                   }],
                   tagName: 'DIV',
-                }, {
-                  attributes: {
-                    class: 'lates-post__text',
-                  },
-                  childrens: [{
-                    tagName: 'text',
-                    textValue: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis at, voluptatem similique tempora\n voluptate quia in ea minima earum consequatur eveniet, praesentium illum error delectus optio nobis\n eaque distinctio! Suscipit nostrum?',
-                  }],
-                  tagName: 'P',
-                }, {
-                  attributes: {
-                    href: '#',
-                    class: 'lates-post__link btn btn--link',
-                  },
-                  childrens: [{
-                    tagName: 'text',
-                    textValue: 'READ MORE',
-                  }],
-                  tagName: 'A',
                 }],
                 tagName: 'DIV',
-              }],
-              tagName: 'DIV',
-            }, {
-              attributes: {
-                class: 'lates-post',
-              },
-              childrens: [{
-                attributes: {
-                  class: 'lates-post__img',
-                },
-                childrens: [],
-                tagName: 'DIV',
-              }, {
-                attributes: {
-                  class: 'lates-post__comtent',
-                },
-                childrens: [{
-                  attributes: {
-                    class: 'lates-post__header',
-                  },
-                  childrens: [{
-                    attributes: {
-                      class: 'lates-post__header-link',
-                      href: '#',
-                    },
-                    childrens: [{
-                      tagName: 'text',
-                      textValue: 'Blog Post With Youtube video',
-                    }],
-                    tagName: 'A',
-                  }],
-                  tagName: 'H3',
-                }, {
-                  attributes: {
-                    class: 'lates-post__info',
-                  },
-                  childrens: [{
-                    attributes: {
-                      href: '#',
-                      class: 'lates-post__info-el ti-user',
-                    },
-                    childrens: [{
-                      tagName: 'text',
-                      textValue: 'By Author',
-                    }],
-                    tagName: 'A',
-                  }, {
-                    attributes: {
-                      href: '#',
-                      class: 'lates-post__info-el ti-calendar',
-                    },
-                    childrens: [{
-                      tagName: 'text',
-                      textValue: '29 December 2014',
-                    }],
-                    tagName: 'A',
-                  }, {
-                    attributes: {
-                      href: '#',
-                      class: 'lates-post__info-el ti-comment',
-                    },
-                    childrens: [{
-                      tagName: 'text',
-                      textValue: '1',
-                    }],
-                    tagName: 'A',
-                  }],
-                  tagName: 'DIV',
-                }, {
-                  attributes: {
-                    class: 'lates-post__text',
-                  },
-                  childrens: [{
-                    tagName: 'text',
-                    textValue: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis at, voluptatem similique tempora\n voluptate quia in ea minima earum consequatur eveniet, praesentium illum error delectus optio.',
-                  }],
-                  tagName: 'P',
-                }, {
-                  attributes: {
-                    href: '#',
-                    class: 'lates-post__link btn btn--link',
-                  },
-                  childrens: [{
-                    tagName: 'text',
-                    textValue: 'READ MORE',
-                  }],
-                  tagName: 'A',
-                }],
-                tagName: 'DIV',
-              }],
-              tagName: 'DIV',
-            }, {
-              attributes: {
-                class: 'lates-post',
-              },
-              childrens: [{
-                attributes: {
-                  class: 'lates-post__img',
-                },
-                childrens: [],
-                tagName: 'DIV',
-              }, {
-                attributes: {
-                  class: 'lates-post__comtent',
-                },
-                childrens: [{
-                  attributes: {
-                    class: 'lates-post__header',
-                  },
-                  childrens: [{
-                    attributes: {
-                      class: 'lates-post__header-link',
-                      href: '#',
-                    },
-                    childrens: [{
-                      tagName: 'text',
-                      textValue: 'This Could be Great',
-                    }],
-                    tagName: 'A',
-                  }],
-                  tagName: 'H3',
-                }, {
-                  attributes: {
-                    class: 'lates-post__info',
-                  },
-                  childrens: [{
-                    attributes: {
-                      href: '#',
-                      class: 'lates-post__info-el ti-user',
-                    },
-                    childrens: [{
-                      tagName: 'text',
-                      textValue: 'By Author',
-                    }],
-                    tagName: 'A',
-                  }, {
-                    attributes: {
-                      href: '#',
-                      class: 'lates-post__info-el ti-calendar',
-                    },
-                    childrens: [{
-                      tagName: 'text',
-                      textValue: '10 June 2014',
-                    }],
-                    tagName: 'A',
-                  }, {
-                    attributes: {
-                      href: '#',
-                      class: 'lates-post__info-el ti-comment',
-                    },
-                    childrens: [{
-                      tagName: 'text',
-                      textValue: '0',
-                    }],
-                    tagName: 'A',
-                  }],
-                  tagName: 'DIV',
-                }, {
-                  attributes: {
-                    class: 'lates-post__text',
-                  },
-                  childrens: [{
-                    tagName: 'text',
-                    textValue: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis at, voluptatem similique tempora\n voluptate quia in ea minima earum consequatur eveniet, praesentium illum error delectus optio nobis\n eaque distinctio! Suscipit nostrum?',
-                  }],
-                  tagName: 'P',
-                }, {
-                  attributes: {
-                    href: '#',
-                    class: 'lates-post__link btn btn--link',
-                  },
-                  childrens: [{
-                    tagName: 'text',
-                    textValue: 'READ MORE',
-                  }],
-                  tagName: 'A',
-                }],
-                tagName: 'DIV',
-              }],
-              tagName: 'DIV',
-            }],
+              };
+            }),
             tagName: 'DIV',
           }],
           tagName: 'DIV',
