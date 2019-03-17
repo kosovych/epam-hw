@@ -1,4 +1,4 @@
-const parseDOM = require('./modules/parseDOM');
+// const parseDOM = require('./modules/parseDOM');
 const renderDOM = require('./modules/renderDOM');
 const articleTemplate = require('./templates/post/article');
 const commentTemplate = require('./templates/post/comments');
