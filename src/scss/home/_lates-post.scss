@@ -59,6 +59,9 @@
     background-color: $dark-grayishnavy;
     position: relative;
     z-index: 2;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     &::after {
       content: '';

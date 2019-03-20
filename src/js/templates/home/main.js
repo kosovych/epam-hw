@@ -427,6 +427,7 @@ module.exports = (data) => {
                 childrens: [{
                   attributes: {
                     class: 'lates-post__img',
+                    style: post.img ? `background-image: url('${post.img}')` : '',
                   },
                   childrens: [],
                   tagName: 'DIV',
@@ -445,7 +446,7 @@ module.exports = (data) => {
                       },
                       childrens: [{
                         tagName: 'text',
-                        textValue: 'This Could be Great',
+                        textValue: post.title,
                       }],
                       tagName: 'A',
                     }],
@@ -461,7 +462,7 @@ module.exports = (data) => {
                       },
                       childrens: [{
                         tagName: 'text',
-                        textValue: `By Author`,
+                        textValue: post.author,
                       }],
                       tagName: 'A',
                     }, {
@@ -471,7 +472,7 @@ module.exports = (data) => {
                       },
                       childrens: [{
                         tagName: 'text',
-                        textValue: '10 June 2014',
+                        textValue: `${post.day} ${post.month} ${post.year}`,
                       }],
                       tagName: 'A',
                     }, {
@@ -481,7 +482,7 @@ module.exports = (data) => {
                       },
                       childrens: [{
                         tagName: 'text',
-                        textValue: '0',
+                        textValue: post.commentsCount,
                       }],
                       tagName: 'A',
                     }],

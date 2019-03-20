@@ -79,7 +79,7 @@ module.exports = (data) => {
                 },
                 childrens: [{
                   tagName: 'text',
-                  textValue: article.header,
+                  textValue: article.title,
                 }],
                 tagName: 'DIV',
               }, {

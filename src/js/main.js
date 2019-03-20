@@ -13,6 +13,8 @@ const pagination = require('./templates/blog/padination');
 const carousel = require('./templates/home/carousel');
 const homeTemplate = require('./templates/home/main');
 const slider = require('./modules/carousel');
+const newPostPopup = require('./modules/addNewPost');
+newPostPopup();
 let data;
 
 const path = window.location.pathname;
@@ -30,7 +32,6 @@ switch (path) {
     data = require('./data/blog/blog')();
     renderDOM(document.getElementById('main'), blogPreview(data));
     renderDOM(document.getElementById('main'), pagination());
-    console.log(data);
     break;
 
   case '/post.html':
