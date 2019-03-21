@@ -27,6 +27,54 @@ function sendData(event) {
   if (!validate.title(title)) {
     return alert('Please, enter a Valid Title');
   }
-  const body = new FormData(event.target);
-  fetch('/', {body, method: 'POST'});
+
+  const _data = createData(event.target);
+  console.log(_data);
+  const body = JSON.stringify(_data);
+  console.log(body);
+
+  const headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  const options = {
+    method: 'POST',
+    headers,
+    body,
+  };
+
+
+  fetch('http://localhost:3000/api/create-article', options)
+      .then((res) => res.json())
+      .then((data) => window.location = `/post.html#${_data.id}`)
+      .catch((error) => {
+        return alert(`Ooops something went wrong \n ${error.message}`);
+      });
+}
+
+function createData(form) {
+  const data = {};
+  const map = [].map;
+
+  map.call(form, (el) => {
+    let value;
+
+    if (!el.name || !el.value) {
+      console.log(el.name, el.value);
+      return;
+    }
+
+    if (el.multiple) {
+      value = map.call(el.selectedOptions, (option) => option.value);
+      data[el.name] = value;
+      return;
+    }
+
+    value = el.value;
+    data[el.name] = el.value;
+    console.dir(el.name, el.value);
+  });
+
+  // data.id = data.title.toLocaleLowerCase().replace(/ /gi, '-');
+  data.id = Date.now();
+
+  return data;
 }

@@ -35,9 +35,24 @@ switch (path) {
     break;
 
   case '/post.html':
+    if (location.hash !== '') {
+      fetch(`http://localhost:3000/api/list/${location.hash.slice(1)}`)
+          .then((res) => res.json())
+          .then((data) => {
+            const info = require('./data/post/post')();
+            renderDOM(document.getElementById('article'), articleTemplate(data));
+            renderDOM(document.getElementById('aside-content'), tagsContent(data));
+            renderDOM(document.getElementById('comments'), commentForm());
+            renderDOM(document.getElementById('aside-content'), resentPosts(info));
+            renderDOM(document.getElementById('aside-content'), twittFeed(info));
+            renderDOM(document.getElementById('comments'), relatedPosts(info));
+          });
+
+      break;
+    }
     data = require('./data/post/post')();
     renderDOM(document.getElementById('article'), articleTemplate(data));
-    data.comments.map( (obj) => {
+    data.comments.map((obj) => {
       renderDOM(document.getElementById('comments'), commentTemplate(obj));
     });
     renderDOM(document.getElementById('comments'), commentForm());

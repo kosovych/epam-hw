@@ -1,3 +1,5 @@
+const getMonth = require('../../helpers/monthSwitcher');
+
 module.exports = (data) => {
   return {
     attributes: {
@@ -13,7 +15,7 @@ module.exports = (data) => {
         },
         childrens: [{
           tagName: 'text',
-          textValue: data.year,
+          textValue: data.year || new Date(data.id).getFullYear(),
         }],
         tagName: 'DIV',
       }, {
@@ -22,7 +24,7 @@ module.exports = (data) => {
         },
         childrens: [{
           tagName: 'text',
-          textValue: data.mounth,
+          textValue: data.mounth || getMonth(new Date(data.id).getMonth()),
         }],
         tagName: 'DIV',
       }, {
@@ -31,7 +33,7 @@ module.exports = (data) => {
         },
         childrens: [{
           tagName: 'text',
-          textValue: data.day,
+          textValue: data.day || new Date(data.id).getDate(),
         }],
         tagName: 'DIV',
       }],
@@ -46,7 +48,7 @@ module.exports = (data) => {
         },
         childrens: [{
           tagName: 'text',
-          textValue: 'Coffee is good, coffee is great',
+          textValue: data.title,
         }],
         tagName: 'H2',
       }, {
@@ -88,7 +90,7 @@ module.exports = (data) => {
         }, {
           attributes: {
             class: 'article__img-el',
-            src: data.articleImg,
+            src: data.img,
             alt: '',
           },
           childrens: [],
@@ -105,7 +107,7 @@ module.exports = (data) => {
           },
           childrens: [{
             tagName: 'text',
-            textValue: data.text[0],
+            textValue: Array.isArray(data.text) ? data.text[0] : data.text,
           }, {
             attributes: {},
             childrens: [],
@@ -116,7 +118,7 @@ module.exports = (data) => {
             tagName: 'BR',
           }, {
             tagName: 'text',
-            textValue: data.text[1],
+            textValue: Array.isArray(data.text) ? data.text[1] : '',
           }, {
             attributes: {},
             childrens: [],
@@ -127,7 +129,7 @@ module.exports = (data) => {
             tagName: 'BR',
           }, {
             tagName: 'text',
-            textValue: data.text[2],
+            textValue: Array.isArray(data.text) ? data.text[2] : '',
           }],
           tagName: 'P',
         }, {
@@ -145,7 +147,7 @@ module.exports = (data) => {
           },
           childrens: [{
             tagName: 'text',
-            textValue: data.text[2],
+            textValue: Array.isArray(data.text) ? data.text[2] : '',
           }],
           tagName: 'P',
         }],
