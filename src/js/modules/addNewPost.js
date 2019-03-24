@@ -2,6 +2,8 @@ const validate = require('./validators/index')();
 const addListener = require('../helpers/addDeligateListener');
 const template = require('../templates/ui/addPostPopup')();
 const render = require('../modules/renderDOM');
+const errorParser = require('../helpers/errorParser');
+let errorWasShowed = false;
 
 module.exports = () => {
   addListener('body', 'click', '#add-article-btn', addPopup);
@@ -11,12 +13,10 @@ module.exports = () => {
 
 
 function addPopup(event) {
-  console.log('addPopup');
   render(document.body, template);
 }
 
 function closePopup(event) {
-  console.log('closePopup');
   event.target.parentElement.parentElement.parentElement.remove();
 }
 
@@ -29,9 +29,7 @@ function sendData(event) {
   }
 
   const _data = createData(event.target);
-  console.log(_data);
   const body = JSON.stringify(_data);
-  console.log(body);
 
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
@@ -43,10 +41,17 @@ function sendData(event) {
 
 
   fetch('http://localhost:3000/api/create-article', options)
-      .then((res) => res.json())
+      .then( (res) => {
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
+      })
       .then((data) => window.location = `/post.html#${_data.id}`)
       .catch((error) => {
-        return alert(`Ooops something went wrong \n ${error.message}`);
+        if (!errorWasShowed) {
+          alert(errorParser(error.message));
+        }
       });
 }
 
@@ -58,7 +63,6 @@ function createData(form) {
     let value;
 
     if (!el.name || !el.value) {
-      console.log(el.name, el.value);
       return;
     }
 
@@ -70,7 +74,6 @@ function createData(form) {
 
     value = el.value;
     data[el.name] = el.value;
-    console.dir(el.name, el.value);
   });
 
   // data.id = data.title.toLocaleLowerCase().replace(/ /gi, '-');

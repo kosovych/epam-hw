@@ -1,4 +1,5 @@
 const getMonth = require('../../helpers/monthSwitcher');
+const dayParser = require('../../helpers/dayParser');
 
 module.exports = (data) => {
   return {
@@ -15,7 +16,7 @@ module.exports = (data) => {
         },
         childrens: [{
           tagName: 'text',
-          textValue: data.year || new Date(data.id).getFullYear(),
+          textValue: new Date(data.id).getFullYear(),
         }],
         tagName: 'DIV',
       }, {
@@ -24,7 +25,7 @@ module.exports = (data) => {
         },
         childrens: [{
           tagName: 'text',
-          textValue: data.mounth || getMonth(new Date(data.id).getMonth()),
+          textValue: getMonth(new Date(data.id).getMonth()),
         }],
         tagName: 'DIV',
       }, {
@@ -33,7 +34,7 @@ module.exports = (data) => {
         },
         childrens: [{
           tagName: 'text',
-          textValue: data.day || new Date(data.id).getDate(),
+          textValue: dayParser(new Date(data.id).getDate()),
         }],
         tagName: 'DIV',
       }],
@@ -108,26 +109,12 @@ module.exports = (data) => {
           childrens: [{
             tagName: 'text',
             textValue: Array.isArray(data.text) ? data.text[0] : data.text,
-          }, {
-            attributes: {},
-            childrens: [],
-            tagName: 'BR',
-          }, {
-            attributes: {},
-            childrens: [],
-            tagName: 'BR',
-          }, {
+          },
+          {
             tagName: 'text',
             textValue: Array.isArray(data.text) ? data.text[1] : '',
-          }, {
-            attributes: {},
-            childrens: [],
-            tagName: 'BR',
-          }, {
-            attributes: {},
-            childrens: [],
-            tagName: 'BR',
-          }, {
+          },
+          {
             tagName: 'text',
             textValue: Array.isArray(data.text) ? data.text[2] : '',
           }],
@@ -135,6 +122,7 @@ module.exports = (data) => {
         }, {
           attributes: {
             class: 'blockquote',
+            style: data.blockquote ? '' : 'display: none',
           },
           childrens: [{
             tagName: 'text',

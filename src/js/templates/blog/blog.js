@@ -1,3 +1,6 @@
+const getMonth = require('../../helpers/monthSwitcher');
+const dayParser = require('../../helpers/dayParser');
+
 module.exports = (data) => {
   return {
     attributes: {
@@ -20,7 +23,7 @@ module.exports = (data) => {
               },
               childrens: [{
                 tagName: 'text',
-                textValue: article.year,
+                textValue: new Date(article.id).getFullYear(),
               }],
               tagName: 'DIV',
             }, {
@@ -29,7 +32,7 @@ module.exports = (data) => {
               },
               childrens: [{
                 tagName: 'text',
-                textValue: article.month,
+                textValue: getMonth(new Date(article.id).getMonth()),
               }],
               tagName: 'DIV',
             }, {
@@ -38,7 +41,7 @@ module.exports = (data) => {
               },
               childrens: [{
                 tagName: 'text',
-                textValue: article.day,
+                textValue: dayParser(new Date(article.id).getDate()),
               }],
               tagName: 'DIV',
             }],
@@ -63,7 +66,7 @@ module.exports = (data) => {
                 attributes: {
                   class: 'article-preview__img-el',
                   src: article.img,
-                  alt: 'Post 1',
+                  alt: article.title,
                 },
                 childrens: [],
                 tagName: 'IMG',
@@ -79,7 +82,7 @@ module.exports = (data) => {
                 },
                 childrens: [{
                   tagName: 'text',
-                  textValue: article.title,
+                  textValue: article.title || article.title,
                 }],
                 tagName: 'DIV',
               }, {
@@ -120,7 +123,7 @@ module.exports = (data) => {
               }, {
                 attributes: {
                   class: 'article-preview__link',
-                  href: '#',
+                  href: `http://localhost:3001/post.html#${article.id}`,
                 },
                 childrens: [{
                   tagName: 'text',

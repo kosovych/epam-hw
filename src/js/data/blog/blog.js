@@ -9,6 +9,7 @@ module.exports = () => {
       "commentsCount": "3",
       "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque veniam in nobis nulla, excepturi necessitatibus maxime sapiente laborum, rerum asperiores ipsa similique quos, deserunt beatae aliquam maiores alias sed dolorum? Rerum recusandae culpa nobis ipsa dolores consequatur voluptate. Est commodi amet dolores atque autem sapiente quidem numquam assumenda. Veritatis corrupti minima omnis nobis quos, repellat sed voluptate facere, nisi eum labore, dolor quam autem quisquam hic, quasi placeat doloribus laudantium.",
       "category": "pic",
+      "id": "1415484000000",
     },
     {
       "year": "2014",
@@ -20,6 +21,7 @@ module.exports = () => {
       "commentsCount": "3",
       "text": "Neque veniam in nobis nulla, excepturi necessitatibus maxime sapiente laborum, rerum asperiores ipsa similique quos, deserunt beatae aliquam maiores alias sed dolorum? Rerum recusandae culpa nobis ipsa dolores consequatur voluptate. Est commodi amet dolores atque autem sapiente quidem numquam assumenda. Veritatis corrupti minima omnis nobis quos, repellat sed voluptate facere, nisi eum labore, dolor quam autem quisquam hic, quasi placeat doloribus laudantium.",
       "category": "film",
+      "id": "1415397600000",
     },
     {
       "year": "2014",
@@ -31,6 +33,7 @@ module.exports = () => {
       "commentsCount": "3",
       "text": "Est commodi amet dolores atque autem sapiente quidem numquam assumenda. Veritatis corrupti minima omnis nobis quos, repellat sed voluptate facere, nisi eum labore, dolor quam autem quisquam hic, quasi placeat doloribus laudantium.",
       "category": "write",
+      "id": "1415311200000",
     },
     {
       "year": "2014",
@@ -42,6 +45,7 @@ module.exports = () => {
       "commentsCount": "3",
       "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque veniam in nobis nulla, excepturi necessitatibus maxime sapiente laborum, rerum asperiores ipsa similique quos, deserunt beatae aliquam maiores alias sed dolorum? Rerum recusandae culpa nobis ipsa dolores consequatur voluptate. Est commodi amet dolores atque autem sapiente quidem numquam assumenda. Veritatis corrupti minima omnis nobis quos, repellat sed voluptate facere, nisi eum labore, dolor quam autem quisquam hic, quasi placeat doloribus laudantium.",
       "category": "music",
+      "id": "1415224800000",
     },
-  ]
-}
+  ];
+};

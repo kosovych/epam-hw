@@ -6,12 +6,10 @@ module.exports = () => {
 
 function title(value) {
   if (typeof value !== 'string') {
-    console.log('Incorrect input data');
     return false;
   }
 
   if (!checkLength(value) || !checkTheFirstSumb(value.charCodeAt(0))) {
-    console.log(false);
     return false;
   }
 
@@ -20,11 +18,9 @@ function title(value) {
   const arrOfSumbCodes = arrOfSumb.map((el) => el.charCodeAt(0));
 
   if (!checkTheRightSumb(arrOfSumbCodes, arrOfSpecSumbCode)) {
-    console.log(false);
     return false;
   }
 
-  console.log(true);
   return true;
 }
 
