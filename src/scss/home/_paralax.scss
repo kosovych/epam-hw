@@ -1,9 +1,13 @@
 .paralax {
   height: 560px;
   background-color: $paralax-bg;
+  background-image: url(../img/bg-3.jpg);
   padding-top: 128px;
   color: $white;
   position: relative;
+  text-shadow: -1px 0 #444, 0 1px #444, 1px 0 #444, 0 -1px #444;
+  background-attachment: fixed;
+  background-size: cover;
 
   &::after {
     content: '';

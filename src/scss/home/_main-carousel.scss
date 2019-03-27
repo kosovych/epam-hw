@@ -1,7 +1,14 @@
 .main-carousel {
   color: $white;
+  overflow: hidden;
   &__slide {
+    @include make-xs-column(12);
     height: 500px;
+    min-width: 100%;
+  }
+
+  &-slide-wrapper {
+    display: flex;
   }
 
   &__header {
@@ -76,6 +83,8 @@
     top: 50%;
     transform: translateY(-50%);
     outline: none;
+    box-shadow: 0 0 5px 3px white;
+    border-radius: 50%;
 
     &:active {
       font-size: 32px;
@@ -83,6 +92,7 @@
 
     &:hover {
       color: $white;
+      box-shadow: 0 0 8px 3px white;
     }
 
     &--prew {
@@ -99,4 +109,8 @@
   &__btn-explore {
     margin-right: 16px;
   }
+}
+
+.marker.active {
+  background-color: $white;
 }

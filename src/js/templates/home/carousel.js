@@ -6,6 +6,7 @@ module.exports = (data) => {
     childrens: [{
       attributes: {
         id: 'main-carousel-slide-wrapper',
+        class: 'main-carousel-slide-wrapper row',
       },
       childrens: data.slides.map((slide) => {
         return {
@@ -18,7 +19,7 @@ module.exports = (data) => {
             },
             childrens: [{
               tagName: 'text',
-              textValue: 'Expire',
+              textValue: slide.header,
             }, {
               attributes: {
                 class: 'main-carousel__header-border',
@@ -33,8 +34,7 @@ module.exports = (data) => {
             },
             childrens: [{
               tagName: 'text',
-              textValue: `Professionaly designed, carefully 
-              made\n for your enjoyement`,
+              textValue: slide.text,
             }],
             tagName: 'P',
           }, {
@@ -62,23 +62,23 @@ module.exports = (data) => {
       tagName: 'DIV',
     }, {
       attributes: {
-        class: 'main-carousel__markers',
+        class: 'main-carousel__markers markers',
       },
       childrens: [{
         attributes: {
-          class: 'main-carousel__marker main-carousel__marker--active',
+          class: 'main-carousel__marker marker active',
         },
         childrens: [],
         tagName: 'DIV',
       }, {
         attributes: {
-          class: 'main-carousel__marker',
+          class: 'main-carousel__marker marker',
         },
         childrens: [],
         tagName: 'DIV',
       }, {
         attributes: {
-          class: 'main-carousel__marker',
+          class: 'main-carousel__marker marker',
         },
         childrens: [],
         tagName: 'DIV',
@@ -86,13 +86,13 @@ module.exports = (data) => {
       tagName: 'DIV',
     }, {
       attributes: {
-        class: 'main-carousel__btn main-carousel__btn--prew ti-angle-left',
+        class: 'main-carousel__btn main-carousel__btn--prew ti-angle-left slider__prev',
       },
       childrens: [],
       tagName: 'BUTTON',
     }, {
       attributes: {
-        class: 'main-carousel__btn main-carousel__btn--next ti-angle-right',
+        class: 'main-carousel__btn main-carousel__btn--next ti-angle-right slider__next',
       },
       childrens: [],
       tagName: 'BUTTON',
