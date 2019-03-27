@@ -60,7 +60,9 @@
 
 .testimonials-wrapper {
   @include make-xs-column(6);
-
+  overflow: hidden;
+  padding: 0 !important;
+  margin-right: 15px;
 }
 
 .accordion-wrapper {
@@ -74,6 +76,11 @@
   margin-top: (350px - 231px);
   position: relative;
   padding: 0 28px;
+  min-width: 100%;
+
+  &-container {
+    display: flex;
+  }
 
   &::after {
     content: '';
@@ -99,7 +106,7 @@
     height: 80px;
     background-color: $article-preview-bg;
     position: relative;
-    top: -120px;
+    top: -60px;
     z-index: 1;
     border: 1px solid $red-orange;
 
@@ -153,6 +160,13 @@
     font-style: italic;
     line-height: (25 / 15);
     margin-bottom: 24px;
+  }
+
+  &__conntrolls {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   &__conntroll {
