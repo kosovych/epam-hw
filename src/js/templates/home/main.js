@@ -774,81 +774,190 @@ module.exports = (data) => {
           },
           childrens: [{
             attributes: {
-              class: 'testimonials-wrapper',
+              class: 'testimonials-wrapper row',
             },
             childrens: [{
               attributes: {
-                class: 'testimonials',
+                class: 'testimonials-container',
+                id: 'testimonials-container',
               },
               childrens: [{
                 attributes: {
-                  class: 'testimonials__avatar-img-wrapper',
+                  class: 'testimonials',
                 },
                 childrens: [{
                   attributes: {
-                    class: 'testimonials__avatar-img',
+                    class: 'testimonials__avatar-img-wrapper',
                   },
-                  childrens: [],
+                  childrens: [{
+                    attributes: {
+                      class: 'testimonials__avatar-img',
+                    },
+                    childrens: [],
+                    tagName: 'DIV',
+                  }],
+                  tagName: 'DIV',
+                }, {
+                  attributes: {
+                    class: 'testimonials__content',
+                  },
+                  childrens: [{
+                    attributes: {
+                      class: 'testimonials__user',
+                    },
+                    childrens: [{
+                      tagName: 'text',
+                      textValue: 'Astrid Jorgensen',
+                    }],
+                    tagName: 'SPAN',
+                  }, {
+                    attributes: {
+                      class: 'testimonials__user-role',
+                    },
+                    childrens: [{
+                      tagName: 'text',
+                      textValue: 'CEO at Runway inc.',
+                    }],
+                    tagName: 'SPAN',
+                  }, {
+                    attributes: {
+                      class: 'testimonials__text',
+                    },
+                    childrens: [{
+                      tagName: 'text',
+                      textValue: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis at, voluptatem similique tempora\n voluptate quia in ea minima earum consequatur',
+                    }],
+                    tagName: 'P',
+                  }],
                   tagName: 'DIV',
                 }],
                 tagName: 'DIV',
               }, {
                 attributes: {
-                  class: 'testimonials__content',
+                  class: 'testimonials',
                 },
                 childrens: [{
                   attributes: {
-                    class: 'testimonials__user',
-                  },
-                  childrens: [{
-                    tagName: 'text',
-                    textValue: 'Astrid Jorgensen',
-                  }],
-                  tagName: 'SPAN',
-                }, {
-                  attributes: {
-                    class: 'testimonials__user-role',
-                  },
-                  childrens: [{
-                    tagName: 'text',
-                    textValue: 'CEO at Runway inc.',
-                  }],
-                  tagName: 'SPAN',
-                }, {
-                  attributes: {
-                    class: 'testimonials__text',
-                  },
-                  childrens: [{
-                    tagName: 'text',
-                    textValue: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis at, voluptatem similique tempora\n voluptate quia in ea minima earum consequatur',
-                  }],
-                  tagName: 'P',
-                }, {
-                  attributes: {
-                    class: 'testimonials__conntrolls',
+                    class: 'testimonials__avatar-img-wrapper',
                   },
                   childrens: [{
                     attributes: {
-                      class: 'testimonials__conntroll testimonials__conntroll--active',
+                      class: 'testimonials__avatar-img',
                     },
                     childrens: [],
+                    tagName: 'DIV',
+                  }],
+                  tagName: 'DIV',
+                }, {
+                  attributes: {
+                    class: 'testimonials__content',
+                  },
+                  childrens: [{
+                    attributes: {
+                      class: 'testimonials__user',
+                    },
+                    childrens: [{
+                      tagName: 'text',
+                      textValue: 'Dave Batista',
+                    }],
                     tagName: 'SPAN',
                   }, {
                     attributes: {
-                      class: 'testimonials__conntroll',
+                      class: 'testimonials__user-role',
                     },
-                    childrens: [],
+                    childrens: [{
+                      tagName: 'text',
+                      textValue: 'HR at Runway inc.',
+                    }],
                     tagName: 'SPAN',
                   }, {
                     attributes: {
-                      class: 'testimonials__conntroll',
+                      class: 'testimonials__text',
                     },
-                    childrens: [],
-                    tagName: 'SPAN',
+                    childrens: [{
+                      tagName: 'text',
+                      textValue: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis at, voluptatem similique tempora\n voluptate quia in ea minima earum consequatur',
+                    }],
+                    tagName: 'P',
                   }],
                   tagName: 'DIV',
                 }],
                 tagName: 'DIV',
+              }, {
+                attributes: {
+                  class: 'testimonials',
+                },
+                childrens: [{
+                  attributes: {
+                    class: 'testimonials__avatar-img-wrapper',
+                  },
+                  childrens: [{
+                    attributes: {
+                      class: 'testimonials__avatar-img',
+                    },
+                    childrens: [],
+                    tagName: 'DIV',
+                  }],
+                  tagName: 'DIV',
+                }, {
+                  attributes: {
+                    class: 'testimonials__content',
+                  },
+                  childrens: [{
+                    attributes: {
+                      class: 'testimonials__user',
+                    },
+                    childrens: [{
+                      tagName: 'text',
+                      textValue: 'Stevie T',
+                    }],
+                    tagName: 'SPAN',
+                  }, {
+                    attributes: {
+                      class: 'testimonials__user-role',
+                    },
+                    childrens: [{
+                      tagName: 'text',
+                      textValue: 'COO at Runway inc.',
+                    }],
+                    tagName: 'SPAN',
+                  }, {
+                    attributes: {
+                      class: 'testimonials__text',
+                    },
+                    childrens: [{
+                      tagName: 'text',
+                      textValue: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis at, voluptatem similique tempora\n voluptate quia in ea minima earum consequatur',
+                    }],
+                    tagName: 'P',
+                  }],
+                  tagName: 'DIV',
+                }],
+                tagName: 'DIV',
+              }],
+              tagName: 'DIV',
+            }, {
+              attributes: {
+                class: 'testimonials__conntrolls markers',
+              },
+              childrens: [{
+                attributes: {
+                  class: 'testimonials__conntroll marker active',
+                },
+                childrens: [],
+                tagName: 'SPAN',
+              }, {
+                attributes: {
+                  class: 'testimonials__conntroll marker',
+                },
+                childrens: [],
+                tagName: 'SPAN',
+              }, {
+                attributes: {
+                  class: 'testimonials__conntroll marker',
+                },
+                childrens: [],
+                tagName: 'SPAN',
               }],
               tagName: 'DIV',
             }],

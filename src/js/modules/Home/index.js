@@ -4,6 +4,7 @@ const homeTemplate = require('../../templates/home/main');
 const sliderConstructor = require('../../modules/carousel');
 const SimpleCarousel = require('../SimpleCarousel');
 const DraggableCarousel = require('../DraggableCarousel');
+const AutoplayCarousel = require('../AutoplayCarousel');
 
 let data;
 
@@ -13,6 +14,7 @@ module.exports = () => {
   renderDOM(document.getElementById('main'), homeTemplate(data[1]));
 
 
-  sliderConstructor('#laters-post-carousel', {slidesSameTime: 3, animTime: 600}, SimpleCarousel).sliderInit();
-  sliderConstructor('#main-carousel-slide-wrapper', {slidesSameTime: 1, animTime: 600}, DraggableCarousel).sliderInit();
+  sliderConstructor('#laters-post-carousel', {slidesSameTime: 3}, SimpleCarousel).sliderInit();
+  sliderConstructor('#main-carousel-slide-wrapper', {slidesSameTime: 1}, DraggableCarousel).sliderInit();
+  sliderConstructor('#testimonials-container', {slidesSameTime: 1}, AutoplayCarousel).sliderInit();
 };
