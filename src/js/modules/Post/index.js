@@ -12,6 +12,10 @@ const info = require('../../data/post/post')();
 const errorParser = require('../../helpers/errorParser');
 let errorWasShowed = false;
 
+const PostPic = require('../../components/PostPic');
+const PostVideo = require('../../components/PostVideo');
+const PostMusic = require('../../components/PostMusic');
+
 module.exports = () => {
   if (location.hash !== '') {
     fetch(`http://localhost:3000/api/list/${location.hash.slice(1)}`)
@@ -26,8 +30,27 @@ module.exports = () => {
           return res.json();
         })
         .then((data) => {
-          renderDOM(document.getElementById('article'),
+          const article = renderDOM(document.getElementById('article'),
               articleTemplate(data));
+          let post;
+
+          switch (data.category) {
+            case 'pic':
+              post = new PostPic(article, data.src);
+              break;
+
+            case 'film':
+              post = new PostVideo(article, data.src);
+              break;
+
+            case 'music':
+              post = new PostMusic(article, data.src);
+              break;
+
+            default:
+              post = new PostMusic(article, data.src);
+              break;
+          }
 
           renderDOM(document.getElementById('aside-content'),
               tagsContent(data));
@@ -44,7 +67,7 @@ module.exports = () => {
           renderDOM(document.getElementById('comments'),
               relatedPosts(info));
         })
-        .catch( (error) => {
+        .catch((error) => {
           if (isNaN(error.message)) {
             return alert(errorParser(404));
           }

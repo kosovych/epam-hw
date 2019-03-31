@@ -84,7 +84,7 @@ module.exports = (data) => {
         },
         childrens: [{
           attributes: {
-            class: 'article-preview__img-label article-preview__img-label--pic',
+            class: `article-preview__img-label article-preview__img-label--${data.category}`,
           },
           childrens: [],
           tagName: 'SPAN',
@@ -93,6 +93,7 @@ module.exports = (data) => {
             class: 'article__img-el',
             src: data.img,
             alt: '',
+            id: 'article-poster'
           },
           childrens: [],
           tagName: 'IMG',

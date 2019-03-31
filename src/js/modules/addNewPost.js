@@ -3,7 +3,7 @@ const addListener = require('../helpers/addDeligateListener');
 const template = require('../templates/ui/addPostPopup')();
 const render = require('../modules/renderDOM');
 const errorParser = require('../helpers/errorParser');
-let errorWasShowed = false;
+const errorWasShowed = false;
 
 module.exports = () => {
   addListener('body', 'click', '#add-article-btn', addPopup);

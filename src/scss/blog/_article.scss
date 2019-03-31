@@ -73,6 +73,7 @@
     position: relative;
     margin-bottom: 41px;
     overflow: hidden;
+    cursor: pointer;
 
     .article-preview__img-label {
       left: calc(58.5% - 1px) !important;
@@ -94,6 +95,12 @@
       width: 100%;
       position: relative;
       z-index: 1;
+      transform: scale(1);
+      transition: transform .6s;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
   }
