@@ -74,9 +74,9 @@ module.exports = () => {
               },
               childrens: [{
                 tagName: 'text',
-                textValue: `**Title can contain letters and special characters,
+                textValue: `**Title can contain letters, digits and special characters,
                  including space, ( ,!,:,-,?,.,,),\n 
-                 length must be more than 2 characters but less than 20,
+                 length must be more than 2 characters but less than 61,
                  \n must start with an uppercase letter.`,
               }],
               tagName: 'SPAN',

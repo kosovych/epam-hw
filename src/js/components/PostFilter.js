@@ -2,6 +2,7 @@ const simpleInputValidator = require('../modules/validators/simpleInputValidator
 const renderDOM = require('../modules/renderDOM');
 const popup = require('../templates/ui/popup');
 const blogPreview = require('../templates/blog/blog');
+const pagination = require('../templates/blog/padination');
 
 class PostFilter {
   constructor(container, select, input, btn, cancelBtn, data, target) {
@@ -21,13 +22,18 @@ class PostFilter {
   }
 
   filterInit() {
-    if (localStorage.getItem('isFilterUsed')) {
-      const filterByValue = localStorage.getItem('filterBy');
-      const value = localStorage.getItem('keyWord');
-      this.input.value = value;
-      this.select.querySelector('option[selected]').removeAttribute('selected');
-      this.select.querySelector(`option[value="${filterByValue}"]`).setAttribute('selected', 'selected');
+    if (!localStorage.getItem('isFilterUsed')) {
+      return;
     }
+    const filterByValue = localStorage.getItem('filterBy');
+    const value = localStorage.getItem('keyWord');
+    this.input.value = value;
+    this.select.querySelector('option[selected]').removeAttribute('selected');
+    this.select.
+        querySelector(`option[value="${filterByValue}"]`).
+        setAttribute('selected', 'selected');
+
+    this.filterPost(filterByValue, value);
   }
 
   validateInput(event) {
@@ -43,8 +49,11 @@ class PostFilter {
   }
 
   filterSubmitHandler(event) {
-    event.preventDefault();
-    if (!this.validateInput({target: this.input}) || !this.validateSelect({target: this.select})) {
+    if (event) {
+      event.preventDefault();
+    }
+    if (!this.validateInput({target: this.input})
+          || !this.validateSelect({target: this.select})) {
       return false;
     }
 
@@ -55,11 +64,14 @@ class PostFilter {
   }
 
   filterPost(filterByValue, value) {
-    const result = this._data.filter( (post) => post[filterByValue].toLocaleLowerCase().includes(value.toLocaleLowerCase()));
+    const result = this._data.filter( (post) => (post[filterByValue]
+        .toLocaleLowerCase()
+        .includes(value.toLocaleLowerCase())));
 
     if (result.length > 0) {
       this.target.innerHTML = '';
       renderDOM(this.target, blogPreview(result));
+      renderDOM(document.getElementById('main'), pagination());
     } else {
       const $popup = renderDOM(null, popup());
       $popup.querySelector('.popup__title').innerHTML = '';
@@ -69,9 +81,18 @@ class PostFilter {
   }
 
   cancelHandler(event) {
-    event.preventDefault();
+    localStorage.clear();
+    this.select.
+        querySelector('option[selected]').
+        removeAttribute('selected');
+
+    this.select.
+        querySelector('option[value="placeholder"]').
+        setAttribute('selected', 'selected');
+
     this.target.innerHTML = '';
     renderDOM(this.target, blogPreview(this._data));
+    renderDOM(document.getElementById('main'), pagination());
   }
 }
 

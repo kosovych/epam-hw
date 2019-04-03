@@ -13,6 +13,7 @@ const simpleInputValidator = require('../modules/validators/simpleInputValidator
 const renderDOM = require('../modules/renderDOM');
 const popup = require('../templates/ui/popup');
 const blogPreview = require('../templates/blog/blog');
+const pagination = require('../templates/blog/padination');
 
 class PostFilter {
   constructor(container, select, input, btn, cancelBtn, data, target) {
@@ -32,13 +33,18 @@ class PostFilter {
   }
 
   filterInit() {
-    if (localStorage.getItem('isFilterUsed')) {
-      const filterByValue = localStorage.getItem('filterBy');
-      const value = localStorage.getItem('keyWord');
-      this.input.value = value;
-      this.select.querySelector('option[selected]').removeAttribute('selected');
-      this.select.querySelector(`option[value="${filterByValue}"]`).setAttribute('selected', 'selected');
+    if (!localStorage.getItem('isFilterUsed')) {
+      return;
     }
+    const filterByValue = localStorage.getItem('filterBy');
+    const value = localStorage.getItem('keyWord');
+    this.input.value = value;
+    this.select.querySelector('option[selected]').removeAttribute('selected');
+    this.select.
+        querySelector(`option[value="${filterByValue}"]`).
+        setAttribute('selected', 'selected');
+
+    this.filterPost(filterByValue, value);
   }
 
   validateInput(event) {
@@ -54,8 +60,11 @@ class PostFilter {
   }
 
   filterSubmitHandler(event) {
-    event.preventDefault();
-    if (!this.validateInput({target: this.input}) || !this.validateSelect({target: this.select})) {
+    if (event) {
+      event.preventDefault();
+    }
+    if (!this.validateInput({target: this.input})
+          || !this.validateSelect({target: this.select})) {
       return false;
     }
 
@@ -66,11 +75,14 @@ class PostFilter {
   }
 
   filterPost(filterByValue, value) {
-    const result = this._data.filter( (post) => post[filterByValue].toLocaleLowerCase().includes(value.toLocaleLowerCase()));
+    const result = this._data.filter( (post) => (post[filterByValue]
+        .toLocaleLowerCase()
+        .includes(value.toLocaleLowerCase())));
 
     if (result.length > 0) {
       this.target.innerHTML = '';
       renderDOM(this.target, blogPreview(result));
+      renderDOM(document.getElementById('main'), pagination());
     } else {
       const $popup = renderDOM(null, popup());
       $popup.querySelector('.popup__title').innerHTML = '';
@@ -80,9 +92,18 @@ class PostFilter {
   }
 
   cancelHandler(event) {
-    event.preventDefault();
+    localStorage.clear();
+    this.select.
+        querySelector('option[selected]').
+        removeAttribute('selected');
+
+    this.select.
+        querySelector('option[value="placeholder"]').
+        setAttribute('selected', 'selected');
+
     this.target.innerHTML = '';
     renderDOM(this.target, blogPreview(this._data));
+    renderDOM(document.getElementById('main'), pagination());
   }
 }
 
@@ -95,7 +116,7 @@ function createPopupContent() {
 
 module.exports = PostFilter;
 
-},{"../modules/renderDOM":22,"../modules/validators/simpleInputValidator":24,"../templates/blog/blog":25,"../templates/ui/popup":38}],3:[function(require,module,exports){
+},{"../modules/renderDOM":22,"../modules/validators/simpleInputValidator":25,"../templates/blog/blog":26,"../templates/blog/padination":27,"../templates/ui/popup":39}],3:[function(require,module,exports){
 const Post = require('./Post');
 const popupTempl = require('../templates/ui/popup');
 const renderDOM = require('../modules/renderDOM');
@@ -129,7 +150,7 @@ class PostMusic extends Post {
 
 module.exports = PostMusic;
 
-},{"../modules/renderDOM":22,"../templates/ui/popup":38,"./Post":1}],4:[function(require,module,exports){
+},{"../modules/renderDOM":22,"../templates/ui/popup":39,"./Post":1}],4:[function(require,module,exports){
 const Post = require('./Post');
 const popupTempl = require('../templates/ui/popup');
 const renderDOM = require('../modules/renderDOM');
@@ -151,7 +172,7 @@ class PostPic extends Post {
 
 module.exports = PostPic;
 
-},{"../modules/renderDOM":22,"../templates/ui/popup":38,"./Post":1}],5:[function(require,module,exports){
+},{"../modules/renderDOM":22,"../templates/ui/popup":39,"./Post":1}],5:[function(require,module,exports){
 const Post = require('./Post');
 const popupTempl = require('../templates/ui/popup');
 const renderDOM = require('../modules/renderDOM');
@@ -179,7 +200,7 @@ class PostVideo extends Post {
 
 module.exports = PostVideo;
 
-},{"../modules/renderDOM":22,"../templates/ui/popup":38,"./Post":1}],6:[function(require,module,exports){
+},{"../modules/renderDOM":22,"../templates/ui/popup":39,"./Post":1}],6:[function(require,module,exports){
 module.exports = () => {
   return [{
       "year": "2014",
@@ -537,10 +558,10 @@ let errorWasShowed = false;
 
 module.exports = () => {
   fetch('http://localhost:3000/api/list')
-      // .catch( (err) => {
-      //   errorWasShowed = true;
-      //   alert(errorParser(500));
-      // })
+      .catch( (err) => {
+        errorWasShowed = true;
+        alert(errorParser(500));
+      })
       .then( (res) => {
         if (!res.ok) {
           throw new Error(res.status);
@@ -548,18 +569,23 @@ module.exports = () => {
         return res.json();
       })
       .then( (data) => {
-        const filter = new PostFilter('filter-post', '#sort-by', '#keyword', '#filter-post-btn', '#filter-post-cancel-btn', data, 'main');
-        renderDOM(document.getElementById('main'), blogPreview(data));
-        renderDOM(document.getElementById('main'), pagination());
+        const filter = new PostFilter(
+            'filter-post', '#sort-by', '#keyword',
+            '#filter-post-btn', '#filter-post-cancel-btn', data, 'main');
+
+        if (!localStorage.getItem('filterBy')) {
+          renderDOM(document.getElementById('main'), blogPreview(data));
+          renderDOM(document.getElementById('main'), pagination());
+        }
       })
-      // .catch( (error) => {
-      //   if (!errorWasShowed) {
-      //     alert(errorParser(error.message));
-      //   }
-      // });
+      .catch( (error) => {
+        if (!errorWasShowed) {
+          alert(errorParser(error.message));
+        }
+      });
 };
 
-},{"../../components/PostFilter":2,"../../helpers/errorParser":11,"../../templates/blog/blog":25,"../../templates/blog/padination":26,"../renderDOM":22}],16:[function(require,module,exports){
+},{"../../components/PostFilter":2,"../../helpers/errorParser":11,"../../templates/blog/blog":26,"../../templates/blog/padination":27,"../renderDOM":22}],16:[function(require,module,exports){
 // Can Drag Slides
 // Added maskers
 
@@ -652,7 +678,7 @@ module.exports = () => {
   sliderConstructor('#testimonials-container', {slidesSameTime: 1}, AutoplayCarousel).sliderInit();
 };
 
-},{"../../data/blog/blog":6,"../../data/home/data":7,"../../modules/carousel":21,"../../templates/home/carousel":27,"../../templates/home/main":28,"../AutoplayCarousel":14,"../DraggableCarousel":16,"../SimpleCarousel":19,"../renderDOM":22}],18:[function(require,module,exports){
+},{"../../data/blog/blog":6,"../../data/home/data":7,"../../modules/carousel":21,"../../templates/home/carousel":28,"../../templates/home/main":29,"../AutoplayCarousel":14,"../DraggableCarousel":16,"../SimpleCarousel":19,"../renderDOM":22}],18:[function(require,module,exports){
 const renderDOM = require('../renderDOM');
 const articleTemplate = require('../../templates/post/article');
 const commentTemplate = require('../../templates/post/comments');
@@ -749,7 +775,7 @@ module.exports = () => {
   renderDOM(document.getElementById('comments'), relatedPosts(data));
 };
 
-},{"../../components/PostMusic":3,"../../components/PostPic":4,"../../components/PostVideo":5,"../../data/post/post":8,"../../helpers/errorParser":11,"../../templates/post/article":29,"../../templates/post/categories":30,"../../templates/post/comments":31,"../../templates/post/form":32,"../../templates/post/relatedPosts":33,"../../templates/post/resentPosts":34,"../../templates/post/tags":35,"../../templates/post/twitterFeed":36,"../renderDOM":22}],19:[function(require,module,exports){
+},{"../../components/PostMusic":3,"../../components/PostPic":4,"../../components/PostVideo":5,"../../data/post/post":8,"../../helpers/errorParser":11,"../../templates/post/article":30,"../../templates/post/categories":31,"../../templates/post/comments":32,"../../templates/post/form":33,"../../templates/post/relatedPosts":34,"../../templates/post/resentPosts":35,"../../templates/post/tags":36,"../../templates/post/twitterFeed":37,"../renderDOM":22}],19:[function(require,module,exports){
 // Can only move by controls
 
 module.exports = function(_container, options) {
@@ -848,6 +874,7 @@ const template = require('../templates/ui/addPostPopup')();
 const render = require('../modules/renderDOM');
 const errorParser = require('../helpers/errorParser');
 const errorWasShowed = false;
+const regexpValidTitle = require('./validators/regexpValidTitle');
 
 module.exports = () => {
   addListener('body', 'click', '#add-article-btn', addPopup);
@@ -868,7 +895,7 @@ function sendData(event) {
   event.preventDefault();
 
   const title = event.target.querySelector('input[name="title"]').value;
-  if (!validate.title(title)) {
+  if (!regexpValidTitle(title)) {
     return alert('Please, enter a Valid Title');
   }
 
@@ -926,7 +953,7 @@ function createData(form) {
   return data;
 }
 
-},{"../helpers/addDeligateListener":9,"../helpers/errorParser":11,"../modules/renderDOM":22,"../templates/ui/addPostPopup":37,"./validators/index":23}],21:[function(require,module,exports){
+},{"../helpers/addDeligateListener":9,"../helpers/errorParser":11,"../modules/renderDOM":22,"../templates/ui/addPostPopup":38,"./validators/index":23,"./validators/regexpValidTitle":24}],21:[function(require,module,exports){
 module.exports = Carousel;
 
 function Carousel(_container, options, CarouselClass) {
@@ -1022,6 +1049,12 @@ function checkLength(str) {
 }
 
 },{}],24:[function(require,module,exports){
+module.exports = (str) => {
+  return /^[A-Z][/s:,./?!a\-zA\-Z0-9]{5,59}/gm.test(str);
+};
+
+
+},{}],25:[function(require,module,exports){
 module.exports = (bool, input) => {
   if (bool) {
     input.style.outline = '1px solid green';
@@ -1032,7 +1065,7 @@ module.exports = (bool, input) => {
   return false;
 };
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 const getMonth = require('../../helpers/monthSwitcher');
 const dayParser = require('../../helpers/dayParser');
 
@@ -1179,7 +1212,7 @@ module.exports = (data) => {
   };
 };
 
-},{"../../helpers/dayParser":10,"../../helpers/monthSwitcher":12}],26:[function(require,module,exports){
+},{"../../helpers/dayParser":10,"../../helpers/monthSwitcher":12}],27:[function(require,module,exports){
 module.exports = () => {
   return {
     attributes: {
@@ -1235,7 +1268,7 @@ module.exports = () => {
   };
 };
 
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 module.exports = (data) => {
   return {
     attributes: {
@@ -1339,7 +1372,7 @@ module.exports = (data) => {
   };
 };
 
-},{}],28:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 /* eslint-disable max-len */
 module.exports = (data) => {
   return {
@@ -2417,7 +2450,7 @@ module.exports = (data) => {
   };
 };
 
-},{}],29:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 const getMonth = require('../../helpers/monthSwitcher');
 const dayParser = require('../../helpers/dayParser');
 
@@ -2568,7 +2601,7 @@ module.exports = (data) => {
   };
 };
 
-},{"../../helpers/dayParser":10,"../../helpers/monthSwitcher":12}],30:[function(require,module,exports){
+},{"../../helpers/dayParser":10,"../../helpers/monthSwitcher":12}],31:[function(require,module,exports){
 module.exports = (data) => {
   return {
     attributes: {
@@ -2620,7 +2653,7 @@ module.exports = (data) => {
   };
 };
 
-},{}],31:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 module.exports = (data) => {
   return {
     attributes: {
@@ -2688,7 +2721,7 @@ module.exports = (data) => {
   };
 };
 
-},{}],32:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 module.exports = () => {
   return {
     attributes: {
@@ -2737,7 +2770,7 @@ module.exports = () => {
   };
 };
 
-},{}],33:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 module.exports = (data) => {
   return {
     attributes: {
@@ -2835,7 +2868,7 @@ module.exports = (data) => {
   };
 };
 
-},{}],34:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 module.exports = (data) => {
   return {
     attributes: {
@@ -2930,7 +2963,7 @@ module.exports = (data) => {
   };
 };
 
-},{}],35:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 module.exports = (data) => {
   return {
     attributes: {
@@ -2968,7 +3001,7 @@ module.exports = (data) => {
   };
 };
 
-},{}],36:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 module.exports = (data) => {
   return {
     attributes: {
@@ -3068,7 +3101,7 @@ module.exports = (data) => {
   };
 };
 
-},{}],37:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 module.exports = () => {
   return {
     attributes: {
@@ -3145,9 +3178,9 @@ module.exports = () => {
               },
               childrens: [{
                 tagName: 'text',
-                textValue: `**Title can contain letters and special characters,
+                textValue: `**Title can contain letters, digits and special characters,
                  including space, ( ,!,:,-,?,.,,),\n 
-                 length must be more than 2 characters but less than 20,
+                 length must be more than 2 characters but less than 61,
                  \n must start with an uppercase letter.`,
               }],
               tagName: 'SPAN',
@@ -3416,7 +3449,7 @@ module.exports = () => {
   };
 };
 
-},{}],38:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 module.exports = () => {
   return {
     attributes: {

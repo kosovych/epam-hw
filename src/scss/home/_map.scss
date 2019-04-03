@@ -18,3 +18,21 @@
     box-sizing: border-box;
   }
 }
+
+.gm-style-iw.gm-style-iw-c {
+  border-radius: 0;
+  padding: 20px !important;
+
+  h2 {
+    font-family: 'OpenSans Bold';
+    font-size: 22px;
+  }
+  button {
+    display: none !important;
+  }
+
+  p {
+    font-size: 16px;
+    color: #aaa;
+  }
+}

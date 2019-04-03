@@ -4,6 +4,7 @@ const template = require('../templates/ui/addPostPopup')();
 const render = require('../modules/renderDOM');
 const errorParser = require('../helpers/errorParser');
 const errorWasShowed = false;
+const regexpValidTitle = require('./validators/regexpValidTitle');
 
 module.exports = () => {
   addListener('body', 'click', '#add-article-btn', addPopup);
@@ -24,7 +25,7 @@ function sendData(event) {
   event.preventDefault();
 
   const title = event.target.querySelector('input[name="title"]').value;
-  if (!validate.title(title)) {
+  if (!regexpValidTitle(title)) {
     return alert('Please, enter a Valid Title');
   }
 
