@@ -8,7 +8,7 @@ const Blog = require('./modules/Blog/index');
 const path = window.location.pathname;
 
 switch (path) {
-  case '/home.html':
+  case '/':
     Home();
     break;
 

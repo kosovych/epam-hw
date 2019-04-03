@@ -15,6 +15,7 @@ gulp.task('serve', () => {
   browserSync.init({
     server: {
       baseDir: './src/',
+      index: 'home.html',
     },
     notify: false,
   });
@@ -47,16 +48,13 @@ gulp.task('js', () => {
   return browserify('./src/js/main', {
     debug: true,
   })
-      .transform(babelify, {
-        presets: ['env'],
-      })
       .bundle()
       .pipe(sourse('./src/js/bundle.js'))
       .pipe(buffer())
       .pipe(sourcemaps.init({
         loadMaps: true,
       }))
-      .pipe(uglify())
+      // .pipe(uglify())
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('.'));
 });
