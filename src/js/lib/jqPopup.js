@@ -18,7 +18,6 @@
       this.body = body;
       this.mode = mode;
       this.delay = delay;
-
       if (this.mode) {
         this.timerId = setTimeout(this.createPop.bind(this), this.delay);
       } else {
