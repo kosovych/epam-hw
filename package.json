@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "babel-core": "^6.26.3",
+    "jquery": "^3.4.0",
     "node-sass": "^4.11.0",
     "vinyl-source-stream": "^2.0.0"
   }

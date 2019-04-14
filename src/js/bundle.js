@@ -375,12 +375,19 @@ function addListenen(targterElQuery, eventType, currentElQuery, handler) {
   document.querySelector(targterElQuery)
       .addEventListener(eventType, function(event) {
         const eventTarget = event.target;
-        const currentEl = document.querySelector(currentElQuery);
-        if (eventTarget === currentEl) {
-          return handler(event);
+        if (currentElQuery[0] === '.') {
+          if (eventTarget.className.includes(currentElQuery.slice(1))) {
+            return handler(event);
+          } else {
+            return false;
+          }
         }
-        return;
-      });
+        if (eventTarget.id === currentElQuery.slice(1)) {
+          return handler(event);
+        } else {
+          return false;
+        }
+      }, true);
 }
 
 module.exports = addListenen;
@@ -554,21 +561,22 @@ const pagination = require('../../templates/blog/padination');
 const blogPreview = require('../../templates/blog/blog');
 const errorParser = require('../../helpers/errorParser');
 const PostFilter = require('../../components/PostFilter');
+const addListenen = require('../../helpers/addDeligateListener');
 let errorWasShowed = false;
 
 module.exports = () => {
   fetch('http://localhost:3000/api/list')
-      .catch( (err) => {
+      .catch((err) => {
         errorWasShowed = true;
         alert(errorParser(500));
       })
-      .then( (res) => {
+      .then((res) => {
         if (!res.ok) {
           throw new Error(res.status);
         }
         return res.json();
       })
-      .then( (data) => {
+      .then((data) => {
         const filter = new PostFilter(
             'filter-post', '#sort-by', '#keyword',
             '#filter-post-btn', '#filter-post-cancel-btn', data, 'main');
@@ -578,14 +586,39 @@ module.exports = () => {
           renderDOM(document.getElementById('main'), pagination());
         }
       })
-      .catch( (error) => {
+      .catch((error) => {
         if (!errorWasShowed) {
           alert(errorParser(error.message));
         }
       });
+
+  $().jqPopup(
+      null,
+      popupHandler,
+      'succes',
+      'alert',
+      'none',
+      'Subscribe to this blog and get new update first!',
+      true,
+  );
+
+  addListenen('body', 'click', '.article-preview__rm', (event) => $().jqPopup(
+      event.target,
+      popupHandler,
+      'info',
+      'promt',
+      'dark',
+      'Are you sure you want to delete this post?',
+  ));
 };
 
-},{"../../components/PostFilter":2,"../../helpers/errorParser":11,"../../templates/blog/blog":26,"../../templates/blog/padination":27,"../renderDOM":22}],16:[function(require,module,exports){
+function popupHandler() {
+  const post = this.targer.parent().parent().parent();
+  post.slideUp(300, () => post.remove());
+  this.closePopup();
+}
+
+},{"../../components/PostFilter":2,"../../helpers/addDeligateListener":9,"../../helpers/errorParser":11,"../../templates/blog/blog":26,"../../templates/blog/padination":27,"../renderDOM":22}],16:[function(require,module,exports){
 // Can Drag Slides
 // Added maskers
 
@@ -895,6 +928,7 @@ function sendData(event) {
   event.preventDefault();
 
   const title = event.target.querySelector('input[name="title"]').value;
+  console.log(title);
   if (!regexpValidTitle(title)) {
     return alert('Please, enter a Valid Title');
   }
@@ -1050,7 +1084,7 @@ function checkLength(str) {
 
 },{}],24:[function(require,module,exports){
 module.exports = (str) => {
-  return /^[A-Z][/s:,./?!a\-zA\-Z0-9]{5,59}/gm.test(str);
+  return /^[A-Z][/s,:,./?!a\-zA\-Z0-9]{5,59}/gm.test(str);
 };
 
 
@@ -1198,7 +1232,22 @@ module.exports = (data) => {
                   textValue: 'READ MORE',
                 }],
                 tagName: 'A',
-              }],
+              },
+              {
+                attributes: {
+                  class: 'article-preview__rm',
+                  title: 'Remove Post',
+                },
+                childrens: [{
+                  attributes: {
+                    class: 'ti-trash',
+                  },
+                  childrens: [],
+                  tagName: 'I',
+                }],
+                tagName: 'BUTTON',
+              },
+              ],
               tagName: 'DIV',
             }],
             tagName: 'DIV',
@@ -1211,7 +1260,6 @@ module.exports = (data) => {
     tagName: 'DIV',
   };
 };
-
 },{"../../helpers/dayParser":10,"../../helpers/monthSwitcher":12}],27:[function(require,module,exports){
 module.exports = () => {
   return {

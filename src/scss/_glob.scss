@@ -4,6 +4,10 @@
   scroll-behavior: smooth;
 }
 
+button * {
+  pointer-events: none;
+}
+
 // .row {
 //   @include make-row;
 // }
@@ -15,7 +19,6 @@
 // .col-4 {
 //   @include make-xs-column(4);
 // }
-
 
 body {
   font-family: "OpenSans Regular";

@@ -2,12 +2,19 @@ function addListenen(targterElQuery, eventType, currentElQuery, handler) {
   document.querySelector(targterElQuery)
       .addEventListener(eventType, function(event) {
         const eventTarget = event.target;
-        const currentEl = document.querySelector(currentElQuery);
-        if (eventTarget === currentEl) {
-          return handler(event);
+        if (currentElQuery[0] === '.') {
+          if (eventTarget.className.includes(currentElQuery.slice(1))) {
+            return handler(event);
+          } else {
+            return false;
+          }
         }
-        return;
-      });
+        if (eventTarget.id === currentElQuery.slice(1)) {
+          return handler(event);
+        } else {
+          return false;
+        }
+      }, true);
 }
 
 module.exports = addListenen;

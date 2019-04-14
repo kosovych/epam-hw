@@ -130,7 +130,22 @@ module.exports = (data) => {
                   textValue: 'READ MORE',
                 }],
                 tagName: 'A',
-              }],
+              },
+              {
+                attributes: {
+                  class: 'article-preview__rm',
+                  title: 'Remove Post',
+                },
+                childrens: [{
+                  attributes: {
+                    class: 'ti-trash',
+                  },
+                  childrens: [],
+                  tagName: 'I',
+                }],
+                tagName: 'BUTTON',
+              },
+              ],
               tagName: 'DIV',
             }],
             tagName: 'DIV',

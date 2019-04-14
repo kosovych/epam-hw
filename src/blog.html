@@ -11,6 +11,20 @@
 </head>
 
 <body>
+  <!--  -->
+  <!-- <div class="modal-wrapper">
+    <div class="modal">
+      <div class="modal__header">
+        <button class="modal__close-btn">&times;</button>
+      </div>
+      <div class="modal__body"></div>
+      <div class="modal__controls">
+        <button class="modal__ok">OK</button>
+        <button class="modal__cancel">Cancel</button>
+      </div>
+    </div>
+  </div> -->
+  <!--  -->
   <header class="blog-header">
     <div class="container pos-rel">
       <div class="blog-nav row">
@@ -21,7 +35,8 @@
           <ul class="blog-nav__links">
             <li class="blog-nav__links-item"><a class="blog-nav__link" href="/">HOME</a></li>
             <li class="blog-nav__links-item"><a class="blog-nav__link" href="/#portfolios">PORTFOLIO</a></li>
-            <li class="blog-nav__links-item"><a class="blog-nav__link blog-nav__link--active" href="/blog.html">BLOG</a></li>
+            <li class="blog-nav__links-item"><a class="blog-nav__link blog-nav__link--active" href="/blog.html">BLOG</a>
+            </li>
             <li class="blog-nav__links-item"><a class="blog-nav__link" href="#">PAGES</a></li>
             <li class="blog-nav__links-item"><a class="blog-nav__link" href="/#about">ABOUT US</a></li>
             <li class="blog-nav__links-item"><a class="blog-nav__link" href="/#contact">CONTACT</a></li>
@@ -54,9 +69,10 @@
           <option value="author">by aythor</option>
           <option value="title">by title</option>
         </select>
-        <input id="keyword" type="text" placeholder="Enter the key word"/>
+        <input id="keyword" type="text" placeholder="Enter the key word" />
         <button id="filter-post-btn" class="filter-post__btn btn">Filter now <i class="ti-filter"></i></button>
-        <button id="filter-post-cancel-btn" type="reset" class="filter-post__btn btn">Reset <i class="ti-reload"></i></button>
+        <button id="filter-post-cancel-btn" type="reset" class="filter-post__btn btn">Reset <i
+            class="ti-reload"></i></button>
       </form>
     </div>
   </div>
@@ -84,9 +100,9 @@
     </div>
   </footer>
 
-
-
-  <script src="js/bundle.js"></script>
+  <script defer src="./js/lib/jquery.min.js"></script>
+  <script defer src="./js/lib/jqPopup.js"></script>
+  <script defer src="js/bundle.js"></script>
 
 </body>
 
