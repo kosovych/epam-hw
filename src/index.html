@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Home</title>
+</head>
+
+<body>
+  <header class="home-header">
+    <div id="header-container" class="container">
+      <nav class="home-nav row">
+        <div class="home-nav__wrapper">
+          <a class="home-nav__link home-nav__link--active home-nav__link--left" href="/">HOME</a>
+          <a class="home-nav__link home-nav__link--left" href="#portfolios">PORTFOLIO</a>
+          <a class="home-nav__link home-nav__link--left" href="/blog.html">BLOG</a>
+          <a class="home-nav__link home-nav__link--logo" href="/#">Expire</a>
+          <a class="home-nav__link home-nav__link--right" href="/#contact">CONTACT</a>
+          <a class="home-nav__link home-nav__link--right" href="/#about">ABOUT US</a>
+          <a class="home-nav__link home-nav__link--right" href="#">PAGES</a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+  </main>
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="row">
+        <h2 class="contact__header">Get to know us better</h2>
+        <p class="contact__text">Contact us, and we will contact you back. Want to chat? We can do that too.</p>
+      </div>
+      <div class="row">
+        <div class="contact-info">
+          <p class="contact-info__el ti-location-pin">
+            623 Fifth Avenue,<br />
+            New York, NY 10022, <br />
+            USA
+          </p>
+          <a href="mailto:randomness@expire.com"
+            class="contact-info__el contact-info__el--link ti-email">randomness@expire.com</a>
+
+          <p class="contact-info__el ti-mobile">
+            Phone: +(123) 456 7890 <br />
+            Fax: +(123) 456 7899
+          </p>
+        </div>
+        <form action="#" class="contact-form">
+          <div class="container">
+            <div class="row">
+              <div class="contact-form__el">
+                <input class="input" type="text" name="name" placeholder="Name">
+              </div>
+              <div class="contact-form__el">
+                <input class="input" type="text" name="email" placeholder="Email">
+              </div>
+            </div>
+            <div class="row">
+              <div class="contact-form__el-2">
+                <input class="input" type="text" name="email" placeholder="Subject">
+              </div>
+            </div>
+            <div class="row">
+              <div class="contact-form__el-2">
+                <textarea class="input input--textarea" name="text" placeholder="Message"></textarea>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div id="map" class="map"></div>
+
+  <footer class="footer">
+    <a href="#" class="footer__top-btn ti-angle-up"></a>
+    <div class="container">
+      <div class="row">
+        <div class="footer__item">
+          <a href="#" class="footer__social ti-facebook"></a>
+          <a href="#" class="footer__social ti-twitter"></a>
+          <a href="#" class="footer__social ti-linkedin"></a>
+          <a href="#" class="footer__social ti-google"></a>
+          <a href="#" class="footer__social ti-instagram"></a>
+        </div>
+        <div class="footer__item footer__item--center">
+          <a class="footer__logo-link" href="/">Expire</a>
+        </div>
+        <div class="footer__item">© Copryright 2014, design by dingo_design</div>
+      </div>
+    </div>
+  </footer>
+  <div><h2></h2><p></p></div>
+  <script>
+    var map;
+    var service;
+    var infowindow;
+
+    function initMap() {
+        var coord = {
+          lat:  40.7579118,
+          lng: -73.9770535
+        };
+
+        var img = './img/icons8-marker-48.png';
+        var contentString = ' <div><h2>NEW YORK</h2><br/><p>623 Fifth Avenue</p></div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        
+        var map = new google.maps.Map(
+          document.getElementById('map'), {
+            zoom: 15,
+            center: coord,
+            disableDefaultUI: true
+          });
+          
+          var marker = new google.maps.Marker({
+            position: coord,
+            map: map,
+            icon: img
+          });
+          
+          marker.setMap(map);
+          infowindow.open(map, marker);
+    }
+  </script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5KLGy67GirB4NK-bMNqw4Pm35iXQdGko&libraries=geometry,places&callback=initMap"
+    async defer></script>
+</body>
+
+</html>

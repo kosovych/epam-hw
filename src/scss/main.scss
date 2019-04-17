@@ -1,0 +1,26 @@
+@import './reset';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize';
+
+@import './vars';
+@import './color-matrix';
+@import './themify-icons';
+@import './fonts';
+
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid.scss';
+
+@import './mixins/mixins';
+@import './glob';
+@import './ui/ui';
+@import './nav';
+@import './blog/blog';
+@import './blog/article';
+@import './aside';
+@import './home/home';
+
+@import './footer';
+
+* {
+  // outline: 1px solid red;
+}

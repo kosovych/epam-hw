@@ -1,0 +1,29 @@
+.input {
+  display: inline-block;
+  width: 100%;
+  padding: 18px 24px;
+  box-sizing: border-box;
+  border: none;
+  border: 1px solid $input-border;
+  border-top: 0;
+  margin-bottom: 52px;
+  outline: none;
+
+  &::placeholder {
+    font-style: italic;
+  }
+
+  &--textarea {
+    resize: none;
+    height: 170px;
+  }
+
+  &--search {
+    padding-right: 46px;
+    background-image: url(../img/ico/ti-search.png);
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 20px);
+    background-position-y: center;
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,35 @@
+@import '../mixins/mixins';
+
+.filter-post {
+  margin-bottom: 24px;
+
+  &__inner {
+    @include make-xs-column(9);
+    @include make-xs-column-push(2);
+    display: flex;
+    align-items: center;
+
+    * {
+      margin-right: 12px;
+    }
+
+    input {
+      padding: 3px;
+    }
+
+    select {
+      padding: 3px;
+    }
+  }
+
+  &__btn {
+    padding: 6px;
+    height: 29px;
+    border-color: grey;
+    box-shadow: 0 0 2px 0 #999;
+
+    &:hover {
+      color: white;
+    }
+  }
+}

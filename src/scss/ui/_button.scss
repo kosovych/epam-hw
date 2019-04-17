@@ -1,0 +1,32 @@
+.btn {
+  
+  font-family: 'Raleway SemiBold';
+  height: 50px;
+  min-width: 150px;
+  text-align: center;
+  border: 1px solid;
+  background-color: transparent;
+  transition: all .15s;
+
+  &:hover {
+    background-color: $red-orange;
+    border-color: $red-orange;
+  }
+
+  &--dib {
+    display: inline-block;
+    height: auto;
+    line-height: 47px !important;
+    padding: 0 20px;
+  }
+
+  &--fill {
+    background-color: $red-orange;
+    border-color: $red-orange;
+  }
+}
+
+.btn-link {
+  display: inline-block;
+
+}

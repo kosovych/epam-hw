@@ -1,0 +1,124 @@
+.modal {
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  right: 20%;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 101;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+
+  &-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    &--light {
+      background-color: rgba($color: #ccc, $alpha: 0.5);
+
+      .modal {
+        background-color: #bebebe;
+
+        &__header {
+          background-color: #5d5d5d;
+        }
+
+        &__boby {
+          color: white;
+        }
+
+        &__cancel {
+          color: white;
+        }
+      }
+    }
+
+    &--none {
+      background-color: transparent;
+      pointer-events: none;
+
+      .modal {
+        pointer-events: all;
+      }
+    }
+
+    &--dark {
+      background-color: rgba($color: #222, $alpha: 0.5);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 8px;
+
+    &--error {
+      background-color: #ED1B24;
+    }
+    
+    &--succes {
+      background-color: #25a032 !important;
+    }
+  
+    &--info {
+      background-color: #E8E8E8;
+    }
+  }
+
+  &__close-btn {
+    font-size: 16px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #c5c5c5;
+    outline: none;
+
+    &:hover {
+      color: green;
+      background-color: lightgreen;
+    }
+  }
+
+  &__body {
+    padding: 12px;
+  }
+
+  &__controls {
+    border-top: 1px solid #ccc;
+    padding: 12px 18px;
+  }
+
+  &__ok {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 18px;
+    padding: 8px 24px;
+    border: 3px solid #002aff47;
+    background-color: dodgerblue;
+    border-radius: 12px;
+    color: white;
+    text-shadow: 0px 0px 2px black;
+    outline: none;
+
+    &:hover {
+      background-color: blue;
+    }
+  }
+
+  &__cancel {
+    font-size: 18px;
+    color: #777;
+    outline: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.popup {
+  &__bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #555;
+    opacity: .5;
+    z-index: 999;
+    animation: fadeIn05 .6s forwards;
+  }
+
+  &__inner {
+    position: fixed;
+    left: 15%;
+    right: 15%;
+    top: 50px;
+    // bottom: 10%;
+    z-index: 1000;
+    background-color: $white;
+    padding: 16px;
+    border-radius: 6px;
+    overflow: auto;
+    max-height: calc(100vh - 100px);
+    animation: zoomIn .6s forwards;
+
+    iframe {
+      margin: 0 auto;
+      display: block;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    audio {
+      width: 100%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  &__close-btn {
+    padding: 8px;
+    background-color: #ddd;
+    color: #888;
+    border-radius: 3px;
+    border: 1px solid;
+    &:hover {
+      color: #000;
+    } 
+  }
+
+  &__fieldset {
+    margin-bottom: 16px;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+  }
+
+  &__input {
+    padding: 3px;
+    margin-bottom: 6px;
+    resize: none;
+  }
+
+  &__submit {
+    display: block;
+    width: 33%;
+    margin: 12px auto 0;
+    padding: 6px;
+
+    border-radius: 3px;
+    border: 1px solid;
+    &:hover {
+      color: #000;
+      background-color: #ddd;
+    } 
+  }
+
+  &__info {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+}
+
+@keyframes fadeIn05 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .5;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

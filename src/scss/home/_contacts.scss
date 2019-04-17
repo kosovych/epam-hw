@@ -1,0 +1,64 @@
+.contact {
+  &__header {
+    font-family: 'Raleway Bold';
+    font-size: 45px;
+    margin-bottom: 48px;
+    @include grad-border;
+    position: relative;
+  }
+
+  &__text {
+    margin-bottom: 60px;
+  }
+}
+
+
+.contact-info {
+  @include make-xs-column(3);
+  @include make-xs-column-push(1);
+  overflow: hidden;
+
+  &__el {
+    display: inline-block;
+    margin-bottom: 62px;
+    position: relative;
+    font-family: 'OpenSans Regular' !important;
+    font-size: 14px;
+    line-height: 24px !important;
+
+    &--link {
+      color: $red-orange;
+    }
+
+    &:not(:first-child) {
+      &:before {
+        transform: translateX(40%);
+      }
+    }
+
+    &::before {
+      position: absolute;
+      font-size: 40px;
+      left: calc(-50% - 15px);
+      opacity: 0.5;
+      font-family: 'themify' !important;
+      color:  $night-rider !important;
+      line-height: 1 !important;
+    }
+  }
+
+
+}
+
+.contact-form {
+  @include make-xs-column(8);
+  @include make-xs-column-push(1);
+
+  &__el {
+    @include make-xs-column(4);
+
+    &-2 {
+      @include make-xs-column(8);
+    }
+  }
+}

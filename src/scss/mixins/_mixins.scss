@@ -1,0 +1,11 @@
+@mixin grad-border {
+  &::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100px;
+    bottom: -24px;
+    left: 0;
+    background: linear-gradient(to right, #ff3c1f 0%,#4f585f 100%);
+  }
+}
