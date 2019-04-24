@@ -36,7 +36,7 @@ module.exports = (env) => {
             loader: 'file-loader',
             options: {
               options: {
-                outputPath: '/fonst',
+                outputPath: '/fonts',
               },
             },
           },
@@ -125,6 +125,11 @@ module.exports = (env) => {
       new CopyPlugin([{
         from: 'src/img',
         to: './img',
+        toType: 'dir',
+      }]),
+      new CopyPlugin([{
+        from: 'src/fonts',
+        to: './fonts',
         toType: 'dir',
       }]),
 
