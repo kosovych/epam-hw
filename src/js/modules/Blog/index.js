@@ -5,6 +5,12 @@ const errorParser = require('../../helpers/errorParser');
 const PostFilter = require('../../components/PostFilter');
 const addListenen = require('../../helpers/addDeligateListener');
 const jsPopup = require('../../lib/jqPopup');
+const removeAtricle = require('./removeAtricle');
+const rmAllAtricles = require('./rmAllArticles');
+rmAllAtricles();
+const editPost = require('./editPost');
+editPost();
+
 jsPopup($);
 let errorWasShowed = false;
 
@@ -36,28 +42,14 @@ module.exports = () => {
         }
       });
 
-  $().jqPopup(
-      null,
-      popupHandler,
-      'succes',
-      'alert',
-      'none',
-      'Subscribe to this blog and get new update first!',
-      true
-  );
-
-  addListenen('body', 'click', '.article-preview__rm', (event) => $().jqPopup(
-      event.target,
-      popupHandler,
-      'info',
-      'promt',
-      'dark',
-      'Are you sure you want to delete this post?'
-  ));
+  addListenen('body', 'click', '.article-preview__rm', (event) => {
+    const popup = $().jqPopup(
+        event.target,
+        () => removeAtricle(event, popup),
+        'info',
+        'promt',
+        'dark',
+        'Are you sure you want to delete this post?'
+    );
+  });
 };
-
-function popupHandler() {
-  const post = this.targer.parent().parent().parent();
-  post.slideUp(300, () => post.remove());
-  this.closePopup();
-}

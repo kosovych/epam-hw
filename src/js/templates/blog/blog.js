@@ -23,7 +23,7 @@ module.exports = (data) => {
               },
               childrens: [{
                 tagName: 'text',
-                textValue: new Date(article.id).getFullYear(),
+                textValue: new Date(+article.id).getFullYear(),
               }],
               tagName: 'DIV',
             }, {
@@ -32,7 +32,7 @@ module.exports = (data) => {
               },
               childrens: [{
                 tagName: 'text',
-                textValue: getMonth(new Date(article.id).getMonth()),
+                textValue: getMonth(new Date(+article.id).getMonth()),
               }],
               tagName: 'DIV',
             }, {
@@ -41,7 +41,7 @@ module.exports = (data) => {
               },
               childrens: [{
                 tagName: 'text',
-                textValue: dayParser(new Date(article.id).getDate()),
+                textValue: dayParser(new Date(+article.id).getDate()),
               }],
               tagName: 'DIV',
             }],
@@ -139,6 +139,20 @@ module.exports = (data) => {
                 childrens: [{
                   attributes: {
                     class: 'ti-trash',
+                  },
+                  childrens: [],
+                  tagName: 'I',
+                }],
+                tagName: 'BUTTON',
+              },
+              {
+                attributes: {
+                  class: 'article-preview__edit',
+                  title: 'Edit Post',
+                },
+                childrens: [{
+                  attributes: {
+                    class: 'ti-pencil',
                   },
                   childrens: [],
                   tagName: 'I',

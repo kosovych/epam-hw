@@ -75,6 +75,7 @@ router.delete('/list/:id', (req, res) => {
 
   if (indexOfArticle < 0) {
     res.status(400);
+    res.statusText;
     res.end(JSON.stringify({msg: 'Article you want to delete is not exist'}));
   } else {
     list.splice(indexOfArticle, 1);

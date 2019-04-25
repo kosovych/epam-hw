@@ -41,7 +41,7 @@ function sendData(event) {
   };
 
 
-  fetch('http://localhost:3000/api/create-article', options)
+  fetch('http://localhost:3000/api/list', options)
       .then( (res) => {
         if (!res.ok) {
           throw new Error(res.status);

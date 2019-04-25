@@ -2,6 +2,7 @@ const getMonth = require('../../helpers/monthSwitcher');
 const dayParser = require('../../helpers/dayParser');
 
 module.exports = (data) => {
+  console.log(data);
   return {
     attributes: {
       class: 'row',
@@ -16,7 +17,7 @@ module.exports = (data) => {
         },
         childrens: [{
           tagName: 'text',
-          textValue: new Date(data.id).getFullYear(),
+          textValue: new Date(+data.id).getFullYear(),
         }],
         tagName: 'DIV',
       }, {
@@ -25,7 +26,7 @@ module.exports = (data) => {
         },
         childrens: [{
           tagName: 'text',
-          textValue: getMonth(new Date(data.id).getMonth()),
+          textValue: getMonth(new Date(+data.id).getMonth()),
         }],
         tagName: 'DIV',
       }, {
@@ -34,7 +35,7 @@ module.exports = (data) => {
         },
         childrens: [{
           tagName: 'text',
-          textValue: dayParser(new Date(data.id).getDate()),
+          textValue: dayParser(new Date(+data.id).getDate()),
         }],
         tagName: 'DIV',
       }],

@@ -10,7 +10,7 @@ module.exports = {
         "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
-        "ecmaVersion": 9
+        "ecmaVersion": 2017
     },
     "rules": {
         "require-jsdoc": "off",

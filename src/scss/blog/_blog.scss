@@ -93,11 +93,12 @@
       background: $white;
       position: relative;
       overflow: visible;
+
       img {
         display: none;
       }
 
-      & + .article-preview__content-wrapper {
+      &+.article-preview__content-wrapper {
         padding-top: 86px;
       }
 
@@ -280,7 +281,14 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
+  }
 
+  &__edit {
+    @extend .article-preview__rm;
+
+    &:hover {
+      color: #007eff;
+    }
   }
 }
 
@@ -325,4 +333,9 @@
   right: 16px;
   bottom: 16px;
   text-transform: uppercase;
+
+  &--rm {
+    min-width: 58px;
+    right: 180px;
+  }
 }
