@@ -4,7 +4,8 @@ const router = express.Router();
 const fs = require('fs');
 const log = require( INCPATH + '/log')(module);
 const path = require('path');
-
+const Article = require('../../shemas/article');
+const mongoose = require('mongoose');
 let list;
 
 fs.readFile(
@@ -16,73 +17,102 @@ fs.readFile(
       }
       list = data;
       list = JSON.parse(list);
+      Article.deleteMany({}, (err) => {
+        if (err) {
+          console.log(err);
+        }
+      })
+      list.map(listItem => {
+        let mokArticle = new Article({...listItem});
+        mokArticle.save();
+      })
     });
 
+
+
 router.get('/list', (req, res) => {
+  log.info('==Get all list articles==');
   if (list.length === 0) {
     res.status(400);
     res.end(JSON.stringify({msg: 'Articles you want to delete is not exist'}));
 
   } else {
-    log.info('==Get all list articles==');
-    res.end(JSON.stringify(list));
+    Article.find({}, (err, articles) => {
+      if(err) {
+        console.log(error);
+        res.status = 500;
+        res.end();
+      }
+      res.end(JSON.stringify(articles));
+    })
   }
 });
 
 router.post('/list', function(req, res) {
   log.info('==Save article==');
-  list.push(req.body);
-  res.end(JSON.stringify(list));
+  let newArticle = new Article({...req.body});
+  newArticle.save((err, doc) => {
+    if (err) {
+      console.log(err);
+      res.status = 500;
+      res.end();
+    }
+    res.end(JSON.stringify(newArticle));
+  });
 });
 
 router.delete('/list', (req, res) => {
   log.info('==Delete all articles==');
-  list = [];
-  res.end(JSON.stringify(list));
+  Article.deleteMany({}, (err) => {
+    if (err) {
+      console.log(err);
+      res.status = 500;
+      res.end();
+    }
+    res.end(JSON.stringify([]));
+  })
 });
 
 router.get('/list/:id', (req, res) => {
   log.info('==Get article by id==');
-  const articleById = list.find((article) => +article.id === +req.params.id);
-  if(articleById) {
-    res.end(JSON.stringify(articleById));
-  } else {
-    res.status(404);
-    res.end(JSON.stringify({msg: 'Article you want to get is not exist'}));
-  }
+  let atricleID = req.params.id;
+  Article.findOne({id: atricleID}, (err, article) => {
+    if(err) {
+      res.status(400);
+      return res.end(JSON.stringify({msg: 'Article you want to get is not exist'}));
+    } 
+    res.end(JSON.stringify(article));
+  })
 });
 
 router.put('/list/:id', (req, res) => {
   log.info('==Update article by id==');
-  let articleById = list.find((article) => +article.id === +req.params.id);
-  const indexOfArticle = list.indexOf(articleById);
-
-  if (indexOfArticle < 0) {
-    res.status(400);
-    res.end(JSON.stringify({msg: 'Article you want to update is not exist'}));
-  } else {
-    articleById = {...articleById, ...req.body};
-    list[indexOfArticle] = articleById;
-    res.end(JSON.stringify(articleById));
-  }
+  const articleID = req.params.id;
+  Article.findOne({id: articleID}, (err, article) => {
+    console.log(article.toObject());
+    if(err) {
+      res.status(400);
+      return res.end(JSON.stringify({msg: 'Article you want to update is not exist'}));
+    }
+    updatedArticle = {...article.toObject(), ...req.body};
+    console.log(articleID);
+    Article.updateOne({id: articleID}, {$set: {...updatedArticle}}, (err, doc) => {
+      res.end(JSON.stringify(doc));
+    });
+  })
 });
 
 router.delete('/list/:id', (req, res) => {
   log.info('==Delete article by id==');
-  let articleById = list.find((article) => +article.id === +req.params.id);
-  const indexOfArticle = list.indexOf(articleById);
-  console.log(indexOfArticle);
-
-  if (indexOfArticle < 0) {
-    res.status(400);
-    res.statusText;
-    res.end(JSON.stringify({msg: 'Article you want to delete is not exist'}));
-  } else {
-    list.splice(indexOfArticle, 1);
+  Article.deleteOne({id: req.params.id}, (err) => {
+    if (err) {
+      console.log(err);
+      res.status = 500;
+      return res.end()
+    }
     res.status(200);
     res.end(JSON.stringify(list));
-  }
+  });
 });
-
 
 module.exports = router;

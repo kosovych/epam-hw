@@ -4,6 +4,7 @@ const jsPopup = require('../../lib/jqPopup');
 const popupTemplate = require('../../templates/ui/addPostPopup')();
 const render = require('../renderDOM');
 const regexpValidTitle = require('../validators/regexpValidTitle');
+const errorParser = require('../../helpers/errorParser');
 jsPopup($);
 
 module.exports = () => {
@@ -85,9 +86,7 @@ function sendData(event) {
       })
       .then((data) => window.location = `/post.html#${_data.id}`)
       .catch((error) => {
-        if (!errorWasShowed) {
-          alert(errorParser(error.message));
-        }
+        alert(errorParser(error.message));
       });
 }
 

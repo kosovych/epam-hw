@@ -18,6 +18,9 @@ const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const swaggerDocument = YAML.load('./config/swagger.yaml');
 const router = require('./middleware/api/list');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/blog', {useNewUrlParser: true});
+
 
 // const apiConfig = require(ABSPATH + '/api');
 // app.use ->  this is middleware
@@ -37,8 +40,12 @@ app.get('/', function(req, res) {
   res.sendFile(path.resolve( __dirname, 'index.html' ));
 });
 
-
-// listen our post, 3000
 app.listen(config.get('port'), function() {
   log.info('Server start running on port ' + config.get('port'));
+});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('Data Base connected!');
 });

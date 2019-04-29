@@ -2,7 +2,6 @@ const getMonth = require('../../helpers/monthSwitcher');
 const dayParser = require('../../helpers/dayParser');
 
 module.exports = (data) => {
-  console.log(data);
   return {
     attributes: {
       class: 'row',
