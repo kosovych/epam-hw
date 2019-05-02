@@ -6,6 +6,7 @@ newPostPopup();
 const Post = require('./modules/Post/index');
 const Home = require('./modules/Home/index');
 const Blog = require('./modules/Blog/index');
+const Mediator = require('./modules/Mediator/index');
 const path = window.location.pathname;
 
 switch (path) {
@@ -19,6 +20,10 @@ switch (path) {
 
   case '/post.html':
     Post();
+    break;
+
+  case '/mediator.html':
+    Mediator();
     break;
 
   default:

@@ -116,6 +116,11 @@ module.exports = (env) => {
         template: 'src/post.html',
         minify: env.NODE_ENV == 'build' ? minifyOption : false,
       }),
+      new HtmlWebpackPlugin({
+        filename: 'mediator.html',
+        template: 'src/mediator.html',
+        minify: env.NODE_ENV == 'build' ? minifyOption : false,
+      }),
       new MiniCssExtractPlugin({
         // filename: 'main.css', dev
         // filename: env.NODE_ENV == 'build' ? 'css/main.css' : 'css/main.css',
