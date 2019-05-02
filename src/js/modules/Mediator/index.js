@@ -15,7 +15,9 @@ const mediator = {
     if (selectedAutors.length > 0) {
       event.stopPropagation();
       console.log(selectedAutors);
-      this.authors.
+      this.authors.map( (author) => {
+        author.hideArticles();
+      });
       selectedAutors.map( (author) => {
         author.showArticles();
       });
@@ -24,8 +26,13 @@ const mediator = {
     return;
   },
 
+  isClickedOnPost(event) {
+    console.log(isClickedOnPost);
+  },
+
   init() {
     document.body.addEventListener('click', this.isClickedOnAuthor.bind(this));
+    document.body.addEventListener('click', this.isClickedOnPost.bind(this));
   },
 };
 
@@ -58,12 +65,21 @@ class Storage {
 }
 
 class Author {
-  constructor($template) {
+  constructor($template, author) {
     this.$template = $template;
+    this.name = author;
+    this.posts = renderAuthorsPosts(storage.getPostsByAuthor(this.name));
+
+    $template.append(this.posts);
+    this.posts.hide();
   }
 
   showArticles() {
-    console.log('showArticles');
+    this.posts.show(450);
+  }
+
+  hideArticles() {
+    this.posts.hide(450);
   }
 }
 
@@ -84,9 +100,9 @@ module.exports = () => {
         mediator.storage = storage;
         storage.getAllAuthors().map( (author) => {
           mediator.authors
-              .push(new Author(renderAuthors('author-tabs', author)));
+              .push(new Author(renderAuthors('author-tabs', author), author));
           mediator.authors
-              .push(new Author(renderAuthors('filter-aside', author)));
+              .push(new Author(renderAuthors('filter-aside', author), author));
         });
         mediator.init();
         console.log(storage);
@@ -105,6 +121,12 @@ function renderAuthors($parent, authorName) {
 };
 
 function renderAuthorsPosts(posts) {
-  let postsUl = $('<ul/>', {'class': 'posts-list'});
-  posts.map( (posts) => {});
-}
+  const postsUl = $('<ul/>', {'class': 'posts-list'});
+  posts.map( (post) => {
+    // eslint-disable-next-line max-len
+    $('<li/>', {'class': 'posts-list__el', 'text': post.title, 'data-id': post.id})
+        .appendTo(postsUl);
+  });
+
+  return postsUl;
+};

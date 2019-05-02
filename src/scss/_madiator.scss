@@ -38,3 +38,16 @@
     @extend .author-tabs__el;
   }
 }
+
+.posts-list {
+  margin-top: 12px;
+  &__el {
+    color: blue;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
