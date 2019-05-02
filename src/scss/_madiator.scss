@@ -1,0 +1,40 @@
+.filter-content {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+
+  &__main {
+    flex-basis: 60%;
+    margin-right: 5%;
+  }
+
+  &__aside {
+    width: 35%;
+  }
+}
+
+.author-tabs {
+  display: flex;
+  justify-content: space-between;
+
+  &__el-wrapper {
+    flex-basis: 24%;
+  }
+
+  &__el {
+    padding: 10px 16px;
+    font-size: 18px;
+    background-color: $solitude;
+    border-radius: 4px;
+  }
+}
+
+.filter-aside {
+  &__el-wrapper {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  &__el {
+    @extend .author-tabs__el;
+  }
+}

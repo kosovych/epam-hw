@@ -1,5 +1,34 @@
 const jqPopup = $().jqPopup;
 
+const mediator = {
+  authors: [],
+  storage: null,
+
+  isClickedOnAuthor(event) {
+    const eventTarget = event.target;
+    let selectedAutors = [];
+    selectedAutors = this.authors.filter( (author) => {
+      // eslint-disable-next-line max-len
+      return author.$template[0].children[0].innerText === eventTarget.innerText;
+    });
+
+    if (selectedAutors.length > 0) {
+      event.stopPropagation();
+      console.log(selectedAutors);
+      this.authors.
+      selectedAutors.map( (author) => {
+        author.showArticles();
+      });
+      return;
+    }
+    return;
+  },
+
+  init() {
+    document.body.addEventListener('click', this.isClickedOnAuthor.bind(this));
+  },
+};
+
 class Storage {
   constructor(data) {
     this.store = data;
@@ -28,6 +57,16 @@ class Storage {
   }
 }
 
+class Author {
+  constructor($template) {
+    this.$template = $template;
+  }
+
+  showArticles() {
+    console.log('showArticles');
+  }
+}
+
 let storage;
 
 module.exports = () => {
@@ -42,10 +81,30 @@ module.exports = () => {
       })
       .then( (data) => {
         storage = new Storage(data);
+        mediator.storage = storage;
+        storage.getAllAuthors().map( (author) => {
+          mediator.authors
+              .push(new Author(renderAuthors('author-tabs', author)));
+          mediator.authors
+              .push(new Author(renderAuthors('filter-aside', author)));
+        });
+        mediator.init();
         console.log(storage);
+        console.log(mediator);
       })
       .catch((err) => {
         console.error(err);
       });
   ;
 };
+
+function renderAuthors($parent, authorName) {
+  return $('<div/>', {'class': `${$parent}__el-wrapper`})
+      .append($('<button/>', {'class': `${$parent}__el`}).text(authorName))
+      .appendTo(`#${$parent}`);
+};
+
+function renderAuthorsPosts(posts) {
+  let postsUl = $('<ul/>', {'class': 'posts-list'});
+  posts.map( (posts) => {});
+}
