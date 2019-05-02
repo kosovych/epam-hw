@@ -2,6 +2,8 @@
   display: flex;
   width: 90%;
   margin: 0 auto;
+  min-height: 50vh;
+  margin-bottom: 24px;
 
   &__main {
     flex-basis: 60%;
@@ -34,6 +36,7 @@
     margin-bottom: 16px;
     text-align: center;
   }
+
   &__el {
     @extend .author-tabs__el;
   }
@@ -41,13 +44,45 @@
 
 .posts-list {
   margin-top: 12px;
+
   &__el {
     color: blue;
     line-height: 1.2;
     margin-bottom: 6px;
     cursor: pointer;
+
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+#author-post {
+  margin-top: 24px;
+}
+
+.posts-list__el {
+  transition: all 0.3s;
+  &.selected {
+    color: tomato;
+  }
+}
+
+.authot-btn {
+  transition: all 0.3s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px 0 blue;
+  }
+  &.selected {
+    background-color: #ccc;
+    box-shadow: 0px 0px 0px 1px rgba($color: #000000, $alpha: .5) inset;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 2px 0 blue,
+                  0px 0px 0px 1px rgba($color: #000000, $alpha: .5) inset;
     }
   }
 }

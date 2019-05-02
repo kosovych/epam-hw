@@ -3,31 +3,56 @@ const jqPopup = $().jqPopup;
 const mediator = {
   authors: [],
   storage: null,
+  openedAutors: [],
 
   isClickedOnAuthor(event) {
     const eventTarget = event.target;
     let selectedAutors = [];
     selectedAutors = this.authors.filter( (author) => {
       // eslint-disable-next-line max-len
-      return author.$template[0].children[0].innerText === eventTarget.innerText;
+      return author.name === eventTarget.innerText
+             &&
+             eventTarget.nodeName.toLowerCase() === 'button';
     });
 
-    if (selectedAutors.length > 0) {
-      event.stopPropagation();
-      console.log(selectedAutors);
-      this.authors.map( (author) => {
-        author.hideArticles();
-      });
-      selectedAutors.map( (author) => {
-        author.showArticles();
-      });
+    if (selectedAutors.length <= 0) {
       return;
     }
+
+    event.stopPropagation();
+    this.authors.map( (author) => {
+      author.hideArticles();
+      $('.authot-btn.selected').removeClass('selected');
+      event.target.classList.add('selected');
+    });
+
+    if (selectedAutors.includes(mediator.openedAutors[0])) {
+      mediator.openedAutors = [];
+      return;
+    }
+    selectedAutors.map( (author) => {
+      author.showArticles();
+      mediator.openedAutors = [];
+      mediator.openedAutors.push(author);
+    });
     return;
   },
 
   isClickedOnPost(event) {
-    console.log(isClickedOnPost);
+    if (!event.target.classList.contains('posts-list__el')) {
+      return;
+    }
+
+    $('.posts-list__el.selected').removeClass('selected');
+    event.target.classList.add('selected');
+
+    event.stopPropagation();
+
+    $('#author-post').fadeOut(150, function() {
+      $(this)
+          .text(storage.getPostById(event.target.dataset.id).text)
+          .fadeIn(150);
+    });
   },
 
   init() {
@@ -105,8 +130,6 @@ module.exports = () => {
               .push(new Author(renderAuthors('filter-aside', author), author));
         });
         mediator.init();
-        console.log(storage);
-        console.log(mediator);
       })
       .catch((err) => {
         console.error(err);
@@ -116,7 +139,8 @@ module.exports = () => {
 
 function renderAuthors($parent, authorName) {
   return $('<div/>', {'class': `${$parent}__el-wrapper`})
-      .append($('<button/>', {'class': `${$parent}__el`}).text(authorName))
+      .append($('<button/>', {'class': `${$parent}__el authot-btn`})
+          .text(authorName))
       .appendTo(`#${$parent}`);
 };
 
