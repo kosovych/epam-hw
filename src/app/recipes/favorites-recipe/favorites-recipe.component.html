@@ -1,0 +1,9 @@
+<h2 class="mt-16 mb-32">Favorites</h2>
+<div class="card-deck" *ngIf="favorites.length > 0">
+  <ng-container *ngFor="let recipe of favorites">
+    <app-recipes-preview
+      [recipe]="recipe"
+      class="card recipe justify-content-between"
+      ></app-recipes-preview>
+  </ng-container>
+</div>

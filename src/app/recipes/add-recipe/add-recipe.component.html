@@ -1,0 +1,97 @@
+<h2 class="mt-16">Add New Pecipe</h2>
+
+<div class="container">
+  <form (submit)="submitHandled($event)">
+    <div class="form-group">
+      <label>Title</label>
+      <input [(ngModel)]="recipe.title" type="text" name="title" class="form-control" placeholder="Title">
+      <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea
+        [(ngModel)]="recipe.description"
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        name="description"
+        rows="6"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Photo URL</label>
+      <input
+        [(ngModel)]="recipe.photoUrl"
+        name="photoUrl"
+        type="url" class="form-control"
+        placeholder="Photo URL"
+      >
+    </div>
+
+    <div class="form-group">
+      <span class="mr-16 dib">Ingtidients</span>
+      <button
+        class="btn btn-success"
+        type="button"
+        (click)="toogleIngtidientsList()"
+      >
+      <fa name="plus" *ngIf="!ingtidientsListShow"></fa>
+      <fa name="minus" *ngIf="ingtidientsListShow"></fa>
+      </button>
+    </div>
+
+    <ng-container *ngIf="ingtidientsListShow">
+      <div class="form-inline mb-16">
+        <div class="d-flex align-items-baseline w-100">
+          <input type="text"
+            class="form-control flex-grow-1 mr-16"
+            #ingtidientInput
+            placeholder="Ingtidient"
+            (keydown.enter)="addIngtidient(ingtidientInput)"
+          >
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="addIngtidient(ingtidientInput)"
+          >Add</button>
+        </div>
+      </div>
+    </ng-container>
+
+    <ul class="list-group mb-16" *ngIf="ingtidients.length > 0 && ingtidientsListShow">
+      <li
+        class="list-group-item d-flex justify-content-between"
+        *ngFor="let ingtidient of ingtidients"
+      >
+        <span>{{ ingtidient }}</span>
+        <button (click)="rmIngtidient(ingtidient)">
+          <fa name="times" style="color: red"></fa>
+        </button>
+      </li>
+    </ul>
+
+    <div class="form-group">
+        <label>Instructions</label>
+        <textarea
+          class="form-control"
+          rows="5"
+          [(ngModel)]="recipe.instructions"
+          name="instructions"
+          ></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label>Category</label>
+        <select class="form-control"
+          [(ngModel)]="recipe.categoryId"
+          name="categoryId">
+          <ng-container *ngFor="let category of categories">
+            <option [value]="category">{{ category | decodeCategory }}</option>
+          </ng-container>
+      </select>
+    </div>
+
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

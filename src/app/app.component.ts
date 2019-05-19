@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipes';
+  route = window.location.pathname;
+
+  changedRoute(route) {
+    this.route = route;
+    window.history.pushState(null, null, route);
+  }
 }

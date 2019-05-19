@@ -1,0 +1,42 @@
+<img [src]="recipe.photoUrl" class="card-img-top" [alt]="recipe.title">
+
+<div class="card-body">
+  <h3 class="recipte__title card-title">
+    <a href="#">
+      {{recipe.title}}
+    </a>
+  </h3>
+
+  <p class="recipte__desc card-text">
+    {{recipe.description}}
+  </p>
+
+  <div class="recipte__likes">
+    <span class="icon-wrapper">
+      <fa name="heart" [ngStyle]="{'color': !!recipe.likes ? 'tomato' : 'white'}"></fa>
+    </span>
+    <span class="recipte__likes-val">{{ recipe.likes }}</span>
+  </div>
+
+</div>
+<div class="recipte__actions d-flex justify-content-between card-footer">
+  <div>
+    <button class="button button-default">
+      <fa name="thumbs-up"></fa>
+    </button>
+    <button class="button button-default">
+      <fa name="thumbs-down"></fa>
+    </button>
+  </div>
+  <div>
+    <button class="button button-default">
+      <fa name="eye"></fa>
+    </button>
+    <button class="button button-default">
+      <fa name="edit"></fa>
+    </button>
+    <button class="button button-default">
+      <fa name="trash"></fa>
+    </button>
+  </div>
+</div>
