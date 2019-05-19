@@ -86,16 +86,68 @@
 // });
 
 
-import {fun} from './test';
+// import {fun} from './test';
 
-describe('fun shoud return 25', function() {
-  let n1, n2, n3;
-  beforeEach(function() {
-    n1 = 9;
-    n2 = 3;
-  });
+// describe('fun shoud return 25', function() {
+//   let n1, n2, n3;
+//   beforeEach(function() {
+//     n1 = 9;
+//     n2 = 3;
+//   });
   
-  it('should return 25 if n1 > n2', function() {
+//   it('should return 25 if n1 > n2', function() {
 
+//   })
+// })
+
+import ToDo from './test';
+
+describe('ToDo', function() {
+  let todo;
+  let item1;
+  let item2;
+
+  beforeEach( function() {
+    todo = new ToDo();
+
+    item1 = {
+      id: "1",
+      title: "title 1",
+      complete: false
+    };
+
+    item2 = {
+      id: "2",
+      title: "title 2",
+      complete: false
+    };
+  });
+
+  it('shoud add item', () => {
+    let todo = new ToDo();
+    let item1 = {
+      id: "1",
+      title: "title 1",
+      complete: false
+    };
+
+    const done = todo.addTodo(item1);
+    expect(todo.getItems().length).toBe(1)
+  });
+
+  it('shoud rm item', () => {
+    todo.addTodo(item1);
+    todo.addTodo(item2);
+
+    todo.delete(2);
+    expect(todo.getItems()[todo.getItems().length - 1].id).toBe(1);
+  });
+
+  it('shoud mark complete', () => {
+    todo.addTodo(item1);
+    todo.addTodo(item2);
+    todo.complete(2);
+
+    expect(todo.getItems().find( item => item.id === 2 ).complete).toBe(true)
   })
 })
