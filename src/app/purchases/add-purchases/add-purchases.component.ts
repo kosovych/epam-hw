@@ -7,6 +7,7 @@ import { PurchasesService } from '../../shared/services/purchases.service'
   styleUrls: ['./add-purchases.component.scss']
 })
 export class AddPurchasesComponent implements OnInit {
+  public purchase = '';
 
   constructor(
     private purchasesService: PurchasesService,
@@ -15,8 +16,9 @@ export class AddPurchasesComponent implements OnInit {
   ngOnInit() {
   }
 
-  addToPurchases(event, input) {
+  addToPurchases(event, purchaseInput) {
     event.preventDefault();
-    this.purchasesService.add(input.value);
+    this.purchasesService.add(this.purchase);
+    this.purchase = '';
   }
 }

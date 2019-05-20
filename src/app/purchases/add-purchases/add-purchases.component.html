@@ -2,11 +2,11 @@
   Purchases
 </h2>
 
-<form class="form-inline w-100" (submit)="addToPurchases($event, ingredientInput)">
+<form class="form-inline w-100" (submit)="addToPurchases($event)">
   <div class="form-group w-50">
-    <input #ingredientInput type="text" class="form-control w-100" placeholder="Ingredient">
+    <input [(ngModel)]="purchase" type="text" name="purchase" class="form-control w-100" placeholder="Ingredient">
   </div>
-  <button type="submit" class="btn btn-primary ml-8" (click)="addToPurchases($event, ingredientInput)">
+  <button [disabled]="purchase === ''" type="submit" class="btn btn-primary ml-8" (click)="addToPurchases($event)">
     <fa name="shopping-cart"></fa>
     Add To Purchases
   </button>
