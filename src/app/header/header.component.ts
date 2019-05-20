@@ -8,6 +8,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Output() onChangedRoute = new EventEmitter<any>();
+  public activeRout = '';
 
   constructor() { }
 
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
   setRoute(event, route) {
     event.preventDefault();
     this.onChangedRoute.emit(route);
+    this.activeRout = route;
   }
 
 }
