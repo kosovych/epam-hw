@@ -8,7 +8,8 @@ import { PurchasesService } from '../../shared/services/purchases.service';
   styleUrls: ['./purchases-list.component.scss']
 })
 export class PurchasesListComponent implements OnInit {
-  @Input() purchases: string[];
+  // @Input() purchases: string[];
+  public purchases;
 
   constructor(
     private purchasesService: PurchasesService,
@@ -16,7 +17,10 @@ export class PurchasesListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.purchases = this.purchasesService.getAll()
   }
+
+
 
   rmPurchase(purchase: string) {
     this.purchases = this.purchasesService.remove(purchase);

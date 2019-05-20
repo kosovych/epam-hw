@@ -13,7 +13,7 @@ export class PurchasesService {
   }
 
   add(purchase) {
-    return this.purchases = [...this.purchases, purchase];
+    this.purchases.push(purchase);
   }
 
   remove(purchase) {
