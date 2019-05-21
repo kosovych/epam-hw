@@ -10,6 +10,8 @@ import { DecodeCategory } from "../shared/pipes/decode-category.pipe"
 import { RecipesPreviewComponent } from './recipes-list/recipes-preview/recipes-preview.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { FavoritesRecipeComponent } from './favorites-recipe/favorites-recipe.component';
+import { BoxShadowDirective } from '../shared/directives/box-shadow.directive';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { FavoritesRecipeComponent } from './favorites-recipe/favorites-recipe.co
     DecodeCategory,
     AddRecipeComponent,
     FavoritesRecipeComponent,
+    BoxShadowDirective
   ],
   imports: [
     CommonModule,
