@@ -16,4 +16,9 @@ export class RecipesListComponent implements OnInit {
   ngOnInit() {
     this.recipes = this.reciptesService.getAllReciptes();
   }
+
+  removePecipe (id: string) {
+    this.reciptesService.remove(id);
+    this.recipes = this.reciptesService.getAllReciptes();
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import Recipe from '../../../shared/interfaces/recipe.interface'
 
 @Component({
@@ -8,10 +8,14 @@ import Recipe from '../../../shared/interfaces/recipe.interface'
 })
 export class RecipesPreviewComponent implements OnInit {
   @Input() recipe: Recipe;
+  @Output() onRemovePecipe = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onRemovePecipeHandler(id:string) {
+    this.onRemovePecipe.emit(id)
+  }
 }

@@ -16,7 +16,7 @@ export class AddPurchasesComponent implements OnInit {
   ngOnInit() {
   }
 
-  addToPurchases(event, purchaseInput) {
+  addToPurchases(event) {
     event.preventDefault();
     this.purchasesService.add(this.purchase);
     this.purchase = '';

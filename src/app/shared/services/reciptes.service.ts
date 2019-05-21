@@ -23,4 +23,8 @@ export class ReciptesService {
     this.recipes.push(recipe);
   }
 
+  remove(title) {
+    return this.recipes = this.recipes.filter( recipes => recipes.title !== title);
+  }
+
 }

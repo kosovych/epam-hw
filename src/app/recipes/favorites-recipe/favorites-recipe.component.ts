@@ -17,13 +17,6 @@ export class FavoritesRecipeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // MOCK DATA
-    this.favoriteService.add(
-      this.reciptesService.getAllReciptes()[0]
-    );
-    this.favoriteService.add(
-      this.reciptesService.getAllReciptes()[2]
-    );
     this.favorites = this.favoriteService.getAll();
   }
 
