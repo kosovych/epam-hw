@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderModule } from './header/header.module';
+import { CoreModule } from './core/core.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PurchasesModule } from './purchases/purchases.module';
@@ -16,10 +17,11 @@ import { PurchasesModule } from './purchases/purchases.module';
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    HeaderModule,
     RecipesModule,
     PurchasesModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

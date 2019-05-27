@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { RecipesComponent } from './recipes.component';
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { RecipeComponent } from './recipe/recipe.component';
@@ -27,7 +28,8 @@ import { BoxShadowDirective } from '../shared/directives/box-shadow.directive';
   imports: [
     CommonModule,
     AngularFontAwesomeModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
    
   ],
   exports: [

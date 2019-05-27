@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReciptesService } from '../../shared/services/reciptes.service';
-import Pecipe from '../../shared/interfaces/recipe.interface';
+import Recipe from '../../shared/interfaces/recipe.interface';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recipe',
@@ -8,15 +9,20 @@ import Pecipe from '../../shared/interfaces/recipe.interface';
   styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent implements OnInit {
-  public recipte: Pecipe
+  public recipte: Recipe;
 
   constructor(
-    public reciptesService: ReciptesService
+    public reciptesService: ReciptesService,
+    private route: ActivatedRoute,
   ) {
-    this.recipte = reciptesService.getAllReciptes()[0];
+  }
+  
+  ngOnInit() {
+    this.recipte = this.reciptesService.getRecipeBuyId(this.getRecipeId())
   }
 
-  ngOnInit() {
+  getRecipeId(): string {
+    return this.route.snapshot.paramMap.get('id');
   }
 
 }

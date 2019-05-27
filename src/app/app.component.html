@@ -1,20 +1,5 @@
-<app-header (onChangedRoute)="changedRoute($event)"></app-header>
+<app-header></app-header>
 
 <div class="container-fliud">
-
-  <ng-container *ngIf="route === '/'">
-    <div class="mt-16">
-      <button type="button" class="btn btn-success" (click)="changedRoute('/add-recipe')">Add Recipe</button>
-    </div>
-    <app-recipes-list class="card-deck"></app-recipes-list>
-  </ng-container>
-
-  <app-recipe *ngIf="route === 'TODO'"></app-recipe>
-
-  <app-add-recipe *ngIf="route === '/add-recipe'"></app-add-recipe>
-
-  <app-favorites-recipe *ngIf="route === '/favorites'"></app-favorites-recipe>
-
-  <app-purchases  *ngIf="route === '/purchases'"></app-purchases>
-
+  <router-outlet></router-outlet>
 </div>

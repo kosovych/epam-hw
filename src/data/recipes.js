@@ -1,5 +1,6 @@
 const recipes = [
   {
+    id: '468386c0-5e17-4493-999e-48863f8f5c58',
     title: 'Sicilian Roasted Chicken',
     description: 'Chicken pieces seasoned with paprika, garlic powder, and oregano are roasted until juicy and tender in this simple Sicilian-inspired recipe.',
     photoUrl: 'http://images.media-allrecipes.com/userphotos/560x315/3922864.jpg',
@@ -9,6 +10,7 @@ const recipes = [
     likes: 1
   },
   {
+    id: 'd246595d-f85b-49ef-a00f-4ee79bba5534',
     title: 'Tequila-Lime Pork Tenderloin',
     description: 'A wonderful overnight marinade gives your pork tenderloin a wonderful lime-grilled flavor. You can also grill one tenderloin and freeze the other for future use.',
     photoUrl: 'http://images.media-allrecipes.com/userphotos/250x250/880924.jpg',
@@ -18,6 +20,7 @@ const recipes = [
     likes: 0
   },
   {
+    id: '72b51e10-3b9d-41f0-b77e-a809bf1083c8',
     title: 'Chicken Parmesan',
     description: 'A classic Italian dish prepared with tomato sauce and mozzarella, with a few additions by Chef John. Sure to impress your friends and family!',
     photoUrl: 'http://images.media-allrecipes.com/userphotos/250x250/1036363.jpg',
@@ -35,6 +38,7 @@ const recipes = [
     likes: 1
   },
   {
+    id: 'bfba020c-435f-4090-88b7-e36bd81c113b',
     title: 'Incredibly Delicious Italian Cream Cake',
     description: 'This tender coconut cake is made with buttermilk, topped with a cream cheese coconut frosting and chopped nuts.',
     photoUrl: 'http://images.media-allrecipes.com/userphotos/250x250/2556678.jpg',
@@ -47,6 +51,7 @@ const recipes = [
     likes: 0
   },
   {
+    id: '2a904195-0b24-422b-8548-02c4fba574b1',
     title: 'Smoky Black Bean Burgers',
     description: 'Black beans, flax meal, and liquid smoke make these veggie burgers a flavorful substitute for hamburgers on the grill. Serve on buns with your favorite condiments.',
     photoUrl: 'http://images.media-allrecipes.com/userphotos/250x250/4025318.jpg',
@@ -58,6 +63,7 @@ const recipes = [
     likes: 0
   },
   {
+    id: '8341c64c-ef55-4a1a-971c-e10ecf94060e',
     title: 'Texas Boiled Beer Shrimp',
     description: 'Quick and easy recipe for shrimp cooked in crab boil-seasoned light beer.',
     photoUrl: 'http://images.media-allrecipes.com/userphotos/250x250/1068356.jpg',
@@ -67,6 +73,7 @@ const recipes = [
     likes: 0
   },
   {
+    id: '8d885879-29e4-4c59-ae41-8bfbb22f4bbd',
     title: 'Slow Cooker Chicken Taco Soup',
     description: 'A hearty combination of beans, corn, tomatoes, and taco seasonings, slow cooked with shredded chicken. Top each bowl with Cheddar cheese, sour cream, and crushed tortilla chips. Made mostly of canned ingredients, this tasty soup lets the slow cooker do the work so you do not have to!',
     photoUrl: 'http://images.media-allrecipes.com/userphotos/250x250/3706561.jpg',
@@ -77,6 +84,7 @@ const recipes = [
     likes: 0
   },
   {
+    id: '40a27f35-9c2a-4520-a787-0c81a50ab38b',
     title: 'Easy Chocolate Chip Cookie Dough Cheesecake',
     description: 'A cheesecake mixture spread on a base of chocolate chip cookie dough and topped with pieces of cookie dough bakes up into this easy dessert.',
     photoUrl: 'http://images.media-allrecipes.com/userphotos/250x250/4483419.jpg',
@@ -89,6 +97,7 @@ const recipes = [
     likes: 0
   },
   {
+    id: 'b859b292-7e95-4279-8546-5eef11fa205f',
     title: 'Sandy Homemade Broccoli and Cheddar Soup',
     description: 'Serve fresh broccoli and Cheddar soup in under an hour! This quick recipe is easily adaptable to suit your tastes.',
     photoUrl: 'http://images.media-allrecipes.com/userphotos/250x250/4539521.jpg',
@@ -100,6 +109,7 @@ const recipes = [
     likes: 0
   },
   {
+    id: '71a90345-3141-4e25-9d3d-4c52cac65351',
     title: 'Skillet Breakfast Pizza',
     description: 'Hot, crispy pizza dough topped with ricotta, bacon, and spinach is a unique choice for a savory breakfast cooked in a cast iron skillet.',
     photoUrl: 'http://images.media-allrecipes.com/userphotos/250x250/4579704.jpg',

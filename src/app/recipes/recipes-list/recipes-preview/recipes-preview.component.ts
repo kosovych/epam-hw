@@ -8,14 +8,14 @@ import Recipe from '../../../shared/interfaces/recipe.interface'
 })
 export class RecipesPreviewComponent implements OnInit {
   @Input() recipe: Recipe;
-  @Output() onRemovePecipe = new EventEmitter<any>();
+  @Output() onRemoveRecipe = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onRemovePecipeHandler(id:string) {
-    this.onRemovePecipe.emit(id)
+  onRemoveRecipeHandler(id:string) {
+    this.onRemoveRecipe.emit(id)
   }
 }
