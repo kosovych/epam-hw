@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ReciptesService } from '../../shared/services/reciptes.service';
 import { v4 as uuid } from 'uuid';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, Event } from '@angular/router';
 import Recipe from '../../shared/interfaces/recipe.interface';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-recipe',
@@ -32,7 +31,9 @@ export class AddRecipeComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
   ) {
-    
+    this.router.events.subscribe( (event: Event) => {
+      console.log(event);
+    })
   }
   
   ngOnInit() {

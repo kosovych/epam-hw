@@ -18,7 +18,7 @@ export class RecipeComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.recipte = this.reciptesService.getRecipeBuyId(this.getRecipeId())
+    this.recipte = this.reciptesService.getRecipeBuyId(this.getRecipeId());
   }
 
   getRecipeId(): string {
