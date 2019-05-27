@@ -35,7 +35,6 @@ export class ReciptesService {
   editRecipe(_recipe: Recipe) :string {
     let recipeIndex = this.recipes.indexOf(this.getRecipeBuyId(_recipe.id));
     this.recipes[recipeIndex] = _recipe;
-    console.log(this.recipes[recipeIndex]);
     return _recipe.id;
   }
 }

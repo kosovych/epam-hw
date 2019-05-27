@@ -37,7 +37,6 @@ export class AddRecipeComponent implements OnInit {
   
   ngOnInit() {
     this.categories = this.reciptesService.getAllCategories();
-    console.log(this.route);
     this.id = this.route.snapshot.paramMap.get('id');
     if(this.id) {
       this.isEdit = true;
@@ -45,15 +44,13 @@ export class AddRecipeComponent implements OnInit {
     } else {
       this.isEdit = false;
     }
-
-    console.log(this.recipe);
   }
 
   addIngtidient(input) {
     if(!input.value) {
       return
     }
-    this.ingtidients = [...this.ingtidients, input.value];
+    this.recipe.ingredients.push(input.value);
     input.value = '';
     input.focus();
   }
@@ -74,14 +71,13 @@ export class AddRecipeComponent implements OnInit {
       this.reciptesService.editRecipe(this.recipe);
       this.router.navigate([`/recipes/${this.id}`]);
     } else {
-      this.reciptesService.add({...data, id: uuid()});
+      let _id = uuid();
+      this.reciptesService.add({...data, id: _id});
+      this.router.navigate([`/recipes/${_id}`]);
     }
   }
 
   rmIngtidient(val) {
-    let newIngtidients = this.ingtidients.filter( ingtidients => ingtidients !== val );
-    this.ingtidients.filter( ingtidients => ingtidients !== val );
-    this.ingtidients = newIngtidients;
+    this.recipe.ingredients = this.recipe.ingredients.filter( ingtidients => ingtidients !== val );
   }
-
 }

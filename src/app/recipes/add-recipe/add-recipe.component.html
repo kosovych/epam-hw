@@ -65,7 +65,7 @@
         *ngFor="let ingtidient of recipe.ingredients"
       >
         <span>{{ ingtidient }}</span>
-        <button (click)="rmIngtidient(ingtidient)">
+        <button (click)="rmIngtidient(ingtidient)" type="button">
           <fa name="times" style="color: red"></fa>
         </button>
       </li>
