@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RecipesComponent } from './recipes/recipes.component'
-import { RecipeComponent } from './recipes/recipe/recipe.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { FavoritesRecipeComponent } from './recipes/favorites-recipe/favorites-recipe.component';
-import { AddRecipeComponent } from './recipes/add-recipe/add-recipe.component';
+import { RecipeFormComponent } from './recipes/recipe-form/recipe-form.component';
 import { PurchasesComponent } from './purchases/purchases.component';
 import { RecipesListResolve } from './resolvers/recipes-list.resolver';
 
 const routes: Routes = [
   { path: 'recipes', component: RecipesComponent, resolve: {recipes: RecipesListResolve} },
-  { path: 'recipes/:id', component: RecipeComponent, },
+  { path: 'recipes/:id', component: RecipeDetailComponent},
   { path: 'favorites', component: FavoritesRecipeComponent },
-  { path: 'edit/:id', component: AddRecipeComponent },
+  { path: 'edit/:id', component: RecipeFormComponent },
   { path: 'purchases', component: PurchasesComponent },
-  { path: 'add-recipe', component: AddRecipeComponent },
+  { path: 'add-recipe', component: RecipeFormComponent },
   { path: '', redirectTo: '/recipes',  pathMatch: 'full' },
 ]
 

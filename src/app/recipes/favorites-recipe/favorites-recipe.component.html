@@ -1,5 +1,5 @@
 <h2 class="mt-16 mb-32">Favorites</h2>
-<div class="card-deck" *ngIf="favorites.length > 0">
+<div class="card-deck" *ngIf="favorites.length">
   <ng-container *ngFor="let recipe of favorites">
     <app-recipes-preview
       boxShadow

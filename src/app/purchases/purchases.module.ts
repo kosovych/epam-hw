@@ -5,16 +5,19 @@ import { PurchasesComponent } from './purchases.component';
 import { AddPurchasesComponent } from './add-purchases/add-purchases.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PurchasesListComponent } from './purchases-list/purchases-list.component';
+import { PurchasesItemComponent } from './purchases-list/purchases-item/purchases-item.component';
 
 @NgModule({
-  declarations: [PurchasesComponent, AddPurchasesComponent, PurchasesListComponent],
+  declarations: [PurchasesComponent, AddPurchasesComponent, PurchasesListComponent, PurchasesItemComponent],
   imports: [
     CommonModule,
     AngularFontAwesomeModule,
     FormsModule,
   ],
   exports: [
-    PurchasesComponent
+    PurchasesComponent,
+    PurchasesListComponent,
+    PurchasesItemComponent
   ]
 })
 export class PurchasesModule { }

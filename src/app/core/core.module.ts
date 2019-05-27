@@ -1,18 +1,25 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
+import { FavoriteService } from './services/favorite.service';
+import { PurchasesService } from './services/purchases.service';
+import { ReciptesService } from './services/reciptes.service';
 
 @NgModule({
-  declarations: [
-    HeaderComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,
-    RouterModule
   ],
-  exports: [
-    HeaderComponent,
-  ]
 })
-export class CoreModule { }
+
+ export class CoreModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: CoreModule,
+      providers: [
+        FavoriteService,
+        PurchasesService,
+        ReciptesService,
+      ]
+    };
+  }
+}

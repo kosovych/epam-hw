@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FavoriteService } from '../../shared/services/favorite.service';
-import Recipe from '../../shared/interfaces/recipe.interface';
-import { ReciptesService } from '../../shared/services/reciptes.service';
+import { FavoriteService } from '../../core/services/favorite.service';
+import Recipe from '../../core/interfaces/recipe.interface';
 
 @Component({
   selector: 'app-favorites-recipe',
@@ -13,7 +12,6 @@ export class FavoritesRecipeComponent implements OnInit {
 
   constructor(
     private favoriteService: FavoriteService,
-    private reciptesService :ReciptesService,
   ) { }
 
   ngOnInit() {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PurchasesService } from '../shared/services/purchases.service';
+import { PurchasesService } from '../core/services/purchases.service';
 
 @Component({
   selector: 'app-purchases',
@@ -9,7 +9,7 @@ import { PurchasesService } from '../shared/services/purchases.service';
 export class PurchasesComponent implements OnInit {
   purchases = [];
   constructor(
-    public purchasesService: PurchasesService
+    public purchasesService: PurchasesService,
   ) { }
 
   ngOnInit() {

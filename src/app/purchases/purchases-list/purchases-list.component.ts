@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PurchasesService } from '../../shared/services/purchases.service';
+import { PurchasesService } from '../../core/services/purchases.service';
 
 
 @Component({
@@ -8,7 +8,6 @@ import { PurchasesService } from '../../shared/services/purchases.service';
   styleUrls: ['./purchases-list.component.scss']
 })
 export class PurchasesListComponent implements OnInit {
-  // @Input() purchases: string[];
   public purchases;
 
   constructor(
@@ -22,7 +21,7 @@ export class PurchasesListComponent implements OnInit {
 
 
 
-  rmPurchase(purchase: string) {
+  rmPurchase(purchase: string): void {
     this.purchases = this.purchasesService.remove(purchase);
   }
 

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ReciptesService } from '../../shared/services/reciptes.service';
+import { ReciptesService } from '../../core/services/reciptes.service';
 import { v4 as uuid } from 'uuid';
 import { ActivatedRoute, Router, Event } from '@angular/router';
-import Recipe from '../../shared/interfaces/recipe.interface';
+import Recipe from '../../core/interfaces/recipe.interface';
 
 @Component({
-  selector: 'app-add-recipe',
-  templateUrl: './add-recipe.component.html',
-  styleUrls: ['./add-recipe.component.scss']
+  selector: 'app-recipe-form',
+  templateUrl: './recipe-form.component.html',
+  styleUrls: ['./recipe-form.component.scss']
 })
-export class AddRecipeComponent implements OnInit {
+export class RecipeFormComponent implements OnInit {
   public ingtidients: string[] = [];
   public ingtidientsListShow = false;
   private isEdit: boolean;
