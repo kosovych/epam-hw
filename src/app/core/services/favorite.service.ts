@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import Recipe from '../interfaces/recipe.interface';
-import { ReciptesService } from './reciptes.service'
+import { ReciptesService } from '../../core/services/reciptes.service';
 
 @Injectable({
   providedIn: 'root',
@@ -16,15 +16,15 @@ export class FavoriteService {
     this.add(reciptesService.getAllReciptes()[1])
   }
 
-  getAll() {
+  getAll(): Recipe[] {
     return this.favorites;
   }
 
   add(recipe: Recipe) {
-    return this.favorites = [...this.favorites, recipe];
+    this.favorites.push(recipe);
   }
 
-  remove(recipe: Recipe) {
+  remove(recipe: Recipe): Recipe[] {
     let result = this.favorites.filter( _recipe =>  _recipe.title !== recipe.title);
     return this.favorites = result;
   }

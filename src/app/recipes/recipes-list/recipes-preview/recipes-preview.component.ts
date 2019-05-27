@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import Recipe from '../../../shared/interfaces/recipe.interface'
+import Recipe from '../../../core/interfaces/recipe.interface';
 
 @Component({
   selector: 'app-recipes-preview',
@@ -15,7 +15,7 @@ export class RecipesPreviewComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRemovePecipeHandler(id:string) {
+  onRemovePecipeHandler(id:string): void {
     this.onRemovePecipe.emit(id)
   }
 }

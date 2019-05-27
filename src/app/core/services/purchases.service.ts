@@ -8,15 +8,15 @@ export class PurchasesService {
   constructor() {
   }
 
-  getAll() {
+  getAll(): string[] {
     return this.purchases;
   }
 
-  add(purchase) {
+  add(purchase: string): void {
     this.purchases.push(purchase);
   }
 
-  remove(purchase) {
+  remove(purchase: string): string[] {
     let result = this.purchases.filter( _purchase =>  _purchase !== purchase);
     return this.purchases = result;
   }

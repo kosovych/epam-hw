@@ -1,4 +1,4 @@
-export default interface Pecipe {
+export default interface Recipe {
   title: string,
   description: string,
   photoUrl: string,

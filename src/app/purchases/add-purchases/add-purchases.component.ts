@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PurchasesService } from '../../shared/services/purchases.service'
+import { PurchasesService } from '../../core/services/purchases.service'
 
 @Component({
   selector: 'app-add-purchases',
@@ -16,7 +16,7 @@ export class AddPurchasesComponent implements OnInit {
   ngOnInit() {
   }
 
-  addToPurchases(event) {
+  addToPurchases(event): void {
     event.preventDefault();
     this.purchasesService.add(this.purchase);
     this.purchase = '';

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import Recipe from '../interfaces/recipe.interface';
 import recipes from '../../../data/recipes.js';
 
 @Injectable({
@@ -11,7 +12,7 @@ export class ReciptesService {
   constructor() {
   }
 
-  getAllReciptes() {
+  getAllReciptes(): Recipe[] {
     return this.recipes;
   }
 
@@ -19,11 +20,11 @@ export class ReciptesService {
     return this.category;
   }
 
-  add(recipe) {
+  add(recipe: Recipe): void {
     this.recipes.push(recipe);
   }
 
-  remove(title) {
+  remove(title: string): Recipe[] {
     return this.recipes = this.recipes.filter( recipes => recipes.title !== title);
   }
 

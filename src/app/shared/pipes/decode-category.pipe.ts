@@ -7,7 +7,7 @@ import {
   name: 'decodeCategory'
 })
 export class DecodeCategory implements PipeTransform {
-  transform(value: string, exponent: string): string {
+  transform(value: string): string {
     let result: string
     switch (value) {
       case "-L4N7j92qDMvS8BbgE5u":

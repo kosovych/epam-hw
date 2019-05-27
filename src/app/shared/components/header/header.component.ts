@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  setRoute(event, route) {
+  setRoute(event, route): void {
     event.preventDefault();
     this.onChangedRoute.emit(route);
     this.activeRout = route;

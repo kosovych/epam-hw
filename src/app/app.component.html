@@ -9,9 +9,9 @@
     <app-recipes-list class="card-deck"></app-recipes-list>
   </ng-container>
 
-  <app-recipe *ngIf="route === 'TODO'"></app-recipe>
+  <app-recipe-detail *ngIf="route === 'TODO'"></app-recipe-detail>
 
-  <app-add-recipe *ngIf="route === '/add-recipe'"></app-add-recipe>
+  <app-recipe-form *ngIf="route === '/add-recipe'"></app-recipe-form>
 
   <app-favorites-recipe *ngIf="route === '/favorites'"></app-favorites-recipe>
 

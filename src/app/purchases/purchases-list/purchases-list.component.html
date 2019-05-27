@@ -2,11 +2,10 @@
   Purchases List
 </h2>
 
-<ul class="list-group" *ngIf="purchases.length > 0">
-  <li class="list-group-item d-flex justify-content-between" *ngFor="let purchase of purchases">
-    <span>{{ purchase }}</span>
-    <button (click)="rmPurchase(purchase)">
-      <fa name="times" style="color: red"></fa>
-    </button>
-  </li>
+<ul class="list-group" *ngIf="purchases.length">
+  <app-purchases-item
+    (onRmPurchase)='rmPurchase(purchase)'
+    *ngFor="let purchase of purchases;"
+    [purchase]="purchase">
+  </app-purchases-item>
 </ul>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ReciptesService } from '../../shared/services/reciptes.service';
+import { ReciptesService } from '../../core/services/reciptes.service';
+import Recipe from '../../core/interfaces/recipe.interface';
 
 @Component({
   selector: 'app-recipes-list',
@@ -7,7 +8,7 @@ import { ReciptesService } from '../../shared/services/reciptes.service';
   styleUrls: ['./recipes-list.component.scss']
 })
 export class RecipesListComponent implements OnInit {
-  public recipes: [];
+  public recipes: Recipe[];
 
   constructor(
     private reciptesService: ReciptesService

@@ -3,40 +3,45 @@
 <div class="container">
   <form (submit)="submitHandled($event)">
     <div class="form-group">
-      <label>Title</label>
-      <input [(ngModel)]="recipe.title" type="text" name="title" class="form-control" placeholder="Title">
+      <label class="label">Title
+        <input [(ngModel)]="recipe.title" type="text" name="title" class="form-control" placeholder="Title">
+      </label>
       <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
 
     <div class="form-group">
-      <label for="exampleFormControlTextarea1">Description</label>
-      <textarea
+      <label class="label">Description
+        <textarea
         [(ngModel)]="recipe.description"
         class="form-control"
         id="exampleFormControlTextarea1"
         name="description"
         rows="6"></textarea>
+      </label>
     </div>
 
     <div class="form-group">
-      <label>Photo URL</label>
-      <input
-        [(ngModel)]="recipe.photoUrl"
-        name="photoUrl"
-        type="url" class="form-control"
-        placeholder="Photo URL"
-      >
+      <label class="label">Photo URL
+        <input
+          [(ngModel)]="recipe.photoUrl"
+          name="photoUrl"
+          type="url" class="form-control"
+          placeholder="Photo URL"
+        >
+      </label>
     </div>
 
     <div class="form-group">
-      <span class="mr-16 dib">Ingtidients</span>
+      <span class="mr-16 dib">Ingredients</span>
       <button
         class="btn btn-success"
         type="button"
         (click)="toogleIngtidientsList()"
       >
-      <fa name="plus" *ngIf="!ingtidientsListShow"></fa>
-      <fa name="minus" *ngIf="ingtidientsListShow"></fa>
+      <fa name="plus" *ngIf="!ingtidientsListShow else minus"></fa>
+      <ng-template #minus>
+        <fa name="minus"></fa>
+      </ng-template>
       </button>
     </div>
 
@@ -58,40 +63,36 @@
       </div>
     </ng-container>
 
-    <ul class="list-group mb-16" *ngIf="ingtidients.length > 0 && ingtidientsListShow">
-      <li
-        class="list-group-item d-flex justify-content-between"
-        *ngFor="let ingtidient of ingtidients"
-      >
-        <span>{{ ingtidient }}</span>
-        <button (click)="rmIngtidient(ingtidient)">
-          <fa name="times" style="color: red"></fa>
-        </button>
-      </li>
+    <ul class="list-group mb-16" *ngIf="ingredients.length && ingtidientsListShow">
+      <app-purchases-item
+        *ngFor="let ingredient of ingredients"
+        [purchase]="ingredient"
+        (onRmPurchase)=rmIngtidient(ingredient)
+        ></app-purchases-item>
     </ul>
 
     <div class="form-group">
-        <label>Instructions</label>
-        <textarea
+        <label class="label">Instructions
+          <textarea
           class="form-control"
           rows="5"
           [(ngModel)]="recipe.instructions"
           name="instructions"
           ></textarea>
+        </label>
         </div>
         
         <div class="form-group">
-          <label>Category</label>
-        <select class="form-control"
-          [(ngModel)]="recipe.categoryId"
-          name="categoryId">
-          <ng-container *ngFor="let category of categories">
-            <option [value]="category">{{ category | decodeCategory }}</option>
-          </ng-container>
-      </select>
+          <label class="label">Category
+            <select class="form-control"
+            [(ngModel)]="recipe.categoryId"
+            name="categoryId">
+            <ng-container *ngFor="let category of categories">
+              <option [value]="category">{{ category | decodeCategory }}</option>
+            </ng-container>
+          </select>
+        </label>
     </div>
-
-  
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
