@@ -20,7 +20,7 @@ export class RecipesListComponent implements OnInit {
     this.route.data.subscribe( data => this.recipes = data.recipes);
   }
 
-  removeRecipe (id: string) {
+  removeRecipe(id: string): void {
     this.reciptesService.remove(id);
     this.recipes = this.reciptesService.getAllReciptes();
   }

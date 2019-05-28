@@ -10,7 +10,7 @@ export class RecipesListResolve implements Resolve<any> {
     private recipe: ReciptesService
   ) {}
 
-  resolve() : any {
+  resolve(): Recipe[] {
     return this.recipe.getAllReciptes()
   }
 }

@@ -28,8 +28,8 @@ export class ReciptesService {
     this.recipes.push(recipe);
   }
 
-  remove(title: string): Recipe[] {
-    return this.recipes = this.recipes.filter( recipes => recipes.title !== title);
+  remove(id: string): Recipe[] {
+    return this.recipes = this.recipes.filter( recipes => recipes.id !== id);
   }
 
   editRecipe(_recipe: Recipe) :string {

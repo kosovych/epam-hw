@@ -20,7 +20,7 @@ export class FavoriteService {
     return this.favorites;
   }
 
-  add(recipe: Recipe) {
+  add(recipe: Recipe): void {
     this.favorites.push(recipe);
   }
 

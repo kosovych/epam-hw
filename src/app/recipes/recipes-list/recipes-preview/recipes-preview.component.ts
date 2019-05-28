@@ -15,7 +15,7 @@ export class RecipesPreviewComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRemovePecipeHandler(id:string): void {
+  onRemoveRecipeHandler(id:string): void {
     this.onRemoveRecipe.emit(id)
   }
 }

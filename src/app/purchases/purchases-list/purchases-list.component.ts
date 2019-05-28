@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PurchasesService } from '../../core/services/purchases.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -12,11 +13,12 @@ export class PurchasesListComponent implements OnInit {
 
   constructor(
     private purchasesService: PurchasesService,
+    private route: ActivatedRoute,
 
   ) { }
 
   ngOnInit() {
-    this.purchases = this.purchasesService.getAll()
+    this.route.data.subscribe( data => this.purchases = data.purchases);
   }
 
 

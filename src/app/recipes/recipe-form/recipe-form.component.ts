@@ -31,23 +31,20 @@ export class RecipeFormComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
   ) {
-    this.router.events.subscribe( (event: Event) => {
-      console.log(event);
-    })
   }
   
-  ngOnInit() {
+  ngOnInit(): void {
     this.categories = this.reciptesService.getAllCategories();
     this.id = this.route.snapshot.paramMap.get('id');
     if(this.id) {
       this.isEdit = true;
-      this.recipe = {...this.reciptesService.getRecipeBuyId(this.id)};
+      this.route.data.subscribe( data => this.recipe = data.recipe);
     } else {
       this.isEdit = false;
     }
   }
 
-  addIngtidient(input) {
+  addIngtidient(input): void {
     if(!input.value) {
       return
     }
@@ -56,11 +53,11 @@ export class RecipeFormComponent implements OnInit {
     input.focus();
   }
 
-  toogleIngtidientsList() {
+  toogleIngtidientsList(): void {
     this.ingtidientsListShow = !this.ingtidientsListShow;
   }
 
-  submitHandled(event) {
+  submitHandled(event): void {
     event.preventDefault();
     let data = {
       ...this.recipe,
@@ -78,7 +75,7 @@ export class RecipeFormComponent implements OnInit {
     }
   }
 
-  rmIngtidient(val) {
+  rmIngtidient(val): void {
     this.recipe.ingredients = this.recipe.ingredients.filter( ingtidients => ingtidients !== val );
   }
 }
