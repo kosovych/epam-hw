@@ -12,7 +12,7 @@ import { RecipesComponent } from './recipes.component';
 import { RecipesPreviewComponent } from './recipes-list/recipes-preview/recipes-preview.component';
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 import { FavoritesRecipeComponent } from './favorites-recipe/favorites-recipe.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +31,7 @@ import { FavoritesRecipeComponent } from './favorites-recipe/favorites-recipe.co
     CoreModule,
     SharedModule,
     PurchasesModule,
+    ReactiveFormsModule,
   ],
   exports: [
     RecipesListComponent,

@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PurchasesModule } from './purchases/purchases.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PurchasesModule } from './purchases/purchases.module';
     PurchasesModule,
     FormsModule,
     RouterModule,
-    CoreModule
+    CoreModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

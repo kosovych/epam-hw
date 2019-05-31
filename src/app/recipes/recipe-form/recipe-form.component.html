@@ -1,33 +1,53 @@
 <h2 class="mt-16">Add New Recipe</h2>
 
 <div class="container">
-  <form (submit)="submitHandled($event)">
+  <form
+    (ngSubmit)="submitHandled()"
+    [formGroup]="recipeForm"
+  >
     <div class="form-group">
       <label class="label">Title
-        <input [(ngModel)]="recipe.title" type="text" name="title" class="form-control" placeholder="Title">
+        <input
+          formControlName="title"
+          [ngClass]="{'border-red': title.invalid && title.touched}"
+          type="text" name="title" class="form-control" placeholder="Title"
+          >
+          <small
+            class="form-text text-red"
+            *ngIf="title.invalid && (title.dirty || title.touched)"
+          >{{ title.invalid && title.touched && title.dirty ? 'Title must be at least 15 characters long' : 'Title is required'}}</small>
       </label>
-      <!-- <small class="form-text text-muted">We'll never share your email with anyone else.</small> -->
     </div>
 
     <div class="form-group">
       <label class="label">Description
         <textarea
-        [(ngModel)]="recipe.description"
+        formControlName="description"
         class="form-control"
+        [ngClass]="{'border-red': description.invalid && description.touched}"
         id="exampleFormControlTextarea1"
         name="description"
         rows="6"></textarea>
+        <small
+          class="form-text text-red"
+          *ngIf="description.invalid && (description.dirty || description.touched)"
+        >Description is required</small>
       </label>
     </div>
 
     <div class="form-group">
       <label class="label">Photo URL
         <input
-          [(ngModel)]="recipe.photoUrl"
+          formControlName="photoUrl"
           name="photoUrl"
           type="url" class="form-control"
           placeholder="Photo URL"
+          [ngClass]="{'border-red': photoUrl.invalid && photoUrl.touched}"
         >
+        <small
+          class="form-text text-red"
+          *ngIf="photoUrl.invalid && photoUrl.touched"
+        > {{ photoUrl.invalid && photoUrl.touched && photoUrl.dirty ? 'Please enter the valid URL' : 'Photo URL is required'}}</small>
       </label>
     </div>
 
@@ -45,23 +65,31 @@
       </button>
     </div>
 
-    <ng-container *ngIf="ingtidientsListShow">
-      <div class="form-inline mb-16">
+      <form class="form-inline mb-16"
+        *ngIf="ingtidientsListShow"
+        [formGroup]="ingtidientsForm"
+        (ngSubmit)="addIngtidient()"
+      >
         <div class="d-flex align-items-baseline w-100">
           <input type="text"
             class="form-control flex-grow-1 mr-16"
-            #ingtidientInput
             placeholder="Ingtidient"
-            (keydown.enter)="addIngtidient(ingtidientInput)"
+            formControlName="ingtidients"
+            [ngClass]="{'border-red': ingtidients.invalid && ingtidients.touched}"
+            name="ingtidients"
           >
           <button
-            type="button"
+            type="submit"
             class="btn btn-primary"
-            (click)="addIngtidient(ingtidientInput)"
+            [disabled]="ingtidientsForm.invalid"
           >Add</button>
         </div>
-      </div>
-    </ng-container>
+        <small
+        class="form-text text-red"
+        *ngIf="_ingridients.invalid && (_ingridients.dirty || _ingridients.touched)"
+      >
+        {{ _ingridients.invalid && _ingridients.touched && _ingridients.dirty ? 'Ingredients must be at least 3 characters long' : 'Ingredients is required'}}</small>
+      </form>
 
     <ul class="list-group mb-16" *ngIf="recipe.ingredients.length && ingtidientsListShow">
       <app-purchases-item
@@ -74,25 +102,38 @@
     <div class="form-group">
         <label class="label">Instructions
           <textarea
-          class="form-control"
-          rows="5"
-          [(ngModel)]="recipe.instructions"
-          name="instructions"
+            class="form-control"
+            rows="5"
+            formControlName="instructions"
+            name="instructions"
+            [ngClass]="{'border-red': instructions.invalid && instructions.touched}"
           ></textarea>
+          <small
+            class="form-text text-red"
+            *ngIf="instructions.invalid && (instructions.dirty || instructions.touched)"
+          >
+            {{ instructions.invalid && instructions.touched && instructions.dirty ? 'Title must be at least 15 characters long' : 'Title is required'}}</small>
         </label>
         </div>
         
         <div class="form-group">
           <label class="label">Category
             <select class="form-control"
-            [(ngModel)]="recipe.categoryId"
-            name="categoryId">
-            <ng-container *ngFor="let category of categories">
-              <option [value]="category">{{ category | decodeCategory }}</option>
-            </ng-container>
+              formControlName="categoryId"
+              [ngClass]="{'border-red': categoryId.invalid && categoryId.touched}"
+              name="categoryId"
+            >
+            <option
+              *ngFor="let category of categories"
+              [value]="category"
+            >{{ category | decodeCategory }}</option>
           </select>
+          <small
+            class="form-text text-red"
+            *ngIf="categoryId.invalid && (categoryId.dirty || categoryId.touched)"
+          >Category is required</small>
         </label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button [disabled]='recipeForm.invalid' type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
