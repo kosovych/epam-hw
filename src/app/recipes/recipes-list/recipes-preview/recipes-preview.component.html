@@ -21,10 +21,10 @@
 </div>
 <div class="recipte__actions d-flex justify-content-between card-footer">
   <div>
-    <button class="button button-default">
+    <button class="button button-default" (click)="onChangeLikesHeandler('inc')">
       <fa name="thumbs-up"></fa>
     </button>
-    <button class="button button-default">
+    <button class="button button-default" (click)="onChangeLikesHeandler('dec')">
       <fa name="thumbs-down"></fa>
     </button>
   </div>

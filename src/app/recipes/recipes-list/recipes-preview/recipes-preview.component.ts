@@ -9,6 +9,7 @@ import Recipe from '../../../core/interfaces/recipe.interface';
 export class RecipesPreviewComponent implements OnInit {
   @Input() recipe: Recipe;
   @Output() onRemoveRecipe = new EventEmitter<any>();
+  @Output() onChangeLikes = new EventEmitter<any>();
 
   constructor() { }
 
@@ -17,5 +18,9 @@ export class RecipesPreviewComponent implements OnInit {
 
   onRemoveRecipeHandler(id:string): void {
     this.onRemoveRecipe.emit(id)
+  }
+
+  onChangeLikesHeandler(flag) {
+    this.onChangeLikes.emit(flag);
   }
 }

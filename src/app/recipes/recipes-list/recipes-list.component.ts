@@ -24,4 +24,8 @@ export class RecipesListComponent implements OnInit {
     this.reciptesService.remove(id);
     this.recipes = this.reciptesService.getAllReciptes();
   }
+
+  changeLikes(event, id) {
+    console.log(event, id);
+  }
 }

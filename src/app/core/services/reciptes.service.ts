@@ -37,4 +37,13 @@ export class ReciptesService {
     this.recipes[recipeIndex] = _recipe;
     return _recipe.id;
   }
+
+  changeLikes(id, flag) {
+    if(flag !== 'inc' || flag !== 'dec') {
+      return
+    }
+    let recipe =  this.getRecipeBuyId(id);
+    const operator = flag === 'inc' ? 1 : -1;
+    recipe.likes = recipe.likes + operator;
+  }
 }
