@@ -10,10 +10,12 @@ import { ReciptesService } from '../../core/services/reciptes.service';
 })
 export class RecipesListComponent implements OnInit {
   public recipes: Recipe[];
+  private resipeLikesSubject;
 
   constructor(
     private reciptesService: ReciptesService,
     private route: ActivatedRoute,
+    
   ) { }
 
   ngOnInit() {
@@ -23,9 +25,5 @@ export class RecipesListComponent implements OnInit {
   removeRecipe(id: string): void {
     this.reciptesService.remove(id);
     this.recipes = this.reciptesService.getAllReciptes();
-  }
-
-  changeLikes(event, id) {
-    console.log(event, id);
   }
 }

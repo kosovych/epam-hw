@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import Recipe from '../interfaces/recipe.interface';
 import recipes from '../../../data/recipes.js';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -37,13 +38,18 @@ export class ReciptesService {
     this.recipes[recipeIndex] = _recipe;
     return _recipe.id;
   }
+  
+  likesSubject() {
+    const likesSubject$ =  new Subject();
+    return likesSubject$;
+  }
 
-  changeLikes(id, flag) {
-    if(flag !== 'inc' || flag !== 'dec') {
-      return
-    }
-    let recipe =  this.getRecipeBuyId(id);
-    const operator = flag === 'inc' ? 1 : -1;
-    recipe.likes = recipe.likes + operator;
+  changeLikes(recipe) {
+    return flag => {
+      if (recipe.likes === 0 && flag === 'dec') {
+        return
+      }
+      flag === 'inc' ? recipe.likes++ : recipe.likes--
+    };
   }
 }
