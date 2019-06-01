@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { FavoritesRecipeComponent } from './recipes/favorites-recipe/favorites-recipe.component';
+import { FavoritesRecipeComponent } from './favorites-recipe/favorites-recipe.component';
 import { RecipeFormComponent } from './recipes/recipe-form/recipe-form.component';
 import { PurchasesComponent } from './purchases/purchases.component';
 import { RecipesListResolve } from './resolvers/recipes-list.resolver';

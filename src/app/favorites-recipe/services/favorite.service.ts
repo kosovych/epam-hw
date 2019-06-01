@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import Recipe from '../interfaces/recipe.interface';
+import Recipe from '../../core/interfaces/recipe.interface';
 import { ReciptesService } from '../../core/services/reciptes.service';
 
 @Injectable({

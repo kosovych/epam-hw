@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FavoriteService } from '../../core/services/favorite.service';
-import Recipe from '../../core/interfaces/recipe.interface';
+import { FavoriteService } from './services/favorite.service';
+import Recipe from '../core/interfaces/recipe.interface';
 
 @Component({
   selector: 'app-favorites-recipe',

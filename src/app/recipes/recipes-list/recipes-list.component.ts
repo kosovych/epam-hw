@@ -10,7 +10,6 @@ import { ReciptesService } from '../../core/services/reciptes.service';
 })
 export class RecipesListComponent implements OnInit {
   public recipes: Recipe[];
-  private resipeLikesSubject;
 
   constructor(
     private reciptesService: ReciptesService,

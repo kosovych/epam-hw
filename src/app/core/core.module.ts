@@ -1,7 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FavoriteService } from './services/favorite.service';
-import { PurchasesService } from './services/purchases.service';
+import { PurchasesService } from '../purchases/services/purchases.service';
 import { ReciptesService } from './services/reciptes.service';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { ReciptesService } from './services/reciptes.service';
     return {
       ngModule: CoreModule,
       providers: [
-        FavoriteService,
         PurchasesService,
         ReciptesService,
       ]

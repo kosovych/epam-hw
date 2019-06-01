@@ -11,7 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { RecipesComponent } from './recipes.component';
 import { RecipesPreviewComponent } from './recipes-list/recipes-preview/recipes-preview.component';
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
-import { FavoritesRecipeComponent } from './favorites-recipe/favorites-recipe.component';
+import { FavoritesRecipeComponent } from '../favorites-recipe/favorites-recipe.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
