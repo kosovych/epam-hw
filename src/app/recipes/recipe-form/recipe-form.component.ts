@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ReciptesService } from '../../core/services/reciptes.service';
-import { v4 as uuid } from 'uuid';
 import { ActivatedRoute, Router, Event } from '@angular/router';
 import Recipe from '../../core/interfaces/recipe.interface';
 import { FormBuilder, FormControl, Validators, FormGroup } from "@angular/forms";
-import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-form',
@@ -49,7 +47,10 @@ export class RecipeFormComponent implements OnInit {
   
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.categories = this.reciptesService.getAllCategories();
+    this.reciptesService.getAllCategories().subscribe( categories => {
+      this.categories = categories;
+    });
+
     if (this.id) {
       this.isEdit = true;
       this.route.data.subscribe( data => this.recipe = {...data.recipe});
@@ -92,20 +93,15 @@ export class RecipeFormComponent implements OnInit {
 
   submitHandled(): void {
     if (this.recipeForm.invalid) {
-      console.log('invalid');
       return
     }
-    const data = {...this.recipeForm.value, ingredients: this.recipe.ingredients, id: this.id};
+    const data = {...this.recipeForm.value, ingredients: this.recipe.ingredients, likes: this.recipe.likes};
 
     if (this.isEdit) {
-      this.reciptesService.editRecipe(data);
-      this.router.navigate([`/recipes/${this.id}`]);
+      data.id = this.id;
+      this.reciptesService.editRecipe(data).subscribe( res => this.router.navigate([`/recipes/${this.id}`]));
     } else {
-      let _id = uuid();
-      data.id = _id;
-      data.likes = 0;
-      this.reciptesService.add(data);
-      this.router.navigate([`/recipes/${_id}`]);
+      this.reciptesService.add(data).subscribe( id => this.router.navigate([`/recipes/${id}`]) )
     }
   }
 

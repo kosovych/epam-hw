@@ -1,55 +1,47 @@
 import { Injectable } from '@angular/core';
 import Recipe from '../interfaces/recipe.interface';
-import recipes from '../../../data/recipes.js';
-import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Subject, Observable } from 'rxjs';
+import { API_URL } from '../../constans/constans';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ReciptesService {
-  private recipes = recipes;
-  private category = new Set(recipes.map( recipe => recipe.categoryId));
   
-  constructor() {
+  constructor(
+    private http: HttpClient,
+  ) {
   }
 
-  getAllReciptes(): Recipe[] {
-    return this.recipes;
+  getAllReciptes(): Observable<Recipe[]> {
+    return this.http.get<Recipe[]>(`${API_URL}/recipes`);
   }
 
-  getRecipeBuyId( id: string ) :Recipe {
-    return this.recipes.find( recipe => recipe.id === id)
+  getRecipeBuyId(id: string): Observable<Recipe> {
+    return this.http.get<Recipe>(`${API_URL}/recipes/${id}`);
   }
 
   getAllCategories() {
-    return this.category;
+    return this.http.get(`${API_URL}/categories`);
   }
 
-  add(recipe: Recipe): void {
-    this.recipes.push(recipe);
+  add(recipe: Recipe): Observable<string> {
+    return this.http.post<string>(`${API_URL}/recipes`, recipe);
   }
 
-  remove(id: string): Recipe[] {
-    return this.recipes = this.recipes.filter( recipes => recipes.id !== id);
+  remove(id: string): Observable<null> {
+    return this.http.delete<null>(`${API_URL}/recipes/${id}`);
   }
 
-  editRecipe(_recipe: Recipe) :string {
-    let recipeIndex = this.recipes.indexOf(this.getRecipeBuyId(_recipe.id));
-    this.recipes[recipeIndex] = _recipe;
-    return _recipe.id;
-  }
-  
-  likesSubject() {
-    const likesSubject$ =  new Subject();
-    return likesSubject$;
+  editRecipe(recipe: Recipe): Observable<null> {
+    return this.http.put<null>(`${API_URL}/recipes`, recipe)
   }
 
-  changeLikes(recipe) {
-    return flag => {
-      if (recipe.likes === 0 && flag === 'dec') {
-        return
-      }
-      flag === 'inc' ? recipe.likes++ : recipe.likes--
-    };
+  changeLikes(id, flag): Observable<any> {
+    return flag === 'inc' ?
+    this.http.post<any>(`${API_URL}/recipes/likes`, {id})
+    :
+    this.http.post<any>(`${API_URL}/recipes/dislikes`, {id})
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { PurchasesService } from '../purchases/services/purchases.service';
+import { PurchasesService } from '../shared/services/purchases.service';
 @Injectable()
 
 export class PurchasesResolve implements Resolve<any> {
@@ -9,7 +9,7 @@ export class PurchasesResolve implements Resolve<any> {
     private purchases: PurchasesService
   ) {}
 
-  resolve(): string[] {
+  resolve() {
     return this.purchases.getAll();
   }
 }

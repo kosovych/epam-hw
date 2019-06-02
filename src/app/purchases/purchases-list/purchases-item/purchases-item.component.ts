@@ -14,6 +14,6 @@ export class PurchasesItemComponent implements OnInit {
   }
 
   onRmPurchaseHandler(): void {
-    this.onRmPurchase.emit(this.purchase);
+    this.onRmPurchase.emit(this.purchase.id);
   }
 }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { PurchasesService } from '../services/purchases.service'
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { PurchasesService } from '../../shared/services/purchases.service'
 
 @Component({
   selector: 'app-add-purchases',
@@ -7,6 +7,7 @@ import { PurchasesService } from '../services/purchases.service'
   styleUrls: ['./add-purchases.component.scss']
 })
 export class AddPurchasesComponent implements OnInit {
+  @Output() onPurchaseAdded = new EventEmitter<[]>()
   public purchase = '';
 
   constructor(
@@ -16,9 +17,10 @@ export class AddPurchasesComponent implements OnInit {
   ngOnInit() {
   }
 
-  addToPurchases(event): void {
-    event.preventDefault();
-    this.purchasesService.add(this.purchase);
-    this.purchase = '';
+  addToPurchases(): void {
+    this.purchasesService.add([this.purchase]).subscribe( puechases => {
+      this.onPurchaseAdded.emit(puechases[0]);
+      this.purchase = '';
+    });
   }
 }

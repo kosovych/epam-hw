@@ -11,15 +11,12 @@ export class RecipesPreviewComponent implements OnInit {
   @Input() recipe: Recipe;
   @Output() onRemoveRecipe = new EventEmitter<any>();
   @Output() onChangeLikes = new EventEmitter<any>();
-  private likesSubject$;
 
   constructor(
     private reciptesService: ReciptesService,
   ) { }
 
   ngOnInit() {
-    this.likesSubject$ = this.reciptesService.likesSubject();
-    this.likesSubject$.subscribe( this.reciptesService.changeLikes(this.recipe));
   }
 
   onRemoveRecipeHandler(id:string): void {
@@ -27,6 +24,12 @@ export class RecipesPreviewComponent implements OnInit {
   }
 
   onChangeLikesHeandler(flag) {
-    this.likesSubject$.next(flag);
+    if(!this.recipe.likes && flag === 'dec') {
+      return
+    }
+    this.reciptesService.changeLikes(this.recipe.id, flag).subscribe( recipe => {
+      const { likes } = recipe;
+      this.recipe.likes = likes;
+    })
   }
 }

@@ -18,11 +18,28 @@
       <fa name="edit"></fa>
       Edit
     </button>
-    <button type="button" class="btn btn-secondary ml-8">
+    <ng-template #rmFromFav>
+    <button type="button"
+      class="btn btn-secondary ml-8"
+      (click)="addToFavorites()"
+    >
       <fa name="star"></fa>
       Add to Favorites
     </button>
-    <button type="button" class="btn btn-info ml-8">
+  </ng-template>
+
+      <button type="button"
+        *ngIf="isFavorites else rmFromFav"  
+        class="btn btn-danger ml-8"
+        (click)="deleteFromFavorites()"
+        >
+        <fa name="trash"></fa>
+        Delere from Favorites
+      </button>
+    <button type="button"
+      class="btn btn-info ml-8"
+      (click)="addToPurchases()"
+    >
       <fa name="shopping-cart"></fa>
       Purchases
     </button>

@@ -1,7 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { PurchasesService } from '../services/purchases.service';
-import { ActivatedRoute } from '@angular/router';
-
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-purchases-list',
@@ -9,22 +6,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./purchases-list.component.scss']
 })
 export class PurchasesListComponent implements OnInit {
-  public purchases;
+  @Input() purchases;
+  @Output() OnRmPurchase = new EventEmitter<any>();
 
   constructor(
-    private purchasesService: PurchasesService,
-    private route: ActivatedRoute,
-
   ) { }
 
   ngOnInit() {
-    this.route.data.subscribe( data => this.purchases = data.purchases);
   }
 
-
-
-  rmPurchase(purchase: string): void {
-    this.purchases = this.purchasesService.remove(purchase);
+  rmPurchase(id) {
+    this.OnRmPurchase.emit(id);
   }
-
 }

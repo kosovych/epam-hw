@@ -1,5 +1,5 @@
 <h2 class="mt-16 mb-32">Favorites</h2>
-<div class="card-deck" *ngIf="favorites.length">
+<div class="card-deck" *ngIf="favorites.length else noFav">
   <ng-container *ngFor="let recipe of favorites">
     <app-recipes-preview
       boxShadow
@@ -14,3 +14,8 @@
       ></app-recipes-preview>
   </ng-container>
 </div>
+<ng-template #noFav>
+    <div class="alert alert-primary" role="alert">
+        No favorite recipes :(
+    </div>
+</ng-template>

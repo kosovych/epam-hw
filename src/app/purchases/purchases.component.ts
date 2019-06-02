@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PurchasesService } from './services/purchases.service';
+import { PurchasesService } from '../shared/services/purchases.service';
 
 @Component({
   selector: 'app-purchases',
@@ -9,10 +9,20 @@ import { PurchasesService } from './services/purchases.service';
 export class PurchasesComponent implements OnInit {
   purchases = [];
   constructor(
-    public purchasesService: PurchasesService,
-  ) { }
+    private purchasesService: PurchasesService,
+  ) {}
 
   ngOnInit() {
-    this.purchases = this.purchasesService.getAll();
+    this.purchasesService.getAll().subscribe(purchases => this.purchases = purchases);
+  }
+
+  purchaseAdded(purchases) {
+    this.purchases = purchases
+  }
+
+  rmPurchase(id) {
+    this.purchasesService.remove(id).subscribe(purchases => {
+      this.purchases = purchases;
+    })
   }
 }

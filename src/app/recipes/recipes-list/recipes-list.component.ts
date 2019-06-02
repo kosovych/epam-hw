@@ -18,11 +18,14 @@ export class RecipesListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.data.subscribe( data => this.recipes = data.recipes);
+    this.reciptesService.getAllReciptes().subscribe( recipes => {
+      this.recipes = recipes;
+    })
   }
 
   removeRecipe(id: string): void {
-    this.reciptesService.remove(id);
-    this.recipes = this.reciptesService.getAllReciptes();
+    this.reciptesService.remove(id).subscribe( () => {
+      this.recipes = this.recipes.filter( recipe =>  recipe.id !== id );
+    })
   }
 }

@@ -2,10 +2,16 @@
   Purchases List
 </h2>
 
-<ul class="list-group" *ngIf="purchases.length">
+<ul class="list-group" *ngIf="purchases.length else noPur">
   <app-purchases-item
-    (onRmPurchase)='rmPurchase(purchase)'
+    (onRmPurchase)='rmPurchase($event)'
     *ngFor="let purchase of purchases;"
     [purchase]="purchase">
   </app-purchases-item>
 </ul>
+
+<ng-template #noPur>
+    <div class="alert alert-primary" role="alert">
+        No purchases :(
+    </div>
+</ng-template>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FavoriteService } from './services/favorite.service';
+import { FavoriteService } from '../shared/services/favorite.service';
 import Recipe from '../core/interfaces/recipe.interface';
 
 @Component({
@@ -8,14 +8,15 @@ import Recipe from '../core/interfaces/recipe.interface';
   styleUrls: ['./favorites-recipe.component.scss']
 })
 export class FavoritesRecipeComponent implements OnInit {
-  public favorites: Recipe[];
+  public favorites: Recipe[] = [];
 
   constructor(
     private favoriteService: FavoriteService,
   ) { }
 
   ngOnInit() {
-    this.favorites = this.favoriteService.getAll();
+    this.favoriteService.getAll().subscribe( recipes => {
+      this.favorites = recipes;
+    })
   }
-
 }

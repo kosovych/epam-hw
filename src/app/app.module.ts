@@ -10,6 +10,7 @@ import { RecipesModule } from './recipes/recipes.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PurchasesModule } from './purchases/purchases.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     RouterModule,
     CoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -125,8 +125,8 @@
             >
             <option
               *ngFor="let category of categories"
-              [value]="category"
-            >{{ category | decodeCategory }}</option>
+              [value]="category.id"
+            >{{ category.name }}</option>
           </select>
           <small
             class="form-text text-red"

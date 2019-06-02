@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PurchasesService } from '../purchases/services/purchases.service';
+import { PurchasesService } from '../shared/services/purchases.service';
 import { ReciptesService } from './services/reciptes.service';
 
 @NgModule({
