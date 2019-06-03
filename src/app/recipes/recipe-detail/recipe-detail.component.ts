@@ -53,8 +53,6 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   addToPurchases() {
-    this.purchasesService.add(this.recipte.ingredients).subscribe( x => {
-      console.log(x);
-    } )
+    this.purchasesService.add(this.recipte.ingredients).subscribe( x => x );
   }
 }

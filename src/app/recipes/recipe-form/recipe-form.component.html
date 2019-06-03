@@ -94,7 +94,7 @@
     <ul class="list-group mb-16" *ngIf="recipe.ingredients.length && ingtidientsListShow">
       <app-purchases-item
         *ngFor="let ingredient of recipe.ingredients"
-        [purchase]="ingredient"
+        [purchase]="{purchase: ingredient}"
         (onRmPurchase)=rmIngtidient(ingredient)
         ></app-purchases-item>
     </ul>

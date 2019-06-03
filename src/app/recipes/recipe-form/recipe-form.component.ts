@@ -84,7 +84,6 @@ export class RecipeFormComponent implements OnInit {
     }
     this.recipe.ingredients.push(this._ingridients.value);
     this._ingridients.reset();
-    console.log(this._ingridients);
   }
 
   toogleIngtidientsList(): void {
@@ -99,6 +98,7 @@ export class RecipeFormComponent implements OnInit {
 
     if (this.isEdit) {
       data.id = this.id;
+      console.log(data);
       this.reciptesService.editRecipe(data).subscribe( res => this.router.navigate([`/recipes/${this.id}`]));
     } else {
       this.reciptesService.add(data).subscribe( id => this.router.navigate([`/recipes/${id}`]) )

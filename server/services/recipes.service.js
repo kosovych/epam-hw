@@ -42,7 +42,7 @@ exports.createRecipe = async (recipe) => {
   try {
     const id = db.ref('recipes').push().key;
     const createdRecipe = await db.ref(`recipes/${id}`).set({
-      id, title, description, photoUrl, instructions, categoryId, likes: likes
+      id, title, description, photoUrl, instructions, categoryId, likes: 0
     });
     HelperService.saveIngredients(ingredients, id);
     return id;
@@ -58,7 +58,7 @@ exports.editRecipe = async (recipe) => {
     if (!selectedRecipe.val()) throw Error('Recipe does not exist');
     const likes = selectedRecipe.val().likes;
     const editedRecipe = await db.ref(`recipes/${id}`).set({
-      id, title, description, photoUrl, instructions, categoryId, likes: 0
+      id, title, description, photoUrl, instructions, categoryId, likes: likes
     });
     HelperService.saveIngredients(ingredients, id);
     return editedRecipe;
